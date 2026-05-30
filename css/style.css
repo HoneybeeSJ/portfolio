@@ -460,6 +460,197 @@ h1, h2, h3 {
 }
 
 /* ═══════════════════════════════════════════════════════
+   HERO — dual impact stat
+═══════════════════════════════════════════════════════ */
+.impact-dual {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: 4px 0;
+}
+
+.impact-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.impact-divider {
+  width: 1px;
+  height: 48px;
+  background: var(--glass-border);
+  flex-shrink: 0;
+}
+
+.imp-val {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  line-height: 1;
+}
+.imp-edu { color: var(--cyan); }
+.imp-ai  { color: var(--purple); }
+.imp-val small { font-size: 0.45em; opacity: 0.8; }
+
+/* ═══════════════════════════════════════════════════════
+   ABOUT — edu stat
+═══════════════════════════════════════════════════════ */
+.bio-sub {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 24px;
+  padding: 12px 16px;
+  border-left: 2px solid var(--cyan);
+  background: rgba(6,182,212,0.05);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+.bio-sub em { color: var(--cyan); font-style: normal; font-weight: 600; }
+
+.edu-stat { color: var(--cyan) !important; }
+
+/* ═══════════════════════════════════════════════════════
+   TEACHING
+═══════════════════════════════════════════════════════ */
+#teaching {
+  padding: 120px 0;
+}
+
+.teaching-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.teaching-card {
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.teaching-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.45);
+}
+
+.teaching-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 999px;
+  width: fit-content;
+}
+.teaching-badge.facilitation {
+  background: rgba(139,92,246,0.15);
+  border: 1px solid rgba(139,92,246,0.3);
+  color: var(--purple);
+}
+.teaching-badge.lecture {
+  background: rgba(6,182,212,0.15);
+  border: 1px solid rgba(6,182,212,0.3);
+  color: var(--cyan);
+}
+
+.teaching-icon { font-size: 2.2rem; }
+.teaching-title { font-size: 1.3rem; font-weight: 700; margin: 0; }
+.teaching-org   { font-size: 0.82rem; color: var(--cyan); font-weight: 500; }
+.teaching-desc  { font-size: 0.88rem; color: var(--text-muted); line-height: 1.75; flex: 1; }
+
+.teaching-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.meta-item {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-sm);
+  padding: 4px 12px;
+}
+
+.teaching-media-placeholder {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  background: rgba(6,182,212,0.06);
+  border: 1px dashed rgba(6,182,212,0.3);
+  border-radius: var(--radius-sm);
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+.placeholder-icon {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: rgba(6,182,212,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  color: var(--cyan);
+  flex-shrink: 0;
+}
+
+/* ═══════════════════════════════════════════════════════
+   EXPERIENCE — learning banner
+═══════════════════════════════════════════════════════ */
+.learning-banner {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 24px 32px;
+  margin-bottom: 32px;
+  border-left: 3px solid var(--cyan);
+}
+
+.learning-badge {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--cyan);
+  background: rgba(6,182,212,0.1);
+  border: 1px solid rgba(6,182,212,0.25);
+  border-radius: 999px;
+  padding: 5px 14px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.learning-info {
+  flex: 1;
+}
+.learning-info h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.learning-info p {
+  font-size: 0.83rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.learning-status {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--emerald);
+  background: rgba(16,185,129,0.1);
+  border: 1px solid rgba(16,185,129,0.25);
+  border-radius: 999px;
+  padding: 4px 12px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ═══════════════════════════════════════════════════════
    CAREER AGENT
 ═══════════════════════════════════════════════════════ */
 #career-agent {
@@ -899,6 +1090,8 @@ h1, h2, h3 {
   .about-grid { grid-template-columns: 1fr; }
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
 
+  .teaching-grid { grid-template-columns: 1fr; max-width: 520px; margin: 0 auto; }
+
   .ca-sticky { grid-template-columns: 1fr; }
   .ca-right  { display: none; }
   .ca-left   { padding: 100px 32px 80px; }
@@ -911,6 +1104,8 @@ h1, h2, h3 {
   .tl-date::after { display: none; }
 
   .edu-grid { grid-template-columns: 1fr; }
+
+  .learning-banner { flex-direction: column; align-items: flex-start; gap: 12px; }
 }
 
 @media (max-width: 600px) {

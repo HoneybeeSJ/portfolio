@@ -9,10 +9,10 @@
   if (typeof Typed !== 'undefined') {
     new Typed('#typed-el', {
       strings: [
-        'AI 에이전트 기획자',
-        '프로세스 혁신가',
-        '시스템 설계자',
-        'Career Agent 빌더',
+        '교육과정 설계자',
+        'AI × HRD 전문가',
+        '퍼실리테이터',
+        'AI 교육 기획자',
       ],
       typeSpeed:  58,
       backSpeed:  34,
