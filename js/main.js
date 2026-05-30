@@ -67,8 +67,10 @@
       entries.forEach(entry => {
         if (!entry.isIntersecting) return;
         const el = entry.target;
-        const target  = parseInt(el.dataset.target, 10);
-        const suffix  = el.dataset.suffix || '';
+        const rawTarget   = el.dataset.target;
+        const target      = parseFloat(rawTarget);
+        const suffix      = el.dataset.suffix || '';
+        const decimalPlaces = rawTarget.includes('.') ? rawTarget.split('.')[1].length : 0;
 
         const CountUpClass = (typeof countUp !== 'undefined' && countUp.CountUp)
           || (typeof CountUp !== 'undefined' ? CountUp : null);
@@ -79,6 +81,7 @@
             duration: 2,
             useEasing: true,
             startVal: 0,
+            decimalPlaces,
           });
           cu.start();
         }
