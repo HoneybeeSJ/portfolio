@@ -2,17 +2,19 @@
 (function () {
   'use strict';
 
-  /* ── GSAP ScrollTrigger ── */
-  gsap.registerPlugin(ScrollTrigger);
+  /* ── GSAP ScrollTrigger (CDN 실패 대비 가드) ── */
+  var HAS_GSAP = (typeof gsap !== 'undefined');
+  var HAS_ST   = HAS_GSAP && (typeof ScrollTrigger !== 'undefined');
+  if (HAS_ST) gsap.registerPlugin(ScrollTrigger);
 
   /* ── Typed.js hero subtitle ── */
   if (typeof Typed !== 'undefined') {
     new Typed('#typed-el', {
       strings: [
-        '교육과정 설계자',
-        'AI × HRD 전문가',
-        '퍼실리테이터',
-        'AI 교육 기획자',
+        '변화를 기회로 만드는',
+        '사람의 성장을 AI의 속도로 이끄는',
+        '없던 곳에 구조를 짓는',
+        '운영과 사람을 잇는',
       ],
       typeSpeed:  58,
       backSpeed:  34,
@@ -97,7 +99,7 @@
   const caSection = document.getElementById('career-agent');
   const caSteps   = document.querySelectorAll('.ca-step');
 
-  if (caSection) {
+  if (caSection && HAS_ST) {
     ScrollTrigger.create({
       trigger: caSection,
       start:   'top top',
@@ -109,12 +111,13 @@
           window.caSceneUpdate(self.progress);
         }
 
-        /* Step highlight: 4 phases */
+        /* Step highlight: 5 phases */
         const p = self.progress;
         let active = 0;
-        if (p > 0.22) active = 1;
-        if (p > 0.52) active = 2;
-        if (p > 0.80) active = 3;
+        if (p > 0.18) active = 1;
+        if (p > 0.38) active = 2;
+        if (p > 0.58) active = 3;
+        if (p > 0.78) active = 4;
 
         caSteps.forEach((step, i) => {
           step.classList.toggle('active', i === active);
@@ -161,5 +164,5 @@
   });
 
   /* ── GSAP page-entry animation for nav ── */
-  gsap.from('#nav', { y: -80, opacity: 0, duration: 0.8, ease: 'power2.out', delay: 0.1 });
+  if (HAS_GSAP) gsap.from('#nav', { y: -80, opacity: 0, duration: 0.8, ease: 'power2.out', delay: 0.1 });
 })();

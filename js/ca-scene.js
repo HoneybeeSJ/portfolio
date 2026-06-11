@@ -22,9 +22,9 @@
   dirLight.position.set(5, 10, 8);
   scene.add(dirLight);
 
-  const purpleLight  = new THREE.PointLight(0x8b5cf6, 3, 10);
-  const cyanLight    = new THREE.PointLight(0x06b6d4, 3, 10);
-  const emeraldLight = new THREE.PointLight(0x10b981, 3, 10);
+  const purpleLight  = new THREE.PointLight(0xFFC400, 3, 10);
+  const cyanLight    = new THREE.PointLight(0xFFD43B, 3, 10);
+  const emeraldLight = new THREE.PointLight(0xC99700, 3, 10);
 
   purpleLight.position.set(-3, 2.5, 3);
   cyanLight.position.set(3, 0, 3);
@@ -33,7 +33,7 @@
   scene.add(purpleLight, cyanLight, emeraldLight);
 
   /* ── Slab geometry ── */
-  const COLORS = [0x8b5cf6, 0x06b6d4, 0x10b981];
+  const COLORS = [0xFFC400, 0xFFD43B, 0xC99700];
   const INIT_Y = [0.25, 0, -0.25];
   const GOAL_Y = [2.4,  0, -2.4 ];
 
@@ -99,7 +99,7 @@
 
   /* ── Self-annealing loop ring ── */
   const ringGeo = new THREE.TorusGeometry(1.0, 0.02, 12, 60, Math.PI * 1.6);
-  const ringMat = new THREE.MeshBasicMaterial({ color: 0xf59e0b, transparent: true, opacity: 0 });
+  const ringMat = new THREE.MeshBasicMaterial({ color: 0xFFC400, transparent: true, opacity: 0 });
   const ring    = new THREE.Mesh(ringGeo, ringMat);
   ring.position.set(3.2, 0, 0);
   ring.rotation.y = Math.PI / 4;
@@ -116,7 +116,7 @@
   const dustGeo = new THREE.BufferGeometry();
   dustGeo.setAttribute('position', new THREE.BufferAttribute(dustPos, 3));
   scene.add(new THREE.Points(dustGeo, new THREE.PointsMaterial({
-    color: 0x4c1d95, size: 0.04, transparent: true, opacity: 0.4,
+    color: 0x5c4600, size: 0.04, transparent: true, opacity: 0.4,
   })));
 
   /* ── Expose progress updater ── */

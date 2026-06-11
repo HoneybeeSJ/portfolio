@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>이승재 | AI 기반 교육 기획자 포트폴리오</title>
+  <meta name="description" content="HRD 실무와 AI 활용 역량을 갖춘 교육 기획자 이승재의 포트폴리오." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+  <!-- ── Nav ─────────────────────────────────────── -->
+  <nav id="nav">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo" aria-label="홈"><span class="logo-hex" aria-hidden="true"></span></a>
+      <ul class="nav-links">
+        <li><a href="#about">소개</a></li>
+        <li><a href="#experience">경력</a></li>
+        <li><a href="#career-agent">AI 시스템</a></li>
+        <li><a href="#projects">프로젝트</a></li>
+        <li><a href="#teaching">강의 경험</a></li>
+        <li><a href="자기소개.html">자기소개</a></li>
+        <li><a href="#contact">연락처</a></li>
+      </ul>
+      <button class="nav-menu" id="menuBtn" aria-label="메뉴">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#about" class="mob-link">소개</a></li>
+      <li><a href="#experience" class="mob-link">경력</a></li>
+      <li><a href="#career-agent" class="mob-link">AI 시스템</a></li>
+      <li><a href="#projects" class="mob-link">프로젝트</a></li>
+      <li><a href="#teaching" class="mob-link">강의 경험</a></li>
+      <li><a href="자기소개.html" class="mob-link">자기소개</a></li>
+      <li><a href="#contact" class="mob-link">연락처</a></li>
+    </ul>
+  </div>
+
+  <!-- ── Hero ────────────────────────────────────── -->
+  <section id="hero">
+    <canvas id="hero-canvas"></canvas>
+    <div class="hero-content">
+      <div class="hero-tag" data-reveal>HRD · 교육 기획</div>
+      <h1 class="hero-headline" data-reveal>
+        <span class="hero-slogan" aria-label="Change into Chance">Chan<span class="morph"><span class="m-g">g</span><span class="m-c">c</span></span>e</span>
+      </h1>
+      <p class="hero-role" data-reveal><span id="typed-el"></span> <strong>AI 교육 설계자 이<span class="accent">승</span>재</strong></p>
+      <div class="hero-impact" data-reveal>
+        <div class="impact-wrap glass-card">
+          <div class="impact-dual">
+            <div class="impact-item">
+              <span class="imp-val imp-edu">4.28<small>/5.0</small></span>
+              <p class="imp-desc">교육 만족도</p>
+            </div>
+            <div class="impact-divider"></div>
+            <div class="impact-item">
+              <span class="imp-val imp-ai">23<small>개</small></span>
+              <p class="imp-desc">HR×AI 실무 실습 수행</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-cta" data-reveal>
+        <a href="#experience" class="btn-primary">경력 보기</a>
+        <a href="#contact" class="btn-ghost">연락하기</a>
+      </div>
+    </div>
+    <div class="scroll-hint">
+      <div class="scroll-bar"></div>
+      <span>scroll</span>
+    </div>
+  </section>
+
+  <!-- ── About ────────────────────────────────────── -->
+  <section id="about">
+    <div class="container">
+      <div class="sec-header">
+        <span class="sec-tag">About</span>
+        <h2 class="sec-title">HRD 실무와 AI 활용을<br />연결하는 교육 기획자</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-bio glass-card" data-reveal>
+          <p class="bio-lead">3년여의 교육 기획·운영 실무와 AI 시스템 설계 경험을 바탕으로, 학습자 요구를 분석하고 AI를 활용해 효과적인 교육과정을 설계하는 기획자입니다.</p>
+          <p class="bio-sub">현재 서울매력일자리사업 <em>AI 기반 교육기획 및 HRD 담당자 과정</em> 수료 중으로, HRD 이론과 AI 툴 활용 교육 설계를 심화 학습 중입니다.
+          </p>
+          <div class="bio-tags">
+            <span class="tag-chip">교육과정 설계 (ISD)</span>
+            <span class="tag-chip">HRD 기획·운영</span>
+            <span class="tag-chip">AI 툴 활용</span>
+            <span class="tag-chip">퍼실리테이션</span>
+            <span class="tag-chip">교육 콘텐츠 제작</span>
+            <span class="tag-chip">데이터 기반 요구분석</span>
+          </div>
+        </div>
+        <div class="stats-grid">
+          <div class="stat-card glass-card" data-reveal>
+            <div class="stat-val edu-stat" data-target="4.28" data-display="4.28" data-suffix="/5.0">4.28</div>
+            <div class="stat-name">교육 만족도</div>
+            <div class="stat-note">직접 기획·운영 실측</div>
+          </div>
+          <div class="stat-card glass-card" data-reveal>
+            <div class="stat-val" data-target="100" data-suffix="%">0%</div>
+            <div class="stat-name">법정의무교육 이수율</div>
+            <div class="stat-note">158명 대상 운영</div>
+          </div>
+          <div class="stat-card glass-card" data-reveal>
+            <div class="stat-val" data-target="3" data-suffix="년+">0년+</div>
+            <div class="stat-name">교육 기획 경험</div>
+            <div class="stat-note">기획·운영·퍼실리테이션</div>
+          </div>
+          <div class="stat-card glass-card" data-reveal>
+            <div class="stat-val" data-target="300" data-suffix="시간↓">0시간↓</div>
+            <div class="stat-name">AI 콘텐츠 자동화</div>
+            <div class="stat-note">이세계 휴식일지 프로젝트</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Experience ───────────────────────────────── -->
+  <section id="experience">
+    <div class="container">
+      <div class="sec-header">
+        <span class="sec-tag">Experience</span>
+        <h2 class="sec-title">교육 기획 실무 경력</h2>
+      </div>
+
+      <!-- 현재 수강 중 (가장 최신) -->
+      <div class="learning-banner glass-card" data-reveal>
+        <div class="learning-badge">🎓 현재 수강 중</div>
+        <div class="learning-info">
+          <h3>서울매력일자리사업 — AI 기반 교육기획 및 HRD 담당자 양성과정</h3>
+          <p>엑스퍼트컨설팅 주관 · 2026.04 ~ 현재 &nbsp;|&nbsp; HRD 이론(ISD · ADDIE · Kirkpatrick)에 생성형 AI를 결합해 <em>채용 → 평가 → 보상 → 교육 → 조직</em> 전 과정을 자동화·고도화하는 실무 과정.</p>
+        </div>
+        <div class="learning-status">진행 중</div>
+      </div>
+
+      <!-- 양성과정 산출물 -->
+      <div class="learning-outputs">
+        <div class="learning-output-card glass-card" data-reveal>
+          <div class="lo-head">
+            <span class="lo-icon">🤖</span>
+            <h4>HR × 생성형 AI 실무 <em>23개 실습</em> 수행·완수</h4>
+          </div>
+          <p class="lo-desc">채용 → 평가 → 보상 → 교육 → 조직으로 이어지는 HR 라이프사이클 전 과정에 생성형 AI를 직접 적용한 23개 실습 과제.</p>
+          <ul class="lo-list">
+            <li>인사기획·자기소개서 평가 <em>AI 에이전트</em> 구성 (Custom GPT · Claude Project · Gemini Gems)</li>
+            <li>사내규정·노무 <em>RAG 챗봇</em> 구축</li>
+            <li>지원자 데이터 정리(Excel VBA)·이력서 수집 폼(Apps Script) <em>업무 자동화</em></li>
+            <li>급여정산(4대보험 수식)·KPI 설정·평가 데이터 다중시트 통합(VLOOKUP)</li>
+            <li>합격/평가 통보 <em>HTML 메일 자동 발송</em></li>
+          </ul>
+          <div class="proj-tags">
+            <span class="proj-tag-item">ChatGPT</span>
+            <span class="proj-tag-item">Claude</span>
+            <span class="proj-tag-item">Gemini</span>
+            <span class="proj-tag-item">NotebookLM</span>
+            <span class="proj-tag-item">RAG</span>
+            <span class="proj-tag-item">Excel VBA</span>
+            <span class="proj-tag-item">Apps Script</span>
+            <span class="proj-tag-item">바이브코딩</span>
+          </div>
+        </div>
+
+        <div class="learning-output-card glass-card" data-reveal>
+          <div class="lo-head">
+            <span class="lo-icon">📊</span>
+            <h4>전략기획 과제 — 킴스헬스클럽 <em>3개월 전략기획안</em></h4>
+          </div>
+          <p class="lo-desc">헬스장을 대상으로 현황 분석부터 경영진 보고 문서까지 전략기획 산출물 일체를 직접 작성.</p>
+          <ul class="lo-list">
+            <li>현황 분석 → <em>전략과제 도출</em> → 리스크 대응 실행계획 → 경영진 보고</li>
+            <li>산출물: 3개월 전략기획안, <em>1-page 핵심 기획안</em>, 전략과제 도출분석서, 리스크대응 실행계획서</li>
+            <li>발표자료(Google Slides) · HTML 전략보고서 · 문서 자동 생성 스크립트(Python)</li>
+          </ul>
+          <div class="proj-tags">
+            <span class="proj-tag-item">전략기획</span>
+            <span class="proj-tag-item">현황·시장 분석</span>
+            <span class="proj-tag-item">리스크 대응</span>
+            <span class="proj-tag-item">기획서 작성</span>
+            <span class="proj-tag-item">문서·PPT 자동화</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline">
+        <div class="tl-item" data-reveal>
+          <div class="tl-date">2024.12 ~ 2025.06</div>
+          <div class="tl-card glass-card">
+            <div class="tl-header">
+              <h3>원티드 포텐업 AI 부트캠프</h3>
+              <span class="tl-role">AI 서비스 기획 · 데이터 분석</span>
+            </div>
+            <ul class="tl-list">
+              <li>AI 활용 신규 서비스 3종 기획 — <em>이세계 휴식일지 · T래블 · BaristAI</em></li>
+              <li>AI 에셋 자동화 파이프라인 기획 — 수동 대비 <em>약 300시간 단축 · 1,670만 원 원가 절감</em></li>
+              <li>대중교통·앱 리뷰 데이터 <em>1,580만 건 수집</em> 및 NLP 텍스트 마이닝 분석</li>
+              <li>최종 성과 <em>우수상 수상</em> (2025)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tl-item" data-reveal>
+          <div class="tl-date">2022.06 ~ 2024.04</div>
+          <div class="tl-card glass-card">
+            <div class="tl-header">
+              <h3>한살림동서울 기획홍보팀</h3>
+              <span class="tl-role">교육 기획·운영 담당</span>
+            </div>
+            <ul class="tl-list">
+              <li>신규 입문교육 프로그램 기획·설계·운영 <em>(교육 만족도 4.28 / 5.0)</em></li>
+              <li>OKR 워크샵 직접 설계 및 <em>퍼실리테이터로 진행</em> — 전사 구성원 목표 수립 촉진</li>
+              <li>교육 자료·학습 콘텐츠 직접 제작 — PPT, 매뉴얼 등 다양한 형태의 학습 자료 개발</li>
+              <li>전사 직원 158명 법정의무교육 기획·운영 <em>(완료율 100%)</em></li>
+              <li>학습모임 시스템 구축 및 운영 — 자기주도 학습 문화 조성</li>
+              <li>SaaS·IT 자산 최적화, 업무 기기 구매 단가 <em>10% 절감</em></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tl-item" data-reveal>
+          <div class="tl-date">2019.09 ~ 2021.08</div>
+          <div class="tl-card glass-card">
+            <div class="tl-header">
+              <h3>한림대학교 도서관운영팀</h3>
+              <span class="tl-role">교육 · 시설 운영 담당</span>
+            </div>
+            <ul class="tl-list">
+              <li>근로장학생 교육·관리 — 교육 동선 최적화로 교육 시간 <em>40분 → 15분 단축</em></li>
+              <li>도서관 대규모 시설·장비 관리 및 <em>시설관리 매뉴얼 제작</em></li>
+              <li>도서관 공식 인스타그램 개설·운영 — 팔로워 <em>0 → 183명</em></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="edu-grid">
+        <div class="edu-card glass-card" data-reveal>
+          <h3 class="edu-hd">학력</h3>
+          <p class="edu-school">한림대학교</p>
+          <p class="edu-major">컨벤션관광경영학 / 경영학 복수전공 학사</p>
+        </div>
+        <div class="edu-card glass-card" data-reveal>
+          <h3 class="edu-hd">자격 &amp; 수상</h3>
+          <ul class="cert-list">
+            <li>🏆 원티드포텐업 AI/데이터 부트캠프 우수상 (2025)</li>
+            <li>🏆 KT&amp;G 상상마케팅스쿨 강원지역 1위 (2015)</li>
+            <li>📜 컴퓨터활용능력 1급</li>
+            <li>📜 전산세무 2급 / 전산회계 1급</li>
+            <li>📜 OPIC IM2</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Career Agent ──────────────────────────────── -->
+  <section id="career-agent">
+    <div class="ca-sticky">
+
+      <div class="ca-left">
+        <span class="sec-tag">AI 서비스 기획 · 자동화 역량</span>
+        <h2 class="ca-title">Career<br /><span class="accent">Agent</span></h2>
+        <p class="ca-desc">채용공고를 입력하면 분석 → 매칭 → 초안 → 교정 → 산출물까지 자동 수행하는, 직접 설계·구현한 AI 파이프라인(Node.js).<br />콘텐츠 설계·자동화 역량을 그대로 <strong>교육 콘텐츠 기획·운영</strong>에 적용할 수 있습니다.</p>
+
+        <div class="ca-steps">
+          <div class="ca-step" data-step="0">
+            <div class="step-track">
+              <div class="step-dot directive-dot"></div>
+              <div class="step-line"></div>
+            </div>
+            <div class="step-body">
+              <h3>① 채용공고 분석 <span class="step-agent">Agent A</span></h3>
+              <p>비정형 공고 텍스트에서 회사·직무·자격요건·키워드를 구조화 JSON으로 추출. 회사명이 없으면 임의 추측을 금지.</p>
+            </div>
+          </div>
+          <div class="ca-step" data-step="1">
+            <div class="step-track">
+              <div class="step-dot orch-dot"></div>
+              <div class="step-line"></div>
+            </div>
+            <div class="step-body">
+              <h3>② 이력서 매칭 <span class="step-agent">Agent B</span></h3>
+              <p>마스터 이력서 전체 맥락을 근거로 직무 적합도 점수와 매칭 경험을 산출. <strong>실재하는 경험만 사용</strong>하도록 프롬프트를 설계해 허위 이력 생성을 방지.</p>
+            </div>
+          </div>
+          <div class="ca-step" data-step="2">
+            <div class="step-track">
+              <div class="step-dot exec-dot"></div>
+              <div class="step-line"></div>
+            </div>
+            <div class="step-body">
+              <h3>③ 자소서 초안 작성</h3>
+              <p>매칭 결과와 문체 가이드를 결합해 자기소개서 초안을 생성. 웹 자동화(ChatGPT·Claude) → API 순으로 <strong>다단계 폴백</strong>해 안정성 확보.</p>
+            </div>
+          </div>
+          <div class="ca-step" data-step="3">
+            <div class="step-track">
+              <div class="step-dot loop-dot"></div>
+              <div class="step-line"></div>
+            </div>
+            <div class="step-body">
+              <h3>④ 톤앤매너 교정 <span class="step-agent">Agent C</span></h3>
+              <p>스타일 가이드 기준으로 AI 상투어를 제거하고 본인 문체로 교정. 수치·성과 등 <strong>사실은 변경하지 않음</strong>.</p>
+            </div>
+          </div>
+          <div class="ca-step" data-step="4">
+            <div class="step-track">
+              <div class="step-dot step5-dot"></div>
+            </div>
+            <div class="step-body">
+              <h3>⑤ 슬라이드 · 면접 대비 생성</h3>
+              <p>포트폴리오 PPTX(+Canva 연동)와 면접 예상질문·답변 가이드를 자동 생성해 지원 1건당 산출물을 일괄 출력.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="ca-results glass-card">
+          <div class="ca-res-item"><span class="res-icon">⚡</span><span>지원서류 작성 시간 <strong>대폭 단축</strong> (수작업 대비)</span></div>
+          <div class="ca-res-item"><span class="res-icon">🛡️</span><span><strong>할루시네이션 방지 설계</strong> — 실재 경험만 근거로 사용</span></div>
+          <div class="ca-res-item"><span class="res-icon">🔁</span><span>웹→API <strong>다단계 폴백</strong>으로 안정적 자동화</span></div>
+        </div>
+      </div>
+
+      <div class="ca-right">
+        <canvas id="ca-canvas"></canvas>
+        <div class="ca-overlay-labels">
+          <div class="ca-lbl ca-lbl-directive" id="lbl-directive">
+            <span class="lbl-dot"></span>입력 · 채용공고
+          </div>
+          <div class="ca-lbl ca-lbl-orch" id="lbl-orch">
+            <span class="lbl-dot"></span>처리 · 매칭 & 생성
+          </div>
+          <div class="ca-lbl ca-lbl-exec" id="lbl-exec">
+            <span class="lbl-dot"></span>출력 · 지원서류
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── Projects ─────────────────────────────────── -->
+  <section id="projects">
+    <div class="container">
+      <div class="sec-header">
+        <span class="sec-tag">Projects</span>
+        <h2 class="sec-title">교육기획 <span class="accent">+</span> AI 역량</h2>
+        <p class="sec-sub">각 프로젝트에서 적용한 방법론이 교육 기획 실무와 AI 활용 역량으로 직결됩니다.</p>
+      </div>
+      <div class="proj-grid">
+
+        <div class="proj-card glass-card" data-reveal>
+          <div class="proj-period">2024.12 ~ 2025.06</div>
+          <div class="proj-icon">🎮</div>
+          <h3 class="proj-name">이세계 휴식일지</h3>
+          <p class="proj-sub">AI 툴 활용 교육 콘텐츠 제작 역량</p>
+          <p class="proj-desc">원티드 포텐업 부트캠프 AI 부문. 생성 AI로 게임 그래픽 에셋을 자동 제작해 300시간 단축. <strong>교육 현장에서 AI 툴로 시각 자료·콘텐츠를
+              빠르고 정확하게 제작하는 역량</strong>으로 직결됩니다.</p>
+          <div class="proj-chips">
+            <span class="chip highlight-chip">300시간 단축</span>
+            <span class="chip highlight-chip">1,670만원 절감</span>
+            <span class="chip highlight-chip">부트캠프 우수상</span>
+          </div>
+          <div class="proj-tags">
+            <span class="proj-tag-item">AI 콘텐츠 제작</span>
+            <span class="proj-tag-item">생성 AI 활용</span>
+            <span class="proj-tag-item">프로세스 자동화</span>
+          </div>
+        </div>
+
+        <div class="proj-card glass-card" data-reveal>
+          <div class="proj-period">원티드포텐업 부트캠프</div>
+          <div class="proj-icon">🚌</div>
+          <h3 class="proj-name">T래블</h3>
+          <p class="proj-sub">데이터 기반 학습자 요구분석(TNA) 역량</p>
+          <p class="proj-desc">서울시 대중교통·리뷰 데이터 1,580만 건으로 Pain Point를 추출한 방법론은 <strong>교육 요구분석(Training Needs Analysis)과
+              동일한 접근법</strong>입니다. 대규모 데이터에서 학습자 니즈를 도출하는 역량을 입증합니다.</p>
+          <div class="proj-chips">
+            <span class="chip highlight-chip">1,580만 건 분석</span>
+            <span class="chip highlight-chip">NLP 텍스트 마이닝</span>
+          </div>
+          <div class="proj-tags">
+            <span class="proj-tag-item">요구분석 (TNA)</span>
+            <span class="proj-tag-item">데이터 분석</span>
+            <span class="proj-tag-item">서비스 기획</span>
+          </div>
+        </div>
+
+        <div class="proj-card glass-card" data-reveal>
+          <div class="proj-period">B2B 제안 프로젝트</div>
+          <div class="proj-icon">☕</div>
+          <h3 class="proj-name">BaristAI</h3>
+          <p class="proj-sub">학습자 접근성을 고려한 교육 UX 설계</p>
+          <p class="proj-desc">디지털 소외 고령층을 위한 UI 설계 경험은 <strong>다양한 학습자 특성(디지털 리터러시, 학습 접근성)을 고려한 교육 설계</strong> 역량과
+            직결됩니다. 학습자 중심 설계(Learner-Centered Design)의 실증 사례.</p>
+          <div class="proj-chips">
+            <span class="chip highlight-chip">학습자 경험 설계</span>
+            <span class="chip highlight-chip">접근성 중심</span>
+          </div>
+          <div class="proj-tags">
+            <span class="proj-tag-item">학습자 분석</span>
+            <span class="proj-tag-item">UX 기획</span>
+            <span class="proj-tag-item">B2B 제안</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Teaching ──────────────────────────────────── -->
+  <section id="teaching">
+    <div class="container">
+      <div class="sec-header">
+        <span class="sec-tag">Teaching</span>
+        <h2 class="sec-title">강의 &amp; 퍼실리테이션</h2>
+        <p class="sec-sub">교육 기획을 넘어 직접 앞에 서서 진행한 경험들입니다.</p>
+      </div>
+
+      <div class="teaching-grid">
+
+        <div class="teaching-card glass-card" data-reveal>
+          <div class="teaching-badge facilitation">퍼실리테이션</div>
+          <div class="teaching-icon">🎯</div>
+          <h3 class="teaching-title">OKR 워크샵 퍼실리테이션</h3>
+          <p class="teaching-org">한살림동서울 · 전사 대상</p>
+          <p class="teaching-desc">OKR(Objectives &amp; Key Results) 도입을 위한 전사 워크샵을 직접 설계하고 퍼실리테이터로 진행. 참여형 토론 구조와 실시간
+            피드백을 적용해 구성원의 자발적 목표 수립을 유도.</p>
+          <div class="teaching-meta">
+            <span class="meta-item">📍 참여형 워크샵</span>
+            <span class="meta-item">📋 교안 직접 제작</span>
+          </div>
+        </div>
+
+        <div class="teaching-card glass-card" data-reveal>
+          <div class="teaching-badge lecture">특강</div>
+          <div class="teaching-icon">🧗</div>
+          <h3 class="teaching-title">안티그래비티 하네스 엔지니어링 특강</h3>
+          <p class="teaching-org">서울매력일자리사업 · 수강생 대상</p>
+          <p class="teaching-desc">15분 압축 특강 형식으로 안티그래비티 하네스 엔지니어링의 핵심 원리를 강의. 실습 연계 구조로 설계해 짧은 시간 안에 학습 목표를 효과적으로 전달.
+          </p>
+          <div class="teaching-meta">
+            <span class="meta-item">⏱ 15분 압축 강의</span>
+            <span class="meta-item">🎥 영상·자료 보유</span>
+          </div>
+          <div class="teaching-media-placeholder">
+            <span class="placeholder-icon">▶</span>
+            <span>강의 영상 · 자료 추가 예정</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Contact ──────────────────────────────────── -->
+  <section id="contact">
+    <div class="container">
+      <div class="sec-header">
+        <span class="sec-tag">Contact</span>
+        <h2 class="sec-title">함께 일해요</h2>
+        <p class="sec-sub">AI 기반 교육 기획·운영 포지션에 관심 있는 기업이라면 언제든 연락주세요.</p>
+      </div>
+      <div class="contact-card glass-card" data-reveal>
+        <a href="mailto:jad6020@naver.com" class="contact-link">
+          <span class="contact-icon">✉</span>
+          <span>jad6020@naver.com</span>
+        </a>
+        <div class="contact-divider"></div>
+        <p class="contact-note">교육 기획 · HRD 운영 · AI 교육 콘텐츠 개발 협업 문의 환영합니다.</p>
+      </div>
+    </div>
+    <footer class="footer">
+      <p>© 2026 이승재 &nbsp;·&nbsp; Built with Three.js + GSAP</p>
+    </footer>
+  </section>
+
+  <!-- ── Scripts ──────────────────────────────────── -->
+  <script src="https://unpkg.com/three@0.158.0/build/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+  <script src="https://unpkg.com/countup.js@2.6.0/dist/countUp.umd.js"></script>
+  <script src="js/hero-scene.js"></script>
+  <script src="js/ca-scene.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
+
+<!-- eof-safety-buffer eof-safety-buffer eof-safety-buffer eof-safety-buffer eof-safety-buffer eof-safety-buffer eof-safety-buffer eof-safety-buffer eof-safety-buffer eof-safety-buffer eof-safety-buffer eof-safety-buffer -->

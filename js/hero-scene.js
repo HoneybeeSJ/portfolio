@@ -37,7 +37,7 @@
   ptGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
 
   const ptMat = new THREE.PointsMaterial({
-    color: 0x8b5cf6,
+    color: 0xFFC400,
     size: 0.06,
     transparent: true,
     opacity: 0.85,
@@ -54,7 +54,7 @@
   lineGeo.setDrawRange(0, 0);
 
   const lineMat = new THREE.LineBasicMaterial({
-    color: 0x7c3aed,
+    color: 0xC99700,
     transparent: true,
     opacity: 0.22,
   });
@@ -72,7 +72,7 @@
   }
   const accentGeo = new THREE.BufferGeometry();
   accentGeo.setAttribute('position', new THREE.BufferAttribute(accentPos, 3));
-  const accentMat = new THREE.PointsMaterial({ color: 0x06b6d4, size: 0.04, transparent: true, opacity: 0.6 });
+  const accentMat = new THREE.PointsMaterial({ color: 0xFFD43B, size: 0.04, transparent: true, opacity: 0.6 });
   scene.add(new THREE.Points(accentGeo, accentMat));
 
   /* ── Line update ── */
