@@ -6,6 +6,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>이승재 | AI 기반 교육 기획자 포트폴리오</title>
   <meta name="description" content="HRD 실무와 AI 활용 역량을 갖춘 교육 기획자 이승재의 포트폴리오." />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+
+  <!-- Open Graph / 카카오·페이스북 공유 미리보기 -->
+  <!-- ※ 배포 후 아래 your-domain.com 을 실제 주소로 교체하면 카톡 미리보기가 정상 표시됩니다 -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="이승재 | AI 기반 교육 기획자 포트폴리오" />
+  <meta property="og:description" content="HRD 실무와 AI 활용을 연결하는 교육 기획자. 교육기획 전 과정 + 생성형 AI 역량." />
+  <meta property="og:image" content="https://your-domain.com/assets/og-image.jpg" />
+  <meta property="og:url" content="https://your-domain.com/" />
+  <meta property="og:locale" content="ko_KR" />
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="이승재 | AI 기반 교육 기획자 포트폴리오" />
+  <meta name="twitter:description" content="HRD 실무와 AI 활용을 연결하는 교육 기획자." />
+  <meta name="twitter:image" content="https://your-domain.com/assets/og-image.jpg" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -16,6 +36,9 @@
 
 <body>
 
+  <!-- ── 전체 페이지 벌집 배경 ──────────────────────── -->
+  <canvas id="hero-canvas"></canvas>
+
   <!-- ── Nav ─────────────────────────────────────── -->
   <nav id="nav">
     <div class="nav-inner">
@@ -24,6 +47,7 @@
         <li><a href="#about">소개</a></li>
         <li><a href="#experience">경력</a></li>
         <li><a href="#career-agent">AI 시스템</a></li>
+        <li><a href="#competency">역량</a></li>
         <li><a href="#projects">프로젝트</a></li>
         <li><a href="#teaching">강의 경험</a></li>
         <li><a href="자기소개.html">자기소개</a></li>
@@ -40,6 +64,7 @@
       <li><a href="#about" class="mob-link">소개</a></li>
       <li><a href="#experience" class="mob-link">경력</a></li>
       <li><a href="#career-agent" class="mob-link">AI 시스템</a></li>
+      <li><a href="#competency" class="mob-link">역량</a></li>
       <li><a href="#projects" class="mob-link">프로젝트</a></li>
       <li><a href="#teaching" class="mob-link">강의 경험</a></li>
       <li><a href="자기소개.html" class="mob-link">자기소개</a></li>
@@ -49,7 +74,6 @@
 
   <!-- ── Hero ────────────────────────────────────── -->
   <section id="hero">
-    <canvas id="hero-canvas"></canvas>
     <div class="hero-content">
       <div class="hero-tag" data-reveal>HRD · 교육 기획</div>
       <h1 class="hero-headline" data-reveal>
@@ -91,6 +115,15 @@
       </div>
       <div class="about-grid">
         <div class="about-bio glass-card" data-reveal>
+          <div class="bio-profile">
+            <div class="bio-avatar">
+              <img src="assets/profile.jpg" alt="이승재 프로필 사진" loading="lazy" />
+            </div>
+            <div class="bio-id">
+              <p class="bio-name">이승재</p>
+              <p class="bio-role-line">AI 기반 교육 기획자 · HRD</p>
+            </div>
+          </div>
           <p class="bio-lead">3년여의 교육 기획·운영 실무와 AI 시스템 설계 경험을 바탕으로, 학습자 요구를 분석하고 AI를 활용해 효과적인 교육과정을 설계하는 기획자입니다.</p>
           <p class="bio-sub">현재 서울매력일자리사업 <em>AI 기반 교육기획 및 HRD 담당자 과정</em> 수료 중으로, HRD 이론과 AI 툴 활용 교육 설계를 심화 학습 중입니다.
           </p>
@@ -120,7 +153,7 @@
             <div class="stat-note">기획·운영·퍼실리테이션</div>
           </div>
           <div class="stat-card glass-card" data-reveal>
-            <div class="stat-val" data-target="300" data-suffix="시간↓">0시간↓</div>
+            <div class="stat-val" data-target="299.6" data-suffix="시간↓">0시간↓</div>
             <div class="stat-name">AI 콘텐츠 자동화</div>
             <div class="stat-note">이세계 휴식일지 프로젝트</div>
           </div>
@@ -172,6 +205,7 @@
             <span class="proj-tag-item">Apps Script</span>
             <span class="proj-tag-item">바이브코딩</span>
           </div>
+          <a class="proj-more" href="projects/training-program.html">23개 실습 자세히 보기 <span class="arrow">→</span></a>
         </div>
 
         <div class="learning-output-card glass-card" data-reveal>
@@ -192,6 +226,7 @@
             <span class="proj-tag-item">기획서 작성</span>
             <span class="proj-tag-item">문서·PPT 자동화</span>
           </div>
+          <a class="proj-more" href="projects/training-program.html">전략기획안 자세히 보기 <span class="arrow">→</span></a>
         </div>
       </div>
 
@@ -205,7 +240,7 @@
             </div>
             <ul class="tl-list">
               <li>AI 활용 신규 서비스 3종 기획 — <em>이세계 휴식일지 · T래블 · BaristAI</em></li>
-              <li>AI 에셋 자동화 파이프라인 기획 — 수동 대비 <em>약 300시간 단축 · 1,670만 원 원가 절감</em></li>
+              <li>AI 에셋 자동화 파이프라인 기획 — 수동 대비 <em>299.6시간 단축 · 1,670만 원 원가 절감</em></li>
               <li>대중교통·앱 리뷰 데이터 <em>1,580만 건 수집</em> 및 NLP 텍스트 마이닝 분석</li>
               <li>최종 성과 <em>우수상 수상</em> (2025)</li>
             </ul>
@@ -332,6 +367,7 @@
           <div class="ca-res-item"><span class="res-icon">🛡️</span><span><strong>할루시네이션 방지 설계</strong> — 실재 경험만 근거로 사용</span></div>
           <div class="ca-res-item"><span class="res-icon">🔁</span><span>웹→API <strong>다단계 폴백</strong>으로 안정적 자동화</span></div>
         </div>
+        <a class="ca-more btn-ghost" href="projects/career-agent.html">시스템 상세 보기 <span class="arrow">→</span></a>
       </div>
 
       <div class="ca-right">
@@ -352,6 +388,76 @@
     </div>
   </section>
 
+  <!-- ── Competency ───────────────────────────────── -->
+  <section id="competency">
+    <div class="container">
+      <div class="sec-header">
+        <span class="sec-tag">Competency</span>
+        <h2 class="sec-title">직무역량 현황 &amp; 보유기술</h2>
+        <p class="sec-sub">교육기획의 <strong>분석→설계→기획→운영→평가</strong> 전 과정에, 생성형 AI와 실무 툴 역량을 결합합니다.</p>
+      </div>
+
+      <div class="comp-grid">
+
+        <!-- ① HRD 직무역량 -->
+        <div class="comp-card glass-card" data-reveal>
+          <div class="comp-head">
+            <span class="comp-num">01</span>
+            <div>
+              <span class="comp-kicker">HRD 직무역량</span>
+              <h3 class="comp-title">교육기획 전 과정</h3>
+            </div>
+          </div>
+          <ul class="comp-list">
+            <li><span class="cl-k">요구분석</span> 수요조사·학습자 분석·데이터 기반 TNA</li>
+            <li><span class="cl-k">설계</span> 교육과정 설계(ISD·ADDIE)·평가도구 설계</li>
+            <li><span class="cl-k">기획</span> 커리큘럼·콘텐츠 기획·교안/대본 제작</li>
+            <li><span class="cl-k">운영</span> 입문교육·법정의무교육·학습모임 운영</li>
+            <li><span class="cl-k">평가</span> 만족도 분석(Kirkpatrick)·피드백 개선</li>
+            <li><span class="cl-k">퍼실리테이션</span> OKR 워크샵 설계·진행</li>
+          </ul>
+        </div>
+
+        <!-- ② AI 직무역량 -->
+        <div class="comp-card glass-card" data-reveal>
+          <div class="comp-head">
+            <span class="comp-num">02</span>
+            <div>
+              <span class="comp-kicker">AI 직무역량</span>
+              <h3 class="comp-title">생성형 AI 활용</h3>
+            </div>
+          </div>
+          <ul class="comp-list">
+            <li><span class="cl-k">콘텐츠 제작</span> ChatGPT·Claude·Gemini — 페르소나·시나리오·기획서</li>
+            <li><span class="cl-k">RAG 챗봇</span> 사내규정·노무 지식 챗봇 구축</li>
+            <li><span class="cl-k">업무 자동화</span> Excel VBA·Apps Script·Python·HTML 메일</li>
+            <li><span class="cl-k">AI 에셋 제작</span> 생성 AI 그래픽·시각 자료 자동 제작</li>
+            <li><span class="cl-k">AI 시스템 설계</span> Career Agent 멀티 에이전트 파이프라인</li>
+          </ul>
+        </div>
+
+        <!-- ③ 실무 툴 & 협업 -->
+        <div class="comp-card glass-card" data-reveal>
+          <div class="comp-head">
+            <span class="comp-num">03</span>
+            <div>
+              <span class="comp-kicker">실무 툴 &amp; 협업</span>
+              <h3 class="comp-title">업무 효율 역량</h3>
+            </div>
+          </div>
+          <ul class="comp-list">
+            <li><span class="cl-k">문서·발표</span> PowerPoint·Word·Google Slides — 컴활 1급</li>
+            <li><span class="cl-k">데이터</span> Excel(VLOOKUP·수식)·NLP 텍스트 마이닝</li>
+            <li><span class="cl-k">운영 도구</span> Notion·Padlet·Zoom·카카오 오픈채팅</li>
+            <li><span class="cl-k">콘텐츠 디자인</span> 시각 자료·교육 자료 제작</li>
+            <li><span class="cl-k">회계·사무</span> 전산세무 2급·전산회계 1급</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- ── Projects ─────────────────────────────────── -->
   <section id="projects">
     <div class="container">
@@ -363,14 +469,24 @@
       <div class="proj-grid">
 
         <div class="proj-card glass-card" data-reveal>
+          <a href="projects/rest-diary.html" class="proj-thumb"><img src="assets/projects/rest-diary-cover.jpg" alt="이세계 휴식일지 표지" loading="lazy" /></a>
           <div class="proj-period">2024.12 ~ 2025.06</div>
           <div class="proj-icon">🎮</div>
           <h3 class="proj-name">이세계 휴식일지</h3>
           <p class="proj-sub">AI 툴 활용 교육 콘텐츠 제작 역량</p>
-          <p class="proj-desc">원티드 포텐업 부트캠프 AI 부문. 생성 AI로 게임 그래픽 에셋을 자동 제작해 300시간 단축. <strong>교육 현장에서 AI 툴로 시각 자료·콘텐츠를
-              빠르고 정확하게 제작하는 역량</strong>으로 직결됩니다.</p>
+          <p class="proj-desc">원티드 포텐업 부트캠프 AI 부문. <strong>6인 융합팀의 총괄 PM</strong>으로 기획·UX·일정·품질을 관리하고, AI 멀티 에이전트로 게임 에셋 제작을 자동화해 299.6시간을 단축. 교육 현장에서 AI 툴로 콘텐츠를 제작·운영하는 역량으로 직결됩니다.</p>
+          <div class="proj-meta">
+            <div class="pm-row"><span class="pm-label">투입</span><span class="pm-val">6인 융합팀 (PM·AI·언리얼)</span></div>
+            <div class="pm-row"><span class="pm-label">역할</span><span class="pm-val">총괄 PM · 기획/UX/매니징</span></div>
+            <div class="pm-row"><span class="pm-label">사용툴</span><span class="pm-val">Stable Diffusion·AudioGen·Mesh AI · FastAPI</span></div>
+            <div class="pm-row pm-part">
+              <span class="pm-label">기여도</span>
+              <div class="pm-bar"><span style="width:100%"></span></div>
+              <span class="pm-pct">기획·UX 100%</span>
+            </div>
+          </div>
           <div class="proj-chips">
-            <span class="chip highlight-chip">300시간 단축</span>
+            <span class="chip highlight-chip">299.6시간 단축</span>
             <span class="chip highlight-chip">1,670만원 절감</span>
             <span class="chip highlight-chip">부트캠프 우수상</span>
           </div>
@@ -379,15 +495,27 @@
             <span class="proj-tag-item">생성 AI 활용</span>
             <span class="proj-tag-item">프로세스 자동화</span>
           </div>
+          <a class="proj-more" href="projects/rest-diary.html">자세히 보기 <span class="arrow">→</span></a>
         </div>
 
         <div class="proj-card glass-card" data-reveal>
+          <a href="projects/travel.html" class="proj-thumb"><img src="assets/projects/travel-cover.jpg" alt="T래블 표지" loading="lazy" /></a>
           <div class="proj-period">원티드포텐업 부트캠프</div>
           <div class="proj-icon">🚌</div>
           <h3 class="proj-name">T래블</h3>
           <p class="proj-sub">데이터 기반 학습자 요구분석(TNA) 역량</p>
           <p class="proj-desc">서울시 대중교통·리뷰 데이터 1,580만 건으로 Pain Point를 추출한 방법론은 <strong>교육 요구분석(Training Needs Analysis)과
-              동일한 접근법</strong>입니다. 대규모 데이터에서 학습자 니즈를 도출하는 역량을 입증합니다.</p>
+              동일한 접근법</strong>입니다. 3인팀의 팀장으로 데이터 분석과 기획의 논리 구조를 주도했습니다.</p>
+          <div class="proj-meta">
+            <div class="pm-row"><span class="pm-label">투입</span><span class="pm-val">3인팀 (AI 개발자)</span></div>
+            <div class="pm-row"><span class="pm-label">역할</span><span class="pm-val">팀장 · 데이터 분석·기획</span></div>
+            <div class="pm-row"><span class="pm-label">사용툴</span><span class="pm-val">Python · Pandas · KoNLPy(Okt)</span></div>
+            <div class="pm-row pm-part">
+              <span class="pm-label">기여도</span>
+              <div class="pm-bar"><span style="width:100%"></span></div>
+              <span class="pm-pct">팀장</span>
+            </div>
+          </div>
           <div class="proj-chips">
             <span class="chip highlight-chip">1,580만 건 분석</span>
             <span class="chip highlight-chip">NLP 텍스트 마이닝</span>
@@ -397,15 +525,27 @@
             <span class="proj-tag-item">데이터 분석</span>
             <span class="proj-tag-item">서비스 기획</span>
           </div>
+          <a class="proj-more" href="projects/travel.html">자세히 보기 <span class="arrow">→</span></a>
         </div>
 
         <div class="proj-card glass-card" data-reveal>
-          <div class="proj-period">B2B 제안 프로젝트</div>
+          <a href="projects/baristai.html" class="proj-thumb"><img src="assets/projects/baristai-cover.jpg" alt="BaristAI 표지" loading="lazy" /></a>
+          <div class="proj-period">원티드포텐업 부트캠프</div>
           <div class="proj-icon">☕</div>
           <h3 class="proj-name">BaristAI</h3>
           <p class="proj-sub">학습자 접근성을 고려한 교육 UX 설계</p>
-          <p class="proj-desc">디지털 소외 고령층을 위한 UI 설계 경험은 <strong>다양한 학습자 특성(디지털 리터러시, 학습 접근성)을 고려한 교육 설계</strong> 역량과
-            직결됩니다. 학습자 중심 설계(Learner-Centered Design)의 실증 사례.</p>
+          <p class="proj-desc">디지털 소외 고령층을 위한 얼굴인식·음성주문 키오스크 UI 설계 경험은 <strong>다양한 학습자 특성(디지털 리터러시, 접근성)을 고려한 교육 설계</strong> 역량과
+            직결됩니다. 4인팀에서 기획·UX·백엔드를 담당했습니다.</p>
+          <div class="proj-meta">
+            <div class="pm-row"><span class="pm-label">투입</span><span class="pm-val">4인팀 (PM·AI 3)</span></div>
+            <div class="pm-row"><span class="pm-label">역할</span><span class="pm-val">기획·UX·백엔드</span></div>
+            <div class="pm-row"><span class="pm-label">사용툴</span><span class="pm-val">Figma · FastAPI · face_recognition · Whisper</span></div>
+            <div class="pm-row pm-part">
+              <span class="pm-label">기여도</span>
+              <div class="pm-bar"><span style="width:100%"></span></div>
+              <span class="pm-pct">UI/UX 100%</span>
+            </div>
+          </div>
           <div class="proj-chips">
             <span class="chip highlight-chip">학습자 경험 설계</span>
             <span class="chip highlight-chip">접근성 중심</span>
@@ -415,6 +555,7 @@
             <span class="proj-tag-item">UX 기획</span>
             <span class="proj-tag-item">B2B 제안</span>
           </div>
+          <a class="proj-more" href="projects/baristai.html">자세히 보기 <span class="arrow">→</span></a>
         </div>
 
       </div>
@@ -475,10 +616,13 @@
         <p class="sec-sub">AI 기반 교육 기획·운영 포지션에 관심 있는 기업이라면 언제든 연락주세요.</p>
       </div>
       <div class="contact-card glass-card" data-reveal>
-        <a href="mailto:jad6020@naver.com" class="contact-link">
-          <span class="contact-icon">✉</span>
-          <span>jad6020@naver.com</span>
-        </a>
+        <div class="contact-links">
+          <a href="mailto:jad6020@naver.com" class="contact-link">
+            <span class="contact-icon">✉</span>
+            <span>jad6020@naver.com</span>
+          </a>
+        </div>
+        <a href="resume.html" class="btn-primary">온라인 이력서 보기</a>
         <div class="contact-divider"></div>
         <p class="contact-note">교육 기획 · HRD 운영 · AI 교육 콘텐츠 개발 협업 문의 환영합니다.</p>
       </div>

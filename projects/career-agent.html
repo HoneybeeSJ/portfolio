@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Career Agent | 이승재 포트폴리오</title>
+  <meta name="description" content="할루시네이션 0%·문체 복제 95%로 채용 서류 3종을 자동화한 3계층 멀티 에이전트 시스템 — 직접 기획·구축한 이승재의 프로젝트 상세." />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/project.css" />
+</head>
+
+<body>
+  <canvas id="hero-canvas" aria-hidden="true"></canvas>
+
+  <nav class="pd-nav">
+    <a href="../index.html#career-agent" class="pd-back"><span class="arrow">←</span> 포트폴리오</a>
+    <a href="../index.html" class="pd-nav-logo" aria-label="홈"><span class="logo-hex"></span></a>
+  </nav>
+
+  <header class="pd-hero pd-reveal">
+    <div class="pd-eyebrow">
+      <span class="pd-icon">🤖</span>
+      <span class="pd-cat">AI 시스템 · 단독 기획·구축</span>
+    </div>
+    <h1 class="pd-title">Career <span class="accent">Agent</span></h1>
+    <p class="pd-lead">LLM의 할루시네이션을 방지하고 개인 문체를 복제하여, 채용 공고 분석부터 맞춤형 지원 서류 3종 생성까지 자동화한
+      <strong>3계층(Directive–Orchestration–Execution) 멀티 에이전트 시스템</strong>. 직접 기획하고 Node.js로 구현했습니다.</p>
+
+    <div class="pd-meta">
+      <div class="pd-meta-item"><span class="mk">기간</span><span class="mv">2026.05 ~ 현재</span></div>
+      <div class="pd-meta-item"><span class="mk">유형</span><span class="mv">개인 프로젝트 (단독)</span></div>
+      <div class="pd-meta-item"><span class="mk">역할</span><span class="mv">기획·아키텍처·구현</span></div>
+      <div class="pd-meta-item"><span class="mk">스택</span><span class="mv">Node.js</span></div>
+    </div>
+
+    <div class="pd-chips">
+      <span class="pd-chip">리드타임 90%↓</span>
+      <span class="pd-chip">할루시네이션 0%</span>
+      <span class="pd-chip">문체 복제 95%↑</span>
+    </div>
+  </header>
+
+  <main class="pd-body">
+
+    <section class="pd-section pd-reveal">
+      <span class="pd-sec-tag">Overview · 배경과 문제</span>
+      <h2>왜 직접 만들었나</h2>
+      <div class="pd-card">
+        <p>기존 LLM으로 지원 서류를 작성하는 방식은 <strong>허위 사실을 지어내는 '할루시네이션'</strong>과
+          <strong>획일화된 문체</strong>라는 치명적 한계가 있었습니다. 본인의 구직 활동을 혁신하기 위해,
+          검증된 사실만 사용하고 본인 문체를 복제하는 자동화 시스템을 직접 설계했습니다.</p>
+        <p class="muted">결과물 — 채용 공고를 입력하면 분석 → 매칭 → 초안 → 교정 → 산출물(이력서·경력기술서·자기소개서, 슬라이드·면접 대비)까지
+          자동 수행하는 AI 파이프라인.</p>
+      </div>
+    </section>
+
+    <section class="pd-section pd-reveal">
+      <span class="pd-sec-tag">Architecture · 3계층 설계</span>
+      <h2>Directive · Orchestration · Execution</h2>
+      <div class="pd-card">
+        <ul class="pd-ul">
+          <li><strong>Directive Layer</strong> — 프로세스 통제, 기업별 커스터마이징 룰 및 예외 처리 가이드라인(SOP) 수립. 검증된 마스터 이력서 팩트만 사용하도록 정책 설계</li>
+          <li><strong>Orchestration Layer</strong> — 직무 적합도 평가 알고리즘 설계, RAG 기반 경험 추출·검증 프로세스 조율</li>
+          <li><strong>Execution Layer</strong> — 외부 웹 검색, 로컬 파일 입출력(File I/O), 데이터 전처리 등 결정론적 도구(Deterministic Tools) 연동</li>
+          <li><strong>Self-annealing Loop</strong> — 생성 실패·포맷 오류를 모니터링해 가이드라인에 피드백, 시스템을 스스로 고도화하는 자가 치유 루프</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="pd-section pd-reveal">
+      <span class="pd-sec-tag">Pipeline · 처리 흐름</span>
+      <h2>입력 한 번, 산출물 일괄 생성</h2>
+      <ol class="pd-steps">
+        <li><div class="st-title">채용공고 분석 <em>(Agent A)</em></div><div class="st-desc">비정형 공고 텍스트에서 회사·직무·자격요건·키워드를 구조화 JSON으로 추출. 회사명이 없으면 임의 추측 금지</div></li>
+        <li><div class="st-title">이력서 매칭 <em>(Agent B)</em></div><div class="st-desc">마스터 이력서 전체 맥락을 근거로 직무 적합도 점수와 매칭 경험 산출 — 실재하는 경험만 사용해 허위 이력 생성 방지</div></li>
+        <li><div class="st-title">자소서 초안 작성</div><div class="st-desc">매칭 결과와 문체 가이드를 결합해 초안 생성. 웹 자동화(ChatGPT·Claude) → API 순으로 다단계 폴백해 안정성 확보</div></li>
+        <li><div class="st-title">톤앤매너 교정 <em>(Agent C)</em></div><div class="st-desc">스타일 가이드 기준으로 AI 상투어를 제거하고 본인 문체로 교정. 수치·성과 등 사실은 변경하지 않음</div></li>
+        <li><div class="st-title">슬라이드 · 면접 대비 생성</div><div class="st-desc">포트폴리오 PPTX(+Canva 연동)와 면접 예상질문·답변 가이드를 자동 생성해 지원 1건당 산출물 일괄 출력</div></li>
+      </ol>
+    </section>
+
+    <section class="pd-section pd-reveal">
+      <span class="pd-sec-tag">Results · 정량 성과</span>
+      <h2>숫자로 증명한 결과</h2>
+      <div class="pd-stats">
+        <div class="pd-stat"><div class="sv">90<small>%↓</small></div><div class="sn">리드타임 단축</div><div class="snote">약 6시간 → 2분 내외</div></div>
+        <div class="pd-stat"><div class="sv">0<small>%</small></div><div class="sn">할루시네이션</div><div class="snote">RAG·로컬 마스터 DB 연계</div></div>
+        <div class="pd-stat"><div class="sv">95<small>%↑</small></div><div class="sn">문체 복제율</div><div class="snote">합격 샘플 스타일 가이드 기반</div></div>
+      </div>
+    </section>
+
+    <section class="pd-section pd-reveal">
+      <span class="pd-sec-tag">Tech · 사용 기술</span>
+      <h2>구현 스택</h2>
+      <div class="pd-card">
+        <div class="tech-groups">
+          <div class="tech-group"><div class="tg-label">엔진 · 언어</div><div class="tech-tags">
+            <span class="tech-tag">Node.js</span><span class="tech-tag">JavaScript</span></div></div>
+          <div class="tech-group"><div class="tg-label">AI · 자동화</div><div class="tech-tags">
+            <span class="tech-tag">ChatGPT</span><span class="tech-tag">Claude</span><span class="tech-tag">RAG</span>
+            <span class="tech-tag">웹 자동화</span><span class="tech-tag">LLM API</span></div></div>
+          <div class="tech-group"><div class="tg-label">연동 · 산출물</div><div class="tech-tags">
+            <span class="tech-tag">파일 I/O</span><span class="tech-tag">웹 검색</span><span class="tech-tag">PPTX</span><span class="tech-tag">Canva 연동</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pd-section pd-reveal">
+      <span class="pd-sec-tag">Takeaway · 의의</span>
+      <h2>'시스템 설계자적 사고'로 잇는 역량</h2>
+      <div class="pd-card">
+        <p>AI 기술을 현실 문제 해결과 프로세스 혁신에 적용하는 <strong>시스템 설계자적 사고</strong>를 입증한 프로젝트입니다.
+          콘텐츠 설계·자동화 역량을 그대로 교육 콘텐츠 기획·운영에 적용할 수 있으며, 교육생이 자신의 실무 장벽을
+          AI 에이전트 설계로 해결하도록 돕는 도메인 맞춤형 AI 교육 설계의 토대가 됩니다.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="pd-footer">
+    <a href="../index.html#projects" class="btn-primary">← 다른 프로젝트 보기</a>
+    <p class="pd-disclaimer">본 페이지의 내용·수치는 프로젝트 기획 문서 및 구현 산출물에 근거합니다.</p>
+  </footer>
+
+  <script src="../js/hero-scene.js"></script>
+  <script src="../js/project.js"></script>
+</body>
+
+</html>

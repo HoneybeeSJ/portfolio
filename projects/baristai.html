@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BaristAI | 이승재 포트폴리오</title>
+  <meta name="description" content="얼굴 인식·음성 주문으로 고령층 디지털 소외를 푸는 초개인화 AI 키오스크 — 기획·UX·백엔드를 맡은 이승재의 프로젝트 상세." />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/project.css" />
+</head>
+
+<body>
+  <canvas id="hero-canvas" aria-hidden="true"></canvas>
+
+  <nav class="pd-nav">
+    <a href="../index.html#projects" class="pd-back"><span class="arrow">←</span> 포트폴리오</a>
+    <a href="../index.html" class="pd-nav-logo" aria-label="홈"><span class="logo-hex"></span></a>
+  </nav>
+
+  <header class="pd-hero pd-reveal">
+    <div class="pd-eyebrow">
+      <span class="pd-icon">☕</span>
+      <span class="pd-cat">AI 키오스크 프로젝트 · 기획·UX·백엔드</span>
+    </div>
+    <h1 class="pd-title">Barist<span class="accent">AI</span></h1>
+    <p class="pd-lead">얼굴 인식과 음성 주문 기술로 고령층의 키오스크 진입 장벽을 낮추는 <strong>초개인화 AI 키오스크</strong>.
+      디지털 소외 문제를 사용자 친화적 인터페이스로 해결하고자 했습니다.</p>
+
+    <div class="pd-meta">
+      <div class="pd-meta-item"><span class="mk">소속</span><span class="mv">원티드 PotenUp 부트캠프</span></div>
+      <div class="pd-meta-item"><span class="mk">역할</span><span class="mv">기획·UX·백엔드</span></div>
+      <div class="pd-meta-item"><span class="mk">팀 구성</span><span class="mv">4명 (PM 1·AI 3)</span></div>
+      <div class="pd-meta-item"><span class="mk">타겟</span><span class="mv">컴포즈커피 (B2B)</span></div>
+    </div>
+
+    <div class="pd-chips">
+      <span class="pd-chip">얼굴 인식 로그인</span>
+      <span class="pd-chip">음성 주문 (STT/TTS)</span>
+      <span class="pd-chip">접근성 중심 UX</span>
+    </div>
+  </header>
+
+  <div class="pd-cover pd-reveal">
+    <img src="../assets/projects/baristai-cover.jpg" alt="BaristAI 발표자료 표지" loading="lazy" />
+  </div>
+
+  <main class="pd-body">
+
+    <section class="pd-section pd-reveal">
+      <span class="pd-sec-tag">Overview · 배경과 문제</span>
+      <h2>왜 이 프로젝트였나</h2>
+      <div class="pd-card">
+        <p>성장하는 저가 커피 시장에서 <strong>60대 이상 고령층 이용률이 59% 급증</strong>했으나, 이들이 복잡한 UI와 터치 조작 등
+          키오스크 이용에 큰 불편(디지털 소외)을 겪는다는 점을 사회적 문제로 정의했습니다.</p>
+        <p class="muted">목적 — 얼굴 인식·음성 주문을 도입해 고령층의 진입 장벽을 낮추는 초개인화 AI 키오스크 개발.
+          저가 커피 중 고령층 이용 빈도가 가장 높은 <strong>컴포즈커피</strong>를 B2B 집중 타깃으로 선정.</p>
+      </div>
+      <figure class="pd-figure">
+        <img src="../assets/projects/baristai-chart.jpg" alt="저가 커피 시장·고령층 이용률 분석" loading="lazy" />
+        <figcaption>기획 배경 — 저가 커피 시장 성장과 고령층 이용률 분석</figcaption>
+      </figure>
+    </section>
+
+    <section class="pd-section pd-reveal">
+      <span class="pd-sec-tag">My Role · 나의 역할</span>
+      <h2>기획부터 백엔드까지 주도</h2>
+      <div class="pd-card">
+        <div class="role-list">
+          <div class="role-item">
+            <div class="role-head"><span class="role-name">UI/UX 디자인</span><span class="role-pct">기여도 100%</span></div>
+            <div class="role-bar"><span data-pct="100"></span></div>
+            <p class="role-desc">Figma·Creati로 고령층 친화 키오스크 전용 인터페이스 및 데모 디자인 설계</p>
+          </div>
+          <div class="role-item">
+            <div class="role-head"><span class="role-name">기획 · 전략</span><span class="role-pct">기여도 80%</span></div>
+            <div class="role-bar"><span data-pct="80"></span></div>
+            <p class="role-desc">서비스 전략 도출, 비즈니스 목표 설정, 사용자 여정(Customer Journey) 시나리오 구성</p>
+          </div>
+          <div class="role-item">
+            <div class="role-head"><span class="role-name">백엔드 구축</span><span class="role-pct">기여도 50%</span></div>
+            <div class="role-bar"><span data-pct="50"></span></div>
+            <p class="role-desc">FastAPI 기반 백엔드 서버 기능별 엔드포인트 구현</p>
+          </div>
+          <div class="role-item">
+            <div class="role-head"><span class="role-name">데이터 구조 설계</span><span class="role-pct">기여도 30%</span></div>
+            <div class="role-bar"><span data-pct="30"></span></div>
+            <p class="role-desc">주문 이력·대화 맥락 이원화 DB 구조 초안 설계 · 일부 LLM 프롬프팅 · 발표 PPT 제작</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pd-section pd-reveal">
+      <span class="pd-sec-tag">Process · 진행 과정</span>
+      <h2>고객 여정 중심 6단계</h2>
+      <ol class="pd-steps">
+        <li><div class="st-title">문제 정의 및 타겟 설정</div><div class="st-desc">고령층 Pain Point 조사, 컴포즈커피를 타깃 브랜드로 확정</div></li>
+        <li><div class="st-title">서비스 기획 · 흐름 설계</div><div class="st-desc">얼굴 인식 로그인 → 음성 주문 → 결제까지 전체 고객 여정 시각화</div></li>
+        <li><div class="st-title">데이터 구조 · 아키텍처</div><div class="st-desc">키오스크에 최적화된 경량 아키텍처와 이원화 DB 설계</div></li>
+        <li><div class="st-title">핵심 기능 개발</div><div class="st-desc">비접촉 로그인, 음성 텍스트 변환, 맞춤형 메뉴 추천 로직 구현</div></li>
+        <li><div class="st-title">인터페이스 디자인</div><div class="st-desc">고령층을 고려한 큰 버튼과 실사형 캐릭터 UI 제작</div></li>
+        <li><div class="st-title">테스트 · 고도화</div><div class="st-desc">응답 일관성을 위한 프롬프트 구조화 및 다층 대화 흐름 구성</div></li>
+      </ol>
+    </section>
+
+    <section class="pd-section pd-reveal">
+      <span class="pd-sec-tag">Tech · 사용 기술</span>
+      <h2>얼굴·음성·LLM을 결합한 스택</h2>
+      <div class="pd-card">
+        <p>주문 이력(SQLite)과 대화 맥락(ChromaDB)을 분리 관리하는 <strong>이원화 DB 구조</strong>로 개인화 추천을 구현했습니다.</p>
+        <div class="tech-groups" style="margin-top:18px">
+          <div class="tech-group"><div class="tg-label">기획 · 디자인</div><div class="tech-tags">
+            <span class="tech-tag">Figma</span><span class="tech-tag">Creati</span><span class="tech-tag">Canva</span><span class="tech-tag">Notion</span></div></div>
+          <div class="tech-group"><div class="tg-label">개발 · 언어</div><div class="tech-tags">
+            <span class="tech-tag">Python</span><span class="tech-tag">FastAPI</span><span class="tech-tag">Kivy</span></div></div>
+          <div class="tech-group"><div class="tg-label">AI 기술</div><div class="tech-tags">
+            <span class="tech-tag">face_recognition</span><span class="tech-tag">Whisper (STT)</span><span class="tech-tag">Google Cloud TTS</span>
+            <span class="tech-tag">ChatGPT</span><span class="tech-tag">Gemini</span><span class="tech-tag">LangChain</span></div></div>
+          <div class="tech-group"><div class="tg-label">데이터베이스</div><div class="tech-tags">
+            <span class="tech-tag">SQLite</span><span class="tech-tag">ChromaDB</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pd-section pd-reveal">
+      <span class="pd-sec-tag">Results · 성과와 학습</span>
+      <h2>구현, 그리고 배움</h2>
+      <div class="pd-card">
+        <ul class="pd-ul">
+          <li><strong>기술 구현</strong> — 얼굴 인식 로그인 및 실시간 음성 주문 시스템 프로토타입 구현</li>
+          <li><strong>데이터 아키텍처</strong> — 주문 이력과 대화 컨텍스트를 분리 관리하는 개인화 DB 구조 완성</li>
+          <li><strong>QA·리스크 관리</strong> — 시연 중 주변 소음으로 인한 음성 인식 실패를 겪으며 QA·리스크 관리의 중요성을 체득</li>
+          <li><strong>협업 학습</strong> — 기획 단계 UI와 실제 구현된 서비스 간 차이를 발견, 프론트엔드 개발자와의 지속적 소통·추적 필요성을 배움</li>
+        </ul>
+      </div>
+      <figure class="pd-figure">
+        <img src="../assets/projects/baristai-effect.jpg" alt="BaristAI 기대 효과" loading="lazy" />
+        <figcaption>기대 효과 — 고령층 접근성 개선과 매장 운영 가치</figcaption>
+      </figure>
+    </section>
+
+    <section class="pd-section pd-reveal">
+      <span class="pd-sec-tag">Gallery · 발표자료</span>
+      <h2>발표자료 미리보기</h2>
+      <div class="pd-gallery">
+        <a href="../assets/projects/baristai-cover.jpg" target="_blank"><img src="../assets/projects/baristai-cover.jpg" alt="BaristAI 표지" loading="lazy" /></a>
+        <a href="../assets/projects/baristai-kiosk.jpg" target="_blank"><img src="../assets/projects/baristai-kiosk.jpg" alt="키오스크 UI 목업" loading="lazy" /></a>
+        <a href="../assets/projects/baristai-chart.jpg" target="_blank"><img src="../assets/projects/baristai-chart.jpg" alt="시장 분석" loading="lazy" /></a>
+        <a href="../assets/projects/baristai-effect.jpg" target="_blank"><img src="../assets/projects/baristai-effect.jpg" alt="기대 효과" loading="lazy" /></a>
+      </div>
+    </section>
+
+    <section class="pd-section pd-reveal">
+      <span class="pd-sec-tag">Takeaway · 의의</span>
+      <h2>학습자 중심 설계로 잇는 역량</h2>
+      <div class="pd-card">
+        <p>디지털 소외 고령층을 위한 UI 설계 경험은 <strong>다양한 학습자 특성(디지털 리터러시·학습 접근성)을 고려한 교육 설계</strong> 역량과 직결됩니다.
+          단순 기능 구현을 넘어 사용자의 접근성을 실질적으로 강화하는 학습자 중심 설계(Learner-Centered Design)의 실증 사례입니다.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="pd-footer">
+    <a href="../index.html#projects" class="btn-primary">← 다른 프로젝트 보기</a>
+    <p class="pd-disclaimer">본 페이지의 내용·수치는 프로젝트 보고서 및 경력기술서에 근거합니다.</p>
+  </footer>
+
+  <script src="../js/hero-scene.js"></script>
+  <script src="../js/project.js"></script>
+</body>
+
+</html>

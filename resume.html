@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<title>이승재 이력서</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --ink:#1A1A1A; --body:#33333a; --muted:#6b6b73;
+    --honey:#FFC400; --honey-deep:#B07D00; --line:#E6E4DE; --soft:#FBF8F0;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  @page{ size:A4; margin:13mm 14mm; }
+  html{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  body{
+    font-family:'Malgun Gothic','Noto Sans KR',sans-serif;
+    color:var(--body); font-size:10.2px; line-height:1.5; background:#fff;
+  }
+  .display{ font-family:'Space Grotesk','Malgun Gothic',sans-serif; }
+
+  /* Header */
+  header{ display:flex; gap:18px; align-items:center; padding-bottom:14px;
+    border-bottom:2.5px solid var(--honey); margin-bottom:14px; }
+  .photo{ width:84px;height:84px;border-radius:50%;object-fit:cover;flex-shrink:0;
+    border:2px solid var(--honey); }
+  .head-main{ flex:1; }
+  .name{ font-size:27px;font-weight:700;color:var(--ink);letter-spacing:-0.01em;line-height:1.1; }
+  .name .dot{ color:var(--honey-deep); }
+  .role{ font-size:12px;font-weight:700;color:var(--honey-deep);margin-top:3px; }
+  .summary{ font-size:9.8px;color:var(--muted);margin-top:7px;line-height:1.55;max-width:430px; }
+  .contact{ text-align:right;font-size:9.6px;color:var(--ink);flex-shrink:0;line-height:1.85; }
+  .contact b{ color:var(--honey-deep); }
+
+  /* Section */
+  section{ margin-bottom:13px; }
+  h2{ font-size:11.5px;font-weight:700;color:var(--ink);
+    display:flex;align-items:center;gap:7px;margin-bottom:8px;
+    padding-bottom:4px;border-bottom:1px solid var(--line); }
+  h2::before{ content:'';width:11px;height:12px;flex-shrink:0;
+    background:var(--honey);
+    clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%); }
+
+  /* Competency band */
+  .comp{ display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px; }
+  .comp-col{ background:var(--soft);border:1px solid var(--line);border-radius:6px;padding:9px 11px; }
+  .comp-col h3{ font-size:9.6px;font-weight:700;color:var(--honey-deep);margin-bottom:4px; }
+  .comp-col p{ font-size:9.2px;color:var(--body);line-height:1.5; }
+
+  /* Experience */
+  .exp{ margin-bottom:11px; }
+  .exp-head{ display:flex;justify-content:space-between;align-items:baseline;gap:10px; }
+  .exp-org{ font-size:11.5px;font-weight:700;color:var(--ink); }
+  .exp-role{ font-size:9.4px;color:var(--muted);font-weight:500; }
+  .exp-date{ font-size:9.4px;color:var(--honey-deep);font-weight:600;white-space:nowrap;
+    font-family:'Space Grotesk',sans-serif; }
+  ul{ list-style:none;margin-top:5px; }
+  li{ position:relative;padding-left:13px;margin-bottom:3px;font-size:9.7px;line-height:1.5; }
+  li::before{ content:'';position:absolute;left:0;top:5px;width:5px;height:5.5px;
+    background:var(--honey);
+    clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%); }
+  li b{ color:var(--ink);font-weight:700; }
+  .metric{ color:var(--honey-deep);font-weight:700; }
+
+  /* compact two-col list for skills/certs */
+  .grid2{ display:grid;grid-template-columns:1fr 1fr;gap:2px 22px; }
+
+  .edu-row{ display:flex;justify-content:space-between;align-items:baseline; }
+  .edu-row .exp-date{ font-size:9.2px; }
+
+  .tagline{ font-size:9.2px;color:var(--muted);margin-top:2px; }
+  footer{ margin-top:14px;padding-top:8px;border-top:1px solid var(--line);
+    font-size:8.4px;color:#9a9a9a;text-align:center; }
+</style>
+</head>
+<body>
+
+  <header>
+    <img class="photo" src="assets/profile.jpg" alt="이승재" />
+    <div class="head-main">
+      <div class="name display">이승재<span class="dot">.</span></div>
+      <div class="role">AI 기반 교육 기획자 · HRD</div>
+      <p class="summary">3년 10개월의 교육 기획·운영 실무에 생성형 AI 역량을 결합해, 학습자 요구를 데이터로 분석하고 효과적인 교육과정을 설계·운영하는 교육 기획자입니다.</p>
+    </div>
+    <div class="contact">
+      <div><b>E.</b> jad6020@naver.com</div>
+      <div><b>전화번호·주소</b> 요청 시 제공</div>
+      <div style="color:var(--muted)">영어 회화 가능</div>
+    </div>
+  </header>
+
+  <!-- 핵심 역량 -->
+  <section>
+    <h2>핵심 역량</h2>
+    <div class="comp">
+      <div class="comp-col">
+        <h3>HRD 교육기획 전 과정</h3>
+        <p>요구분석(TNA)·학습자분석 · 교육과정 설계(ISD) · 커리큘럼/콘텐츠 기획 · 교육 운영 · 만족도 평가 · 퍼실리테이션</p>
+      </div>
+      <div class="comp-col">
+        <h3>생성형 AI 활용</h3>
+        <p>ChatGPT·Claude·Gemini 콘텐츠 제작 · RAG 챗봇 · 업무 자동화(Excel VBA·Apps Script·Python) · AI 에이전트 설계</p>
+      </div>
+      <div class="comp-col">
+        <h3>실무 툴 &amp; 운영</h3>
+        <p>PowerPoint·Word·Excel(컴활 1급) · Notion·Zoom·Padlet 교육 운영 · Canva 브랜드센터 · NLP 데이터 분석</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 경력 -->
+  <section>
+    <h2>경력 사항 <span class="tagline">&nbsp;· 정규 경력 3년 10개월</span></h2>
+
+    <div class="exp">
+      <div class="exp-head">
+        <div><span class="exp-org">한살림동서울소비자생활협동조합</span> <span class="exp-role">· 경영지원부 기획홍보팀 실무자</span></div>
+        <div class="exp-date">2022.06 – 2024.04</div>
+      </div>
+      <ul>
+        <li>신규 <b>입문교육 총괄 기획·운영</b> — PPT·대본 제작, Zoom 진행, Padlet 사전과제, Notion·카톡 안내 일원화 / 2회 40명 참여, <span class="metric">교육 만족도 4.28/5.0</span></li>
+        <li>내부 <b>학습모임 시스템 구축·운영</b> — 수요조사→매뉴얼→비용정산 체계 신규 설계 / 4개 모임 모집, <span class="metric">만족도 4.86/5.0</span></li>
+        <li>전사 <b>법정의무교육 기획·운영</b>(성희롱예방·직장내괴롭힘·개인정보보호) — <span class="metric">직원 158명 전원 이수</span></li>
+        <li><b>OKR 도입 워크샵 기획·PPT 제작</b> — 도입 TFT 구성 및 초기 프로세스 수립</li>
+        <li><b>채용·온보딩 운영</b>(공고 등록~근로계약~면접 준비) — 약 7개월간 20명+ 채용 진행</li>
+        <li><b>총무·IT 자산·SaaS 관리</b> — 노트북 단체구매 단가 <span class="metric">10% 절감</span>, Canva 브랜드센터 관리자로 전사 디자인 규정 확립</li>
+      </ul>
+    </div>
+
+    <div class="exp">
+      <div class="exp-head">
+        <div><span class="exp-org">한림대학교 도서관운영팀</span> <span class="exp-role">· 교육·시설 운영 담당</span></div>
+        <div class="exp-date">2019.09 – 2021.08</div>
+      </div>
+      <ul>
+        <li><b>근로장학생 교육·관리</b> — 교육 동선 최적화로 교육 시간 <span class="metric">40분 → 15분 단축</span></li>
+        <li>컴퓨터실·대교육장 등 <b>대규모 시설·장비 관리</b> 및 시설관리 매뉴얼 제작</li>
+        <li>도서관 공식 <b>인스타그램 개설·운영</b> — 주 1회 게시, 팔로워 <span class="metric">0 → 183명</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 사이드 프로젝트 & 양성과정 -->
+  <section>
+    <h2>AI 프로젝트 &amp; 양성과정</h2>
+
+    <div class="exp">
+      <div class="exp-head">
+        <div><span class="exp-org">AI 교육기획·HRD 담당자 양성과정</span> <span class="exp-role">· 엑스퍼트컨설팅 주관</span></div>
+        <div class="exp-date">2026.04 – 수강 중</div>
+      </div>
+      <ul>
+        <li><b>HR × 생성형 AI 실무 23개 실습 수행·완수</b> — 채용~평가~보상~교육~조직 전 과정에 AI 적용(인사평가 에이전트, 사내규정 RAG 챗봇, Excel VBA·Apps Script 자동화 등)</li>
+        <li><b>킴스헬스클럽 3개월 전략기획안</b> 직접 작성 — 현황분석→전략과제 도출→리스크 대응→1-page 기획안·발표자료</li>
+      </ul>
+    </div>
+
+    <div class="exp">
+      <div class="exp-head">
+        <div><span class="exp-org">Career Agent — AI 취업서류 자동화</span> <span class="exp-role">· 개인 개발 프로젝트</span></div>
+        <div class="exp-date">2026.05 – 현재</div>
+      </div>
+      <ul>
+        <li><b>Node.js 5단계 AI 에이전트 파이프라인</b> 직접 설계·구현 — 공고분석→이력서매칭→초안작성→톤앤매너 교정→산출물(PPTX·면접 리포트) 생성</li>
+        <li><b>할루시네이션 방지 설계</b>(실재 경험만 사용) · 웹→API <b>다단계 폴백</b>으로 안정적 자동화</li>
+      </ul>
+    </div>
+
+    <div class="exp">
+      <div class="exp-head">
+        <div><span class="exp-org">원티드 포텐업 AI 부트캠프</span> <span class="exp-role">· 서비스 기획·데이터 분석 (우수상)</span></div>
+        <div class="exp-date">2024.12 – 2025.06</div>
+      </div>
+      <ul>
+        <li><b>이세계 휴식일지</b> — 생성 AI 에셋 자동화로 <span class="metric">300시간 단축·약 1,670만 원 원가 절감</span></li>
+        <li><b>T-래블</b> — 대중교통·리뷰 데이터 <span class="metric">1,580만 건</span> 수집·NLP 분석 / <b>BaristAI</b> — 고령층 특화 AI 키오스크 B2B 제안</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 학력 -->
+  <section>
+    <h2>학력</h2>
+    <div class="edu-row">
+      <div><b style="color:var(--ink)">한림대학교</b> &nbsp;컨벤션관광경영학 / 경영학 복수전공 학사</div>
+      <div class="exp-date">2011 – 2018</div>
+    </div>
+  </section>
+
+  <!-- 자격 & 수상 -->
+  <section>
+    <h2>자격증 &amp; 수상</h2>
+    <div class="grid2">
+      <ul>
+        <li>컴퓨터활용능력 1급 · 한국사능력검정시험 1급</li>
+        <li>전산세무 2급 · 전산회계 1급 · 유통관리사 2급</li>
+        <li>OPIC IM2 (영어)</li>
+      </ul>
+      <ul>
+        <li><b>원티드포텐업 AI/데이터 부트캠프 우수상</b> (2025)</li>
+        <li>KT&amp;G 상상마케팅스쿨 강원지역 1위 (2015)</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>이승재 · AI 기반 교육 기획자 · jad6020@naver.com</footer>
+
+</body>
+</html>

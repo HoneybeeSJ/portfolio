@@ -1,147 +1,169 @@
-/* hero-scene.js — Three.js particle network for hero background */
+/* hero-scene.js — Interactive honeycomb (벌집) hero background
+   허니비 디자인 시스템: 블랙 캔버스 위 옐로우 액센트, 육각형 = '구조화'.
+   커서 근처에서 육각형이 옐로우로 점등하고, 마우스가 없을 때는
+   잔잔한 '꿀 파동(honey wave)'이 격자를 훑으며 살아있는 느낌을 준다. */
 (function () {
   'use strict';
 
   const canvas = document.getElementById('hero-canvas');
-  if (!canvas || typeof THREE === 'undefined') return;
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  if (!ctx) return;
 
-  const scene    = new THREE.Scene();
-  const camera   = new THREE.PerspectiveCamera(70, 1, 0.1, 100);
-  camera.position.z = 6;
+  const reduceMotion = window.matchMedia &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-  renderer.setClearColor(0x000000, 0);
+  /* ── 컬러 토큰 (허니비 시스템) ── */
+  const HONEY        = '255,196,0';    /* #FFC400 */
+  const HONEY_BRIGHT = '255,212,59';   /* #FFD43B */
 
-  /* ── Particles ── */
-  const COUNT   = 160;
-  const SPREAD  = 11;
-  const THRESH  = 2.6;
-  const MAX_LINES = 260;
+  /* ── 격자 파라미터 ── */
+  const HEX_R   = 34;     /* 육각형 외접원 반지름(px, CSS 픽셀) */
+  const GAP     = 4;      /* 육각형 사이 여백 */
+  const GLOW_R  = 120;    /* 커서 영향 반경(px) — 기존 200의 60% */
+  const BASE_A  = 0.05;   /* 기본 라인 불투명도(거의 안 보이게) */
 
-  const positions  = new Float32Array(COUNT * 3);
-  const velocities = [];
+  let dpr = Math.min(window.devicePixelRatio || 1, 2);
+  let W = 0, H = 0;
+  let cells = [];
 
-  for (let i = 0; i < COUNT; i++) {
-    positions[i * 3]     = (Math.random() - 0.5) * SPREAD;
-    positions[i * 3 + 1] = (Math.random() - 0.5) * SPREAD;
-    positions[i * 3 + 2] = (Math.random() - 0.5) * 2;
-    velocities.push({
-      x: (Math.random() - 0.5) * 0.0035,
-      y: (Math.random() - 0.5) * 0.0035,
-      z: (Math.random() - 0.5) * 0.001,
-    });
+  /* pointy-top 육각형 한 개의 path */
+  function hexPath(cx, cy, r) {
+    ctx.beginPath();
+    for (let i = 0; i < 6; i++) {
+      const a = Math.PI / 180 * (60 * i - 90);
+      const x = cx + r * Math.cos(a);
+      const y = cy + r * Math.sin(a);
+      i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+    }
+    ctx.closePath();
   }
 
-  const ptGeo = new THREE.BufferGeometry();
-  ptGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-
-  const ptMat = new THREE.PointsMaterial({
-    color: 0xFFC400,
-    size: 0.06,
-    transparent: true,
-    opacity: 0.85,
-    sizeAttenuation: true,
-  });
-
-  const points = new THREE.Points(ptGeo, ptMat);
-  scene.add(points);
-
-  /* ── Lines ── */
-  const linePos = new Float32Array(MAX_LINES * 6);
-  const lineGeo = new THREE.BufferGeometry();
-  lineGeo.setAttribute('position', new THREE.BufferAttribute(linePos, 3));
-  lineGeo.setDrawRange(0, 0);
-
-  const lineMat = new THREE.LineBasicMaterial({
-    color: 0xC99700,
-    transparent: true,
-    opacity: 0.22,
-  });
-
-  const lineSegs = new THREE.LineSegments(lineGeo, lineMat);
-  scene.add(lineSegs);
-
-  /* ── Cyan accent particles ── */
-  const accentCount  = 40;
-  const accentPos    = new Float32Array(accentCount * 3);
-  for (let i = 0; i < accentCount; i++) {
-    accentPos[i * 3]     = (Math.random() - 0.5) * SPREAD;
-    accentPos[i * 3 + 1] = (Math.random() - 0.5) * SPREAD;
-    accentPos[i * 3 + 2] = (Math.random() - 0.5) * 2;
-  }
-  const accentGeo = new THREE.BufferGeometry();
-  accentGeo.setAttribute('position', new THREE.BufferAttribute(accentPos, 3));
-  const accentMat = new THREE.PointsMaterial({ color: 0xFFD43B, size: 0.04, transparent: true, opacity: 0.6 });
-  scene.add(new THREE.Points(accentGeo, accentMat));
-
-  /* ── Line update ── */
-  function updateLines() {
-    const p = ptGeo.attributes.position.array;
-    let count = 0;
-    for (let i = 0; i < COUNT && count < MAX_LINES; i++) {
-      for (let j = i + 1; j < COUNT && count < MAX_LINES; j++) {
-        const dx = p[i*3] - p[j*3];
-        const dy = p[i*3+1] - p[j*3+1];
-        const dz = p[i*3+2] - p[j*3+2];
-        if (dx*dx + dy*dy + dz*dz < THRESH * THRESH) {
-          linePos[count*6]   = p[i*3];   linePos[count*6+1] = p[i*3+1]; linePos[count*6+2] = p[i*3+2];
-          linePos[count*6+3] = p[j*3];   linePos[count*6+4] = p[j*3+1]; linePos[count*6+5] = p[j*3+2];
-          count++;
-        }
+  /* 격자 좌표 계산 (pointy-top → 가로 간격 sqrt3*r, 세로 1.5*r, 홀짝 행 오프셋) */
+  function buildGrid() {
+    cells = [];
+    const r  = HEX_R;
+    const hw = Math.sqrt(3) * r + GAP;   /* 수평 간격 */
+    const vh = 1.5 * r + GAP;            /* 수직 간격 */
+    let row = 0;
+    for (let cy = 0; cy <= H + r; cy += vh) {
+      const offset = (row % 2) ? hw / 2 : 0;
+      for (let cx = -hw; cx <= W + hw; cx += hw) {
+        cells.push({ x: cx + offset, y: cy, phase: Math.random() * Math.PI * 2 });
       }
+      row++;
     }
-    lineGeo.setDrawRange(0, count * 2);
-    lineGeo.attributes.position.needsUpdate = true;
   }
 
-  /* ── Mouse parallax ── */
-  const mouse = { x: 0, y: 0 };
-  document.addEventListener('mousemove', (e) => {
-    mouse.x = (e.clientX / window.innerWidth  - 0.5) * 2;
-    mouse.y = (e.clientY / window.innerHeight - 0.5) * 2;
-  });
-
-  /* ── Animate ── */
-  let tick = 0;
-  function animate() {
-    requestAnimationFrame(animate);
-
-    const p = ptGeo.attributes.position.array;
-    for (let i = 0; i < COUNT; i++) {
-      p[i*3]   += velocities[i].x;
-      p[i*3+1] += velocities[i].y;
-      p[i*3+2] += velocities[i].z;
-      if (Math.abs(p[i*3])   > SPREAD/2) velocities[i].x *= -1;
-      if (Math.abs(p[i*3+1]) > SPREAD/2) velocities[i].y *= -1;
-      if (Math.abs(p[i*3+2]) > 1.2)      velocities[i].z *= -1;
-    }
-    ptGeo.attributes.position.needsUpdate = true;
-
-    tick++;
-    if (tick % 2 === 0) updateLines();
-
-    /* Subtle parallax rotation */
-    points.rotation.y  += 0.0004 + mouse.x * 0.0002;
-    points.rotation.x  += 0.0002 + mouse.y * 0.0001;
-    lineSegs.rotation.y = points.rotation.y;
-    lineSegs.rotation.x = points.rotation.x;
-
-    renderer.render(scene, camera);
-  }
-
-  /* ── Resize ── */
   function resize() {
-    const parent = canvas.parentElement;
-    const w = parent.clientWidth;
-    const h = parent.clientHeight;
-    renderer.setSize(w, h, false);
-    camera.aspect = w / h;
-    camera.updateProjectionMatrix();
+    /* 전체 페이지 고정 배경 → 뷰포트 기준으로 크기 결정 */
+    W = window.innerWidth;
+    H = window.innerHeight;
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    canvas.width  = Math.floor(W * dpr);
+    canvas.height = Math.floor(H * dpr);
+    canvas.style.width  = W + 'px';
+    canvas.style.height = H + 'px';
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    buildGrid();
+  }
+
+  /* ── 포인터 ── */
+  const pointer = { x: -9999, y: -9999, active: false };
+  function moveFromEvent(clientX, clientY) {
+    const rect = canvas.getBoundingClientRect();
+    pointer.x = clientX - rect.left;
+    pointer.y = clientY - rect.top;
+    pointer.active = true;
+  }
+  window.addEventListener('mousemove', (e) => moveFromEvent(e.clientX, e.clientY), { passive: true });
+  window.addEventListener('mouseout', () => { pointer.active = false; });
+  window.addEventListener('touchmove', (e) => {
+    if (e.touches[0]) moveFromEvent(e.touches[0].clientX, e.touches[0].clientY);
+  }, { passive: true });
+
+  /* ── 렌더 ── */
+  let t = 0;
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+
+    /* 마우스가 없을 때 자동으로 움직이는 가상 광원 (모바일/유휴 대비) */
+    let gx, gy;
+    if (pointer.active) {
+      gx = pointer.x; gy = pointer.y;
+    } else {
+      gx = W * (0.5 + 0.32 * Math.cos(t * 0.0006));
+      gy = H * (0.5 + 0.28 * Math.sin(t * 0.0009));
+    }
+
+    for (let i = 0; i < cells.length; i++) {
+      const c = cells[i];
+      const dx = c.x - gx, dy = c.y - gy;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+
+      /* 광원 근접도 0~1 */
+      let glow = dist < GLOW_R ? (1 - dist / GLOW_R) : 0;
+      glow = glow * glow; /* 가장자리는 부드럽게 */
+
+      /* 잔잔한 호흡 파동 (구조가 '살아있게') */
+      const wave = reduceMotion ? 0
+        : 0.5 + 0.5 * Math.sin(t * 0.0018 - dist * 0.015 + c.phase * 0.2);
+      const ambient = reduceMotion ? 0 : wave * 0.10;
+
+      const lineA = Math.min(0.9, BASE_A + glow * 0.85 + ambient * 0.5);
+      const r = HEX_R - GAP / 2;
+
+      hexPath(c.x, c.y, r);
+
+      /* 채움 글로우: 광원에 충분히 가까운 육각형만 옐로우로 점등 */
+      if (glow > 0.04) {
+        ctx.fillStyle = `rgba(${HONEY}, ${glow * 0.16})`;
+        ctx.fill();
+      } else if (ambient > 0.06) {
+        ctx.fillStyle = `rgba(${HONEY}, ${ambient * 0.05})`;
+        ctx.fill();
+      }
+
+      /* 외곽선 */
+      const col = glow > 0.35 ? HONEY_BRIGHT : HONEY;
+      ctx.lineWidth = glow > 0.3 ? 1.4 : 1;
+      ctx.strokeStyle = `rgba(${col}, ${lineA})`;
+      ctx.stroke();
+    }
+
+    /* 광원 중심부 소프트 글로우 */
+    if (!reduceMotion || pointer.active) {
+      const g = ctx.createRadialGradient(gx, gy, 0, gx, gy, GLOW_R * 0.9);
+      g.addColorStop(0, `rgba(${HONEY}, 0.07)`);
+      g.addColorStop(1, 'rgba(0,0,0,0)');
+      ctx.fillStyle = g;
+      ctx.fillRect(gx - GLOW_R, gy - GLOW_R, GLOW_R * 2, GLOW_R * 2);
+    }
+  }
+
+  let rafId = null;
+  function loop() {
+    t += 16;
+    draw();
+    rafId = requestAnimationFrame(loop);
   }
 
   window.addEventListener('resize', resize);
   resize();
-  updateLines();
-  animate();
+
+  if (reduceMotion) {
+    /* 모션 최소화: 정적 격자 1회 렌더 */
+    draw();
+  } else {
+    loop();
+  }
+
+  /* 탭이 백그라운드일 때 정지(배터리 절약) */
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
+    } else if (!reduceMotion && !rafId) {
+      loop();
+    }
+  });
 })();
