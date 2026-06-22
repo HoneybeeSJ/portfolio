@@ -316,4 +316,38 @@
 @media (max-width: 640px) {
   .pd-hero { padding-top: calc(var(--nav-h) + 40px); }
   .pd-meta-item { flex: 1 1 40%; min-width: 0; }
+
+  .harness-page { overflow-x: hidden; }
+  .harness-page .pd-hero,
+  .harness-page .pd-hero > * {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+  .harness-page .pd-title,
+  .harness-page .pd-lead {
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+  .harness-page .pd-meta {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+  .harness-page .pd-meta-item { width: 100%; min-width: 0; }
+  .harness-page .pd-chips {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    width: 100%;
+  }
+  .harness-page .pd-chip {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    text-align: center;
+  }
 }
