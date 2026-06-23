@@ -8,6 +8,9 @@
   --purple-d:  #C99700;
   --cyan:      #FFD43B;
   --emerald:   #C99700;
+  --hansal:        #57bd86;
+  --hansal-soft:   rgba(87, 189, 134, 0.12);
+  --hansal-border: rgba(87, 189, 134, 0.32);
   --text:      #F2F2F3;
   --text-muted:#A1A1AA;
   --glass-bg:  rgba(255, 255, 255, 0.04);
@@ -1744,3 +1747,349 @@ body::before {
   transition: filter 0.2s;
 }
 .nav-logo:hover .logo-hex { filter: drop-shadow(0 0 6px rgba(255,196,0,0.6)); }
+
+
+/* ═══════════════════════════════════════════════════════
+   HANSALIM 통합 카드 (Projects 섹션 내 · 압축형)
+   허니 옐로우/블랙 + 한살림 녹색 보조색
+═══════════════════════════════════════════════════════ */
+.hansal-lead {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 28px 32px;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  overflow: hidden;
+  border-left: 3px solid var(--hansal);
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+.hansal-lead::after {
+  content: "";
+  position: absolute;
+  top: -40px; right: -30px;
+  width: 150px; height: 150px;
+  opacity: 0.14;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='28' height='49' viewBox='0 0 28 49' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5z' fill='none' stroke='%2357bd86' stroke-width='1.4'/%3E%3C/svg%3E");
+  background-size: 28px 49px;
+}
+.hansal-lead:hover {
+  transform: translateY(-4px);
+  border-left-color: var(--hansal);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+}
+.hansal-lead-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  position: relative;
+}
+.hansal-lead-icon {
+  flex: 0 0 auto;
+  width: 46px; height: 46px;
+  display: grid; place-items: center;
+  border-radius: 12px;
+  background: var(--hansal-soft);
+  border: 1px solid var(--hansal-border);
+  font-size: 1.4rem;
+}
+.hansal-lead-id { flex: 1 1 auto; min-width: 0; }
+.hansal-lead-kicker {
+  display: block;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--hansal);
+  margin-bottom: 3px;
+}
+.hansal-lead-id h3 { font-size: 1.32rem; color: var(--text); }
+.hansal-lead-cta {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--hansal);
+  white-space: nowrap;
+}
+.hansal-lead:hover .hansal-lead-cta .arrow { transform: translateX(4px); }
+.hansal-lead-cta .arrow { transition: transform 0.25s; }
+.hansal-lead-desc {
+  position: relative;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+.hansal-lead-desc strong { color: var(--text); font-weight: 600; }
+.hansal-lead-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+.hansal-lead-grid li {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 11px 13px;
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-sm);
+  background: var(--glass-bg);
+  font-size: 0.86rem;
+  color: var(--text);
+  line-height: 1.3;
+}
+.hansal-lead-grid .hl-i { font-size: 1rem; line-height: 1; }
+.hansal-lead-grid b {
+  margin-left: auto;
+  color: var(--hansal);
+  font-weight: 700;
+  font-size: 0.82rem;
+  white-space: nowrap;
+}
+
+@media (max-width: 860px) {
+  .hansal-lead-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .hansal-lead { padding: 24px; }
+  .hansal-lead-head { flex-wrap: wrap; }
+  .hansal-lead-grid { grid-template-columns: 1fr; }
+}
+
+/* ═══════════════════════════════════════════════════════
+   PROJECT GROUPS (노션형 교육/AI 그룹 카드)
+═══════════════════════════════════════════════════════ */
+.proj-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.proj-group {
+  padding: 26px 30px 30px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.proj-group-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 6px;
+}
+.proj-group-icon {
+  flex: 0 0 auto;
+  width: 48px; height: 48px;
+  display: grid; place-items: center;
+  border-radius: 13px;
+  font-size: 1.5rem;
+  border: 1px solid var(--glass-border);
+}
+.proj-group-icon.edu { background: rgba(255,196,0,0.12); border-color: rgba(255,196,0,0.3); }
+.proj-group-icon.ai  { background: rgba(255,212,59,0.1); border-color: rgba(255,212,59,0.28); }
+.proj-group-id { flex: 1 1 auto; min-width: 0; }
+.proj-group-kicker {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--purple);
+  margin-bottom: 2px;
+}
+.proj-group-id h3 { font-size: 1.45rem; color: var(--text); }
+.proj-group-count {
+  flex: 0 0 auto;
+  width: 28px; height: 28px;
+  display: grid; place-items: center;
+  border-radius: 50%;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+.proj-group-desc {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+.proj-subgrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+.proj-subcard {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 18px 18px 16px;
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.025);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.25s, border-color 0.25s, background 0.25s;
+}
+.proj-subcard:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 196, 0, 0.4);
+  background: rgba(255, 196, 0, 0.05);
+}
+.psc-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.psc-icon { font-size: 1.5rem; line-height: 1; }
+.psc-date { font-size: 0.74rem; color: var(--text-muted); text-align: right; }
+.proj-subcard h4 {
+  font-family: 'Space Grotesk', 'Noto Sans KR', sans-serif;
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.3;
+}
+.psc-sub { font-size: 0.8rem; color: var(--purple); font-weight: 500; }
+.psc-desc { font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; flex: 1; }
+.psc-desc strong { color: var(--text); font-weight: 600; }
+.psc-desc code {
+  font-size: 0.82em;
+  padding: 1px 4px;
+  border-radius: 4px;
+  background: rgba(255,196,0,0.12);
+  color: var(--purple);
+}
+.psc-chips { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 2px; }
+.psc-chips span {
+  font-size: 0.72rem;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: rgba(255, 196, 0, 0.1);
+  border: 1px solid rgba(255, 196, 0, 0.25);
+  color: var(--purple);
+  font-weight: 500;
+}
+.psc-more {
+  margin-top: 4px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--purple);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.proj-subcard:hover .psc-more .arrow { transform: translateX(4px); }
+.psc-more .arrow { transition: transform 0.25s; }
+
+@media (max-width: 960px) {
+  .proj-subgrid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .proj-group { padding: 22px 20px 24px; }
+  .proj-subgrid { grid-template-columns: 1fr; }
+}
+
+/* ═══════════════════════════════════════════════════════
+   ABOUT → 자기소개 진입 카드
+═══════════════════════════════════════════════════════ */
+.intro-card {
+  display: block;
+  margin-top: 24px;
+  padding: 26px 30px;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+.intro-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 196, 0, 0.4);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+}
+.intro-card-main {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.intro-card-icon {
+  flex: 0 0 auto;
+  width: 48px; height: 48px;
+  display: grid; place-items: center;
+  border-radius: 13px;
+  background: rgba(255, 196, 0, 0.12);
+  border: 1px solid rgba(255, 196, 0, 0.3);
+  font-size: 1.4rem;
+}
+.intro-card-id { flex: 1 1 auto; min-width: 0; }
+.intro-card-kicker {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--purple);
+  margin-bottom: 2px;
+}
+.intro-card-id h3 { font-size: 1.35rem; color: var(--text); margin-bottom: 4px; }
+.intro-card-id p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.55; }
+.intro-card-cta {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--purple);
+  white-space: nowrap;
+}
+.intro-card:hover .intro-card-cta .arrow { transform: translateX(4px); }
+.intro-card-cta .arrow { transition: transform 0.25s; }
+.intro-card-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid var(--glass-border);
+}
+.intro-card-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 9px;
+  font-size: 0.92rem;
+  color: var(--text);
+  line-height: 1.45;
+}
+.intro-card-list b {
+  flex: 0 0 auto;
+  color: var(--purple);
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+}
+
+@media (max-width: 600px) {
+  .intro-card-main { flex-wrap: wrap; }
+  .intro-card-cta { width: 100%; }
+  .intro-card-list { grid-template-columns: 1fr; }
+}
+
+/* 한살림 그룹 아이콘(녹색) + 서브카드 역할 배지 */
+.proj-group-icon.hansal { background: var(--hansal-soft); border-color: var(--hansal-border); }
+.psc-badge {
+  font-size: 0.68rem;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: var(--hansal-soft);
+  border: 1px solid var(--hansal-border);
+  color: var(--hansal);
+  font-weight: 600;
+  white-space: nowrap;
+}

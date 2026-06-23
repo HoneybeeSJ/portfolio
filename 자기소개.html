@@ -151,17 +151,20 @@
 
 <body>
 
+  <!-- ── 전체 페이지 벌집 배경 ──────────────────────── -->
+  <canvas id="hero-canvas" aria-hidden="true"></canvas>
+
   <!-- ── Nav ─────────────────────────────────────── -->
   <nav id="nav" class="scrolled">
     <div class="nav-inner">
       <a href="index.html#hero" class="nav-logo" aria-label="홈"><span class="logo-hex" aria-hidden="true"></span></a>
       <ul class="nav-links">
         <li><a href="index.html#about">소개</a></li>
-        <li><a href="index.html#experience">경력</a></li>
-        <li><a href="index.html#career-agent">AI 시스템</a></li>
         <li><a href="index.html#competency">역량</a></li>
+        <li><a href="index.html#experience">경력</a></li>
+        <li><a href="index.html#education">교육 이력</a></li>
         <li><a href="index.html#projects">프로젝트</a></li>
-        <li><a href="index.html#teaching">강의 경험</a></li>
+        <li><a href="index.html#career-agent">AI 역량</a></li>
         <li><a href="자기소개.html" class="active">자기소개</a></li>
         <li><a href="index.html#contact">연락처</a></li>
       </ul>
@@ -174,11 +177,11 @@
   <div class="mobile-menu" id="mobileMenu">
     <ul>
       <li><a href="index.html#about" class="mob-link">소개</a></li>
-      <li><a href="index.html#experience" class="mob-link">경력</a></li>
-      <li><a href="index.html#career-agent" class="mob-link">AI 시스템</a></li>
       <li><a href="index.html#competency" class="mob-link">역량</a></li>
+      <li><a href="index.html#experience" class="mob-link">경력</a></li>
+      <li><a href="index.html#education" class="mob-link">교육 이력</a></li>
       <li><a href="index.html#projects" class="mob-link">프로젝트</a></li>
-      <li><a href="index.html#teaching" class="mob-link">강의 경험</a></li>
+      <li><a href="index.html#career-agent" class="mob-link">AI 역량</a></li>
       <li><a href="자기소개.html" class="mob-link">자기소개</a></li>
       <li><a href="index.html#contact" class="mob-link">연락처</a></li>
     </ul>
@@ -280,7 +283,8 @@
     </footer>
   </section>
 
-  <!-- ── Script (페이지 전용 경량) ──────────────────── -->
+  <!-- ── Scripts ──────────────────────────────────── -->
+  <script src="js/hero-scene.js"></script>
   <script>
     (function () {
       'use strict';
