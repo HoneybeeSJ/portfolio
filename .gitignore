@@ -1,0 +1,4 @@
+# Design export artifacts (Claude Design zip exports)
+*.zip
+# Local backup files
+*.bak

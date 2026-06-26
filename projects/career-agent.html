@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Career Agent | 이승재 포트폴리오</title>
-  <meta name="description" content="할루시네이션 0%·문체 복제 95%로 채용 서류 3종을 자동화한 3계층 멀티 에이전트 시스템 — 직접 기획·구축한 이승재의 프로젝트 상세." />
+  <meta name="description" content="채용공고 분석부터 이력서 매칭, 초안 작성, 문체 교정, 슬라이드·면접 대비까지 이어지는 5단계 지원서류 자동화 파이프라인." />
   <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,7 +20,7 @@
   <canvas id="hero-canvas" aria-hidden="true"></canvas>
 
   <nav class="pd-nav">
-    <a href="../index.html#career-agent" class="pd-back"><span class="arrow">←</span> 포트폴리오</a>
+    <a href="../index.html#projects" class="pd-back"><span class="arrow">←</span> 포트폴리오</a>
     <a href="../index.html" class="pd-nav-logo" aria-label="홈"><span class="logo-hex"></span></a>
   </nav>
 
@@ -30,20 +30,20 @@
       <span class="pd-cat">AI 시스템 · 단독 기획·구축</span>
     </div>
     <h1 class="pd-title">Career <span class="accent">Agent</span></h1>
-    <p class="pd-lead">LLM의 할루시네이션을 방지하고 개인 문체를 복제하여, 채용 공고 분석부터 맞춤형 지원 서류 3종 생성까지 자동화한
-      <strong>3계층(Directive–Orchestration–Execution) 멀티 에이전트 시스템</strong>. 직접 기획하고 Node.js로 구현했습니다.</p>
+    <p class="pd-lead">채용공고를 입력하면 분석 → 이력서 매칭 → 초안 작성 → 톤앤매너 교정 → 슬라이드·면접 대비까지 이어지는
+      <strong>5단계 지원서류 자동화 파이프라인</strong>입니다. 마스터 이력서에 있는 사실만 사용하도록 설계하고, Node.js로 직접 구현했습니다.</p>
 
     <div class="pd-meta">
       <div class="pd-meta-item"><span class="mk">기간</span><span class="mv">2026.05 ~ 현재</span></div>
       <div class="pd-meta-item"><span class="mk">유형</span><span class="mv">개인 프로젝트 (단독)</span></div>
-      <div class="pd-meta-item"><span class="mk">역할</span><span class="mv">기획·아키텍처·구현</span></div>
+      <div class="pd-meta-item"><span class="mk">역할</span><span class="mv">기획·흐름 설계·구현</span></div>
       <div class="pd-meta-item"><span class="mk">스택</span><span class="mv">Node.js</span></div>
     </div>
 
     <div class="pd-chips">
-      <span class="pd-chip">리드타임 90%↓</span>
-      <span class="pd-chip">할루시네이션 0%</span>
-      <span class="pd-chip">문체 복제 95%↑</span>
+      <span class="pd-chip">5단계 파이프라인</span>
+      <span class="pd-chip">사실 기반 생성</span>
+      <span class="pd-chip">다단계 폴백</span>
     </div>
   </header>
 
@@ -53,23 +53,23 @@
       <span class="pd-sec-tag">Overview · 배경과 문제</span>
       <h2>왜 직접 만들었나</h2>
       <div class="pd-card">
-        <p>기존 LLM으로 지원 서류를 작성하는 방식은 <strong>허위 사실을 지어내는 '할루시네이션'</strong>과
-          <strong>획일화된 문체</strong>라는 치명적 한계가 있었습니다. 본인의 구직 활동을 혁신하기 위해,
-          검증된 사실만 사용하고 본인 문체를 복제하는 자동화 시스템을 직접 설계했습니다.</p>
+        <p>기존 LLM으로 지원 서류를 작성하면 실제 이력에 없는 내용을 섞거나, 본인 문체와 다른 표현이 들어가는 문제가 있었습니다.
+          이를 줄이기 위해 <strong>검증된 마스터 이력서와 스타일 가이드</strong>를 기준으로 지원서류를 생성하는 자동화 흐름을 직접 설계했습니다.</p>
         <p class="muted">결과물 — 채용 공고를 입력하면 분석 → 매칭 → 초안 → 교정 → 산출물(이력서·경력기술서·자기소개서, 슬라이드·면접 대비)까지
           자동 수행하는 AI 파이프라인.</p>
       </div>
     </section>
 
     <section class="pd-section pd-reveal">
-      <span class="pd-sec-tag">Architecture · 3계층 설계</span>
-      <h2>Directive · Orchestration · Execution</h2>
+      <span class="pd-sec-tag">Design · 설계 기준</span>
+      <h2>사실 기반 지원서류 생성 규칙</h2>
       <div class="pd-card">
         <ul class="pd-ul">
-          <li><strong>Directive Layer</strong> — 프로세스 통제, 기업별 커스터마이징 룰 및 예외 처리 가이드라인(SOP) 수립. 검증된 마스터 이력서 팩트만 사용하도록 정책 설계</li>
-          <li><strong>Orchestration Layer</strong> — 직무 적합도 평가 알고리즘 설계, RAG 기반 경험 추출·검증 프로세스 조율</li>
-          <li><strong>Execution Layer</strong> — 외부 웹 검색, 로컬 파일 입출력(File I/O), 데이터 전처리 등 결정론적 도구(Deterministic Tools) 연동</li>
-          <li><strong>Self-annealing Loop</strong> — 생성 실패·포맷 오류를 모니터링해 가이드라인에 피드백, 시스템을 스스로 고도화하는 자가 치유 루프</li>
+          <li><strong>마스터 이력서 기준</strong> — 경력, 수치, 프로젝트 설명은 로컬 마스터 이력서에 있는 사실만 사용하도록 제한</li>
+          <li><strong>채용공고 분석</strong> — 회사·직무·자격요건·우대사항을 구조화해 지원서류의 방향을 먼저 정리</li>
+          <li><strong>경험 매칭</strong> — 공고 키워드와 실제 경험을 비교해 어떤 사례를 앞에 둘지 판단</li>
+          <li><strong>문체 교정</strong> — 스타일 가이드 기준으로 AI 상투어를 줄이고, 담백한 문장으로 다시 정리</li>
+          <li><strong>폴백 흐름</strong> — 일부 경로가 실패해도 API 기반 경로로 이어갈 수 있도록 구성</li>
         </ul>
       </div>
     </section>
@@ -87,12 +87,12 @@
     </section>
 
     <section class="pd-section pd-reveal">
-      <span class="pd-sec-tag">Results · 정량 성과</span>
-      <h2>숫자로 증명한 결과</h2>
+      <span class="pd-sec-tag">Results · 적용 결과</span>
+      <h2>반복 서류 작업을 구조화한 결과</h2>
       <div class="pd-stats">
-        <div class="pd-stat"><div class="sv">90<small>%↓</small></div><div class="sn">리드타임 단축</div><div class="snote">약 6시간 → 2분 내외</div></div>
-        <div class="pd-stat"><div class="sv">0<small>%</small></div><div class="sn">할루시네이션</div><div class="snote">RAG·로컬 마스터 DB 연계</div></div>
-        <div class="pd-stat"><div class="sv">95<small>%↑</small></div><div class="sn">문체 복제율</div><div class="snote">합격 샘플 스타일 가이드 기반</div></div>
+        <div class="pd-stat"><div class="sv">5</div><div class="sn">단계 파이프라인</div><div class="snote">분석·매칭·초안·교정·산출물</div></div>
+        <div class="pd-stat"><div class="sv">1</div><div class="sn">마스터 기준</div><div class="snote">실재 경험 중심 작성</div></div>
+        <div class="pd-stat"><div class="sv">N</div><div class="sn">지원처별 변형</div><div class="snote">공고별 문서 방향 조정</div></div>
       </div>
     </section>
 
@@ -104,8 +104,8 @@
           <div class="tech-group"><div class="tg-label">엔진 · 언어</div><div class="tech-tags">
             <span class="tech-tag">Node.js</span><span class="tech-tag">JavaScript</span></div></div>
           <div class="tech-group"><div class="tg-label">AI · 자동화</div><div class="tech-tags">
-            <span class="tech-tag">ChatGPT</span><span class="tech-tag">Claude</span><span class="tech-tag">RAG</span>
-            <span class="tech-tag">웹 자동화</span><span class="tech-tag">LLM API</span></div></div>
+            <span class="tech-tag">ChatGPT</span><span class="tech-tag">Claude</span><span class="tech-tag">LLM API</span>
+            <span class="tech-tag">웹 자동화</span></div></div>
           <div class="tech-group"><div class="tg-label">연동 · 산출물</div><div class="tech-tags">
             <span class="tech-tag">파일 I/O</span><span class="tech-tag">웹 검색</span><span class="tech-tag">PPTX</span><span class="tech-tag">Canva 연동</span></div></div>
         </div>
@@ -126,7 +126,7 @@
 
   <footer class="pd-footer">
     <a href="../index.html#projects" class="btn-primary">← 다른 프로젝트 보기</a>
-    <p class="pd-disclaimer">본 페이지의 내용·수치는 프로젝트 기획 문서 및 구현 산출물에 근거합니다.</p>
+    <p class="pd-disclaimer">본 페이지는 개인 구직 문서 자동화 프로젝트를 설명한 것입니다. 측정 근거 없는 정확도·문체 복제율 수치는 사용하지 않았습니다.</p>
   </footer>
 
   <script src="../js/hero-scene.js"></script>

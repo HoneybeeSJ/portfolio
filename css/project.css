@@ -87,7 +87,7 @@
   padding: 5px 14px;
 }
 .pd-title {
-  font-family: 'Space Grotesk', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard', 'Pretendard', sans-serif;
   font-weight: 700;
   font-size: clamp(2rem, 5vw, 3.2rem);
   line-height: 1.12;
@@ -186,7 +186,7 @@
   clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
 }
 .pd-section h2 {
-  font-family: 'Space Grotesk', 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard', 'Pretendard', sans-serif;
   font-size: 1.55rem;
   font-weight: 700;
   margin-bottom: 16px;
@@ -216,7 +216,7 @@
   gap: 12px;
 }
 .role-item .role-name { font-weight: 600; }
-.role-item .role-pct { font-family: 'Space Grotesk', sans-serif; font-weight: 700; color: var(--honey); font-size: 0.95rem; white-space: nowrap; }
+.role-item .role-pct { font-family: 'Pretendard', sans-serif; font-weight: 700; color: var(--honey); font-size: 0.95rem; white-space: nowrap; }
 .role-item .role-desc { color: var(--text-muted); font-size: 0.9rem; line-height: 1.7; }
 .role-bar { height: 6px; background: rgba(255,255,255,0.06); border-radius: 999px; overflow: hidden; margin: 6px 0; }
 .role-bar > span { display: block; height: 100%; background: linear-gradient(90deg, var(--honey-deep), var(--honey)); border-radius: 999px; }
@@ -236,7 +236,7 @@
   left: -18px; top: 12px;
   width: 36px; height: 40px;
   display: grid; place-items: center;
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Pretendard', sans-serif;
   font-weight: 700;
   font-size: 0.9rem;
   color: var(--on-honey, #0A0A0A);
@@ -256,7 +256,7 @@
   padding: 22px;
   text-align: center;
 }
-.pd-stat .sv { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.9rem; color: var(--honey); line-height: 1.1; }
+.pd-stat .sv { font-family: 'Pretendard', sans-serif; font-weight: 700; font-size: 1.9rem; color: var(--honey); line-height: 1.1; }
 .pd-stat .sv small { font-size: 0.9rem; color: var(--text-muted); font-weight: 500; }
 .pd-stat .sn { margin-top: 8px; color: var(--text); font-size: 0.9rem; font-weight: 500; }
 .pd-stat .snote { margin-top: 4px; color: var(--text-muted); font-size: 0.78rem; }
@@ -420,7 +420,7 @@
 }
 .hs-metric strong {
   display: block;
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Pretendard', sans-serif;
   font-size: 1.5rem;
   color: var(--text);
   line-height: 1.1;
