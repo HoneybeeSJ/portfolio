@@ -28,6 +28,7 @@
     href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=Inter:wght@300;400;500;600&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/project.css" />
   <style>
     /* ── 자기소개 페이지 전용 ── */
     #intro-hero {
@@ -154,38 +155,11 @@
   <!-- ── 전체 페이지 벌집 배경 ──────────────────────── -->
   <canvas id="hero-canvas" aria-hidden="true"></canvas>
 
-  <!-- ── Nav ─────────────────────────────────────── -->
-  <nav id="nav" class="scrolled">
-    <div class="nav-inner">
-      <a href="index.html#hero" class="nav-logo" aria-label="홈"><span class="logo-hex" aria-hidden="true"></span></a>
-      <ul class="nav-links">
-        <li><a href="index.html#about">소개</a></li>
-        <li><a href="index.html#competency">역량</a></li>
-        <li><a href="index.html#experience">경력</a></li>
-        <li><a href="index.html#education">교육 이력</a></li>
-        <li><a href="index.html#projects">프로젝트</a></li>
-        <li><a href="index.html#career-agent">AI 역량</a></li>
-        <li><a href="자기소개.html" class="active">자기소개</a></li>
-        <li><a href="index.html#contact">연락처</a></li>
-      </ul>
-      <button class="nav-menu" id="menuBtn" aria-label="메뉴">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
+  <!-- ── Nav (프로젝트 세부페이지식 뒤로가기) ─────────── -->
+  <nav class="pd-nav">
+    <a href="index.html#about" class="pd-back"><span class="arrow">←</span> 포트폴리오</a>
+    <a href="index.html" class="pd-nav-logo" aria-label="홈"><span class="logo-hex"></span></a>
   </nav>
-
-  <div class="mobile-menu" id="mobileMenu">
-    <ul>
-      <li><a href="index.html#about" class="mob-link">소개</a></li>
-      <li><a href="index.html#competency" class="mob-link">역량</a></li>
-      <li><a href="index.html#experience" class="mob-link">경력</a></li>
-      <li><a href="index.html#education" class="mob-link">교육 이력</a></li>
-      <li><a href="index.html#projects" class="mob-link">프로젝트</a></li>
-      <li><a href="index.html#career-agent" class="mob-link">AI 역량</a></li>
-      <li><a href="자기소개.html" class="mob-link">자기소개</a></li>
-      <li><a href="index.html#contact" class="mob-link">연락처</a></li>
-    </ul>
-  </div>
 
   <!-- ── Intro Hero ──────────────────────────────── -->
   <section id="intro-hero">
@@ -274,12 +248,6 @@
   <script>
     (function () {
       'use strict';
-      // Nav scroll style
-      var nav = document.getElementById('nav');
-      var onScroll = function () { nav.classList.toggle('scrolled', window.scrollY > 60); };
-      window.addEventListener('scroll', onScroll, { passive: true });
-      onScroll();
-
       // Mobile menu
       var menuBtn = document.getElementById('menuBtn');
       var mobileMenu = document.getElementById('mobileMenu');
