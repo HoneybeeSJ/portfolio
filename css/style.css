@@ -1474,6 +1474,9 @@ h1, h2, h3 {
 /* ═══════════════════════════════════════════════════════
    TECH STACK (보유기술)
 ═══════════════════════════════════════════════════════ */
+#skills {
+  padding: 120px 0;
+}
 .stack-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
@@ -2279,6 +2282,9 @@ body::before {
 /* ═══════════════════════════════════════════════════════
    ABOUT → 자기소개 진입 카드
 ═══════════════════════════════════════════════════════ */
+#introduce {
+  padding: 120px 0;
+}
 .intro-card {
   display: block;
   margin-top: 24px;
