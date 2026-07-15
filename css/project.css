@@ -274,6 +274,63 @@
   color: var(--text);
 }
 
+/* KHIDI 산출물 카드 */
+.khidi-page .pd-icon {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  color: var(--honey);
+}
+.khidi-doc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+}
+.khidi-doc-card {
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 24px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  color: var(--text);
+  transition: transform 0.2s, border-color 0.2s, background 0.2s;
+}
+.khidi-doc-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--honey-border);
+  background: rgba(255,255,255,0.055);
+}
+.khidi-doc-card .doc-k {
+  width: 42px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  background: var(--honey-soft);
+  border: 1px solid var(--honey-border);
+  color: var(--honey);
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+}
+.khidi-doc-card h3 {
+  font-size: 1.1rem;
+  margin: 0;
+}
+.khidi-doc-card p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.75;
+  margin: 0;
+}
+.khidi-doc-card .doc-link {
+  margin-top: auto;
+  color: var(--honey);
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
 /* ── 표 ── */
 .pd-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
 .pd-table th, .pd-table td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--glass-border); vertical-align: top; line-height: 1.6; }
