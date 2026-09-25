@@ -517,3 +517,18 @@
   .hs-step { padding-left: 0; padding-top: 30px; }
   .hs-step .hs-k { top: 0; }
 }
+
+.pd-tree {
+  background: var(--glass-bg, rgba(255,255,255,0.03));
+  border: 1px solid var(--glass-border, rgba(255,255,255,0.08));
+  border-radius: var(--radius-sm, 8px);
+  padding: 16px 18px;
+  font-family: 'Space Grotesk', 'Consolas', monospace;
+  font-size: 0.82rem;
+  line-height: 1.85;
+  color: var(--text-muted);
+  overflow-x: auto;
+  white-space: pre;
+}
+.pd-tree .dir { color: var(--honey-bright, var(--honey)); font-weight: 600; }
+.pd-tree .note { color: var(--text-muted); opacity: 0.7; }
