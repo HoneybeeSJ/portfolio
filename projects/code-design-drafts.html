@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>코드로 짠 디자인 기획안 | 엑스퍼트컨설팅 프로젝트 · 이승재</title>
+  <meta name="description" content="PowerPoint COM 자동화와 python-pptx로 부스 디자인 기획안을 코드로 생성해, 디자인팀 피드백 반복 주기를 빠르게 돌린 사례." />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/project.css" />
+</head>
+
+<body>
+  <canvas id="hero-canvas" aria-hidden="true"></canvas>
+
+  <nav class="pd-nav">
+    <a href="../index.html#expert" class="pd-back"><span class="arrow">&larr;</span> 엑스퍼트컨설팅 프로젝트</a>
+    <a href="../index.html" class="pd-nav-logo" aria-label="홈"><span class="logo-hex"></span></a>
+  </nav>
+
+  <header class="pd-hero pd-reveal">
+    <div class="pd-eyebrow">
+      <span class="pd-icon">🧩</span>
+      <span class="pd-cat">엑스퍼트컨설팅 · 마케팅팀 파견 · 2026 HR FAIR</span>
+    </div>
+    <h1 class="pd-title">손으로 그리는 대신, <span class="accent">코드로 짠 디자인 기획안</span></h1>
+    <p class="pd-lead">디자인 프로그램을 직접 다루지는 못하지만, 디자인팀에 넘길 기획안은 정확해야 했습니다. PowerPoint를 코드로 조작해 캐릭터 조합·배너·POP 레이아웃 시안을 직접 만들고, 피드백을 받을 때마다 코드를 고쳐 다시 뽑아냈습니다.</p>
+
+    <div class="pd-meta">
+      <div class="pd-meta-item"><span class="mk">소속</span><span class="mv">엑스퍼트컨설팅 · 마케팅팀 파견(1개월)</span></div>
+      <div class="pd-meta-item"><span class="mk">기간</span><span class="mv">2026.08</span></div>
+      <div class="pd-meta-item"><span class="mk">역할</span><span class="mv">기획안·의뢰서 코드로 제작</span></div>
+      <div class="pd-meta-item"><span class="mk">분야</span><span class="mv">AI·자동화 · 디자인 기획</span></div>
+    </div>
+
+    <div class="hs-metrics">
+      <div class="hs-metric"><strong>PowerShell 9개</strong><span>PPT 자동 생성·수정 스크립트</span></div>
+      <div class="hs-metric"><strong>3단계 반복</strong><span>리빌드 → 확정 → 미세조정</span></div>
+    </div>
+  </header>
+
+  <main class="pd-body">
+    <section class="pd-section pd-reveal">
+      <span class="pd-sec-tag">사례 · 배경 &rarr; 결과</span>
+      <div class="pd-card">
+        <div class="hs-flow">
+          <div class="hs-step"><span class="hs-k">배경</span>
+            <p>키캡키링 캐릭터 조합, 부스 배너, 아크릴 POP 스탠드 — 디자인팀에 제작을 의뢰하려면 그 전에 콘셉트와 레이아웃을 구체적인 시안으로 만들어 전달해야 했습니다. 최종 디자인은 디자인팀 몫이지만, "무엇을 어떻게 만들어 달라"는 기획안은 제가 준비해야 했습니다.</p>
+          </div>
+          <div class="hs-step"><span class="hs-k">문제</span>
+            <p>파워포인트를 손으로 직접 만지면 시안 하나 만드는 데도 시간이 걸리고, 팀장 피드백을 받을 때마다 같은 작업을 처음부터 반복해야 했습니다. 색을 하나 바꾸려 해도 슬라이드 곳곳의 도형을 일일이 찾아 고쳐야 하는 구조였습니다.</p>
+          </div>
+          <div class="hs-step"><span class="hs-k">처음 생각과, 바뀐 판단</span>
+            <p>처음엔 "다음 시안도 손으로 만들면 되겠지"라고 생각했습니다. 그런데 캐릭터 조합만 4가지, 색 팔레트 후보도 여러 개인 상황에서 매번 손으로 배치하다 보니 시간이 배로 들었습니다. 그래서 접근을 바꿨습니다 — <strong>슬라이드를 손으로 만들지 않고, 슬라이드를 만드는 코드를 짜는 쪽</strong>을 택했습니다. 색과 텍스트를 변수로 빼두면, 팀장 피드백이 와도 값 몇 개만 바꿔 다시 실행하면 됐습니다.</p>
+          </div>
+          <div class="hs-step"><span class="hs-k">실행</span>
+            <ul class="pd-ul">
+              <li><strong>PowerShell + PowerPoint COM 자동화</strong>로 슬라이드를 코드로 생성. 색상 팔레트를 변수 테이블로 정의하고, 텍스트박스·도형·선을 함수로 만들어 재사용</li>
+              <li>캐릭터 시트 이미지를 <strong>4분면으로 자동 크롭</strong>해 각 캐릭터를 슬라이드에 개별 배치하는 로직 작성 — 이미지를 직접 자르는 대신 좌표 계산으로 처리</li>
+              <li>팀장 피드백을 반영하는 과정을 <strong>3단계로 나눠 반복</strong>: 전체 색감·구성을 다시 짜는 리빌드 → 구성 요소를 확정하는 마무리 → 슬라이드별 문구만 미세 조정. 마지막 단계는 PowerPoint COM으로 특정 도형의 텍스트만 찾아 바꾸고 검토용 PNG로 즉시 내보냄</li>
+              <li><strong>Python(python-pptx)</strong>으로 POP 스탠드 레이아웃 기획안을 별도 생성 — 슬라이드 크기·색상·폰트를 코드로 지정해 디자인팀 전달용 문서 완성</li>
+              <li><strong>HTML/CSS/SVG</strong>로 인쇄 시안 목업까지 코드로 제작 — QR코드와 도시 스카이라인을 직접 벡터로 그려 시각 자료에 포함</li>
+            </ul>
+          </div>
+          <div class="hs-step"><span class="hs-k">결과</span>
+            <p>수정 요청이 올 때마다 처음부터 다시 만들지 않고, 코드 몇 줄을 고쳐 즉시 새 버전을 뽑아냈습니다. 만든 기획안·의뢰서는 디자인팀에 전달했고, <strong>실제 인쇄·제작은 디자인팀이 완성</strong>했습니다. 제 몫은 그 전 단계 — 의도를 구체적인 시안으로 옮겨 전달하는 일이었습니다.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="pd-card hs-evidence">
+        <div class="tg-label">증거 자료 <span>· 실제 스크립트 코드 (프로젝트 경로·파일명은 비공개)</span></div>
+        <div class="pd-tree">function Crop-Quadrants {
+    param([string]$Source, [string]$Prefix)
+    $image = [System.Drawing.Image]::FromFile($Source)
+    $halfW = [int]($image.Width / 2)
+    $halfH = [int]($image.Height / 2)
+    $items = @(
+        <span class="dir">@{ Name = 'cat';      X = 0;      Y = 0 }</span>,
+        <span class="dir">@{ Name = 'dog';      X = $halfW; Y = 0 }</span>,
+        <span class="dir">@{ Name = 'penguin';  X = 0;      Y = $halfH }</span>,
+        <span class="dir">@{ Name = 'hedgehog'; X = $halfW; Y = $halfH }</span>
+    )
+    <span class="note"># 캐릭터 시트 한 장을 4분면으로 잘라 개별 배치</span>
+}</div>
+        <p class="muted" style="margin-top:14px; font-size:.85rem; line-height:1.6">스크립트 9개 중 하나. 색상·좌표를 변수로 분리해, 팀장 피드백이 오면 값만 바꿔 재실행하는 구조로 작성했습니다.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pd-footer">
+    <a href="../index.html#expert" class="btn-primary">&larr; 엑스퍼트컨설팅 프로젝트로 돌아가기</a>
+    <p class="pd-disclaimer">엑스퍼트컨설팅 재직 중 수행한 실제 업무입니다. 최종 디자인·인쇄물은 디자인팀이 제작했으며, 이 페이지는 그 이전 단계인 기획안·의뢰서를 코드로 만든 과정만 다룹니다.</p>
+  </footer>
+
+  <script src="../js/hero-scene.js"></script>
+  <script src="../js/project.js"></script>
+</body>
+
+</html>
