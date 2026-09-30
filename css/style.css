@@ -2507,3 +2507,7 @@ body::before {
   font-weight: 600;
   white-space: nowrap;
 }
+
+/* Phosphor 아이콘 — 이모지 대체 */
+.psc-icon .ph, .proj-group-icon .ph, .pd-icon .ph, .intro-card-icon .ph, .contact-icon .ph { color: var(--purple); line-height: 1; }
+.proj-group-icon.hansal .ph { color: var(--hansal); }
