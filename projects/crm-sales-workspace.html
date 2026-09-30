@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>영업 CRM 기획·구축 | 이승재 포트폴리오</title>
+  <meta name="description" content="엑셀로 관리하던 광고 유입 고객 상담을 단계형 CRM으로 재설계한 프로젝트 — 화면 위계·권한·로그인 결정 과정과 AI 에이전트 팀 협업 방식을 정리했습니다." />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/project.css" />
+</head>
+
+<body class="harness-page">
+  <canvas id="hero-canvas" aria-hidden="true"></canvas>
+
+  <nav class="pd-nav">
+    <a href="../index.html#projects" class="pd-back"><span class="arrow">←</span> 포트폴리오</a>
+    <a href="../index.html" class="pd-nav-logo" aria-label="홈"><span class="logo-hex"></span></a>
+  </nav>
+
+  <header class="pd-hero pd-reveal">
+    <div class="pd-eyebrow">
+      <span class="pd-icon">🗂️</span>
+      <span class="pd-cat">AI 협업 · 서비스 기획·구축</span>
+    </div>
+    <h1 class="pd-title">엑셀 장부를 고객 단계 흐름으로 바꾼<br><span class="accent">영업 CRM 기획·구축</span></h1>
+    <p class="pd-lead">광고로 유입된 B2C 고객의 상담·실측·계약·공사를 엑셀 한 줄로 관리하던 방식을,
+      <strong>단계마다 필요한 정보와 담당자만 보이는 CRM</strong>으로 다시 설계했습니다.
+      요구 정의·화면 결정·검수는 직접 맡고, 구현은 <strong>역할별 AI 에이전트 팀</strong>과 승인 게이트로 진행했습니다.</p>
+
+    <div class="pd-meta">
+      <div class="pd-meta-item"><span class="mk">기간</span><span class="mv">2026.09.10 ~ 09.30</span></div>
+      <div class="pd-meta-item"><span class="mk">대상</span><span class="mv">창호 시공 B2C 고객사</span></div>
+      <div class="pd-meta-item"><span class="mk">역할</span><span class="mv">요구 정의·화면 결정·검수</span></div>
+      <div class="pd-meta-item"><span class="mk">상태</span><span class="mv">테스트 빌드 1차 완성</span></div>
+    </div>
+
+    <div class="pd-chips">
+      <span class="pd-chip">5단계 고객 흐름</span>
+      <span class="pd-chip">3개 역할·팀 권한</span>
+      <span class="pd-chip">개선 과제 14건 기록</span>
+      <span class="pd-chip">AI 에이전트 4역할</span>
+    </div>
+  </header>
+
+  <div class="pd-cover pd-reveal">
+    <img src="../assets/projects/crm-list.jpg" alt="합성 데이터로 만든 CRM 상담 목록 화면. 진행 단계별 탭과 표가 한 화면에 정리되어 있다." />
+  </div>
+
+  <main class="pd-body">
+    <section class="pd-section pd-reveal">
+      <span class="pd-sec-tag">Why · 왜 만들었나</span>
+      <h2>고객은 한 줄인데, 일은 다섯 단계였습니다</h2>
+      <div class="pd-card">
+        <p>광고로 들어온 고객 문의는 구글 시트에 쌓이고, 상담부터 공사까지 한 사람이 엑셀 한 줄에서 관리하고 있었습니다.
+          그러다 보니 <strong>누가 어느 단계를 맡았는지, 언제 연락했는지, 어디서 막혔는지</strong>를 한눈에 볼 수 없었습니다.</p>
+        <p class="muted">목표 — 고객이 <code>상담 → 실측 → 계약 → 공사 → 종료</code> 트랙을 지나가고,
+          각 구간에서 필요한 입력과 담당자 화면만 보이는 구조를 만든다.</p>
+      </div>
+    </section>
+
+    <section class="pd-section pd-reveal">
+      <span class="pd-sec-tag">Structure · 구조 설계</span>
+      <h2>기존 데이터를 잃지 않고 단계형으로 옮기기</h2>
+      <ol class="pd-steps">
+        <li><div class="st-title">원본 24열을 새 구조에 매핑</div><div class="st-desc">기존 '현재단계' 값을 새 단계·세부 상태로 옮기는 대응표를 먼저 만들고, 모호한 값은 이관 전에 보고서로 확인</div></li>
+        <li><div class="st-title">단계별 화면 분리</div><div class="st-desc">상담에서는 연락·메모, 실측에서는 방문 일정·견적, 계약에서는 금액·공사 예정일처럼 그 단계에서 필요한 입력만 노출</div></li>
+        <li><div class="st-title">'우선순위' 필드 제거</div><div class="st-desc">사람이 매기는 우선순위 대신 '기한 지남·오늘 할 일·응답 대기'처럼 실제 업무 신호로 대체</div></li>
+        <li><div class="st-title">시각 기록 남기기</div><div class="st-desc">첫 연락·견적·계약 시각을 남겨 응답 속도와 병목을 나중에 측정할 수 있게 설계</div></li>
+        <li><div class="st-title">테스트 이관 후 운영 이관</div><div class="st-desc">테스트 데이터로 이관 검증을 먼저 통과시킨 뒤 본 이관을 진행</div></li>
+      </ol>
+    </section>
+
+    <section class="pd-section pd-reveal">
+      <span class="pd-sec-tag">UI/UX · 화면 결정 과정</span>
+      <h2>"처음 쓰는 직원도 질문 없이 쓸 수 있을 것"</h2>
+      <div class="pd-card">
+        <p>팀장 피드백으로 잡은 기준입니다. 화면이 어지러우면 "그냥 엑셀 쓸게요"로 돌아가 CRM이 쓰이지 않는다고 봤고,
+          이 기준으로 화면을 여러 차례 덜어냈습니다.</p>
+      </div>
+      <div class="pd-card" style="margin-top:16px">
+        <ul class="pd-ul">
+          <li><strong>색은 키컬러 1개 + 보조 3개로</strong> — 상태 배지·버튼·칩 색이 늘어나 어지럽다는 피드백에 따라 브랜드 색 안에서만 쓰고, 빨강은 기한 초과·위험 동작에만 남김</li>
+          <li><strong>상세 화면 위계 재정렬</strong> — 이름·연락처 → 고객 요청·상담 메모 → 현재 단계와 다음 실행 → 입력 폼 → 시스템 이력(접힘) 순. 모바일에서는 메모를 위로 올림</li>
+          <li><strong>읽는 글자는 낮추지 않기</strong> — 고객 메모는 16px 이상·줄간격 1.7 이상, 핵심 정보를 옅은 회색으로 처리하지 않음. 현장에서 폰으로 이전 문의를 빠르게 읽는 상황을 기준으로 함</li>
+          <li><strong>버튼은 주 실행 1개만 강조</strong> — 크기가 제각각이던 버튼을 44px 높이로 통일하고 위험 동작(종료)은 시각적으로 분리</li>
+          <li><strong>툴팁은 정말 팁일 때만</strong> — 날짜에 붙던 불필요한 툴팁을 줄이고, 긴 설명은 '?' 도움말로 이동해 모바일에서도 탭으로 확인 가능</li>
+          <li><strong>용어 통일</strong> — '아카이브'를 '종료'로 바꿔 탭·버튼·진행 표시를 하나의 말로 통일. 화면 명칭만 바꾸고 저장값은 유지해 데이터 변경 부담을 피함</li>
+          <li><strong>레퍼런스는 구조만 참고</strong> — 상용 CRM UI 킷의 정보 구조(검색·필터 한 줄, 기본 정보와 활동 구분)만 가져오고, 색·자산은 복제하지 않고 고객사 브랜드 색을 유지</li>
+        </ul>
+      </div>
+      <figure class="pd-figure">
+        <img src="../assets/projects/crm-detail.jpg" alt="합성 데이터로 만든 고객 상세 화면. 진행 단계 표시, 고객 요청·상담 메모, 상담 정보 입력이 배치되어 있다." loading="lazy" />
+        <figcaption>고객 상세 — 진행 상태 → 고객 요청·상담 메모 → 입력 폼 순으로 위계를 정리한 화면 (합성 데이터)</figcaption>
+      </figure>
+      <div class="pd-gallery" style="margin-top:16px">
+        <a href="../assets/projects/crm-mobile.jpg" target="_blank" rel="noopener"><img src="../assets/projects/crm-mobile.jpg" alt="375px 모바일 폭의 고객 상세 화면. 진행 상태와 고객 메모가 위쪽에 놓여 있다." loading="lazy" style="aspect-ratio:auto;object-fit:contain" /></a>
+        <a href="../assets/projects/crm-mobile-notes.jpg" target="_blank" rel="noopener"><img src="../assets/projects/crm-mobile-notes.jpg" alt="375px 모바일 폭에서 단계 이동·종료 버튼과 고객 메모를 보여주는 화면." loading="lazy" style="aspect-ratio:auto;object-fit:contain" /></a>
+      </div>
+    </section>
+
+    <section class="pd-section pd-reveal">
+      <span class="pd-sec-tag">Flow · 업무 흐름 결정</span>
+      <h2>단계를 넘길 때 무엇을 반드시 물을 것인가</h2>
+      <div class="pd-card">
+        <ul class="pd-ul">
+          <li><strong>담당자 자동 이어받기</strong> — 한 번 지정한 담당자가 다음 단계에도 기본값으로 들어가고, 필요할 때만 바꾸는 방식. 매번 복사 버튼을 누르는 구조는 배제</li>
+          <li><strong>단계 이동 모달</strong> — 모든 이동에서 담당자를 미리 채워 확인하게 하고, 방문 실측은 날짜·담당자 없이는 확정되지 않게 함</li>
+          <li><strong>종료 사유는 칩으로</strong> — 모든 단계에서 종료할 때 사유를 받되, 셀렉트박스 대신 칩 버튼으로 고르고 '기타'만 직접 입력. 연락 불가는 상태가 아니라 종료 사유로 이동</li>
+          <li><strong>부분 성공 방지</strong> — 단계는 넘어갔는데 담당·일정 저장은 실패하는 상황을 막도록 이동과 저장을 한 번에 처리</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="pd-section pd-reveal">
+      <span class="pd-sec-tag">Access · 권한·로그인 설계</span>
+      <h2>조직도 기준 권한, 비밀번호 없는 로그인</h2>
+      <div class="pd-card">
+        <ul class="pd-ul">
+          <li><strong>역할 3종 + 팀 범위</strong> — 관리자·중간관리자·담당자. 단계가 아니라 조직도의 팀을 열람·수정 범위의 기준으로 삼고, 목록에 '내 담당' 필터를 제공</li>
+          <li><strong>접근 승인</strong> — 가입만으로는 데이터가 열리지 않고 관리자 승인 후 진입. 새 기기 로그인은 기존 권한을 승인 전까지 그대로 보호</li>
+          <li><strong>비밀번호 폐지</strong> — 내부 도구라 비밀번호를 두지 않고 구글 로그인 또는 이메일 인증 코드만 허용. 로그아웃은 현재 브라우저만 끊도록 조정해 다른 기기의 세션은 유지</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="pd-section pd-reveal">
+      <span class="pd-sec-tag">AI Workflow · 일하는 방식</span>
+      <h2>기획 → 설계 → 구현 → 검수, 승인은 사람이</h2>
+      <div class="pd-stats">
+        <div class="pd-stat"><div class="sv">4<small>역할</small></div><div class="sn">AI 에이전트 팀</div><div class="snote">기획·UX 설계·구현·검수</div></div>
+        <div class="pd-stat"><div class="sv">14<small>건</small></div><div class="sn">개선 과제 기록</div><div class="snote">기획서·설계·개발 메모·검수 4종</div></div>
+        <div class="pd-stat"><div class="sv">3<small>단계</small></div><div class="sn">별도 승인</div><div class="snote">커밋·DB 반영·배포</div></div>
+      </div>
+      <div class="pd-card" style="margin-top:16px">
+        <ul class="pd-ul">
+          <li><strong>과제 단위로 기록</strong> — 개선 요청마다 기획서에 요구사항과 완료 기준을 적고, 각 요구의 출처를 <code>본인 판단</code>과 <code>팀장 피드백</code>으로 구분해 남김</li>
+          <li><strong>역할 분리</strong> — 기획·UX 설계·구현·검수 에이전트가 순서대로 일하고, 검수가 반려하면 구현으로 되돌리는 루프를 두었음</li>
+          <li><strong>승인 게이트</strong> — 기획 확정, 커밋, 운영 DB 반영, 배포를 각각 별도로 승인. 앞 단계 승인이 다음 단계를 대신하지 않도록 함</li>
+          <li><strong>눈으로 다시 확인</strong> — UI를 바꾸면 PC 1440px·모바일 375px 실제 화면을 캡처해 확인하는 것을 검수 조건으로 고정</li>
+          <li><strong>보안 경계</strong> — 개발에는 합성 데이터만 쓰고, 실제 고객정보·계정 정보는 AI 작업 범위에서 제외</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="pd-section pd-reveal">
+      <span class="pd-sec-tag">Result · 현재 상태와 한계</span>
+      <h2>테스트 빌드로 1차 완성, 실사용 검증은 남은 단계</h2>
+      <div class="pd-card">
+        <p>고객 목록·상세·단계 이동·종료 흐름과 권한·로그인 구조까지 구현해 운영 환경에 올렸고, 9월 30일 기준으로 1차 작업을 마무리했습니다.</p>
+        <p class="muted">다만 아직 <strong>실사용자와 실제 데이터가 없는 테스트 빌드</strong>입니다.
+          그래서 전환율·응답시간 같은 성과 수치는 기재하지 않았고, 화면 결정의 근거는 팀장 피드백과 직접 판단임을 그대로 밝힙니다.
+          다음 단계로는 실사용 후 응답·견적·계약 속도 측정과 미확인 건 알림 설계를 남겨 두었습니다.</p>
+      </div>
+    </section>
+
+    <section class="pd-section pd-reveal">
+      <span class="pd-sec-tag">Takeaway · 의의</span>
+      <h2>화면을 꾸미는 일이 아니라 일하는 순서를 설계한 프로젝트</h2>
+      <div class="pd-card">
+        <p>엑셀의 한 줄을 고객이 지나가는 흐름으로 다시 정의하고, 그 흐름 위에서 누가 무엇을 입력하고 넘기는지를 결정했습니다.
+          AI에게 구현을 맡기되 <strong>요구의 출처를 기록하고, 승인 단계를 나누고, 결과는 화면으로 직접 검수</strong>하는 방식으로
+          기획자가 AI 협업 프로젝트를 이끄는 방법을 실제 업무에서 적용했습니다.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pd-footer">
+    <a href="../index.html#projects" class="btn-primary">← 다른 프로젝트 보기</a>
+    <p class="pd-disclaimer">고객사 정보와 실제 고객 데이터는 포함하지 않았습니다. 화면 이미지는 모두 합성 데이터로 만든 로컬 검수 화면이며, 기간·과제 수·구조는 프로젝트 저장소의 커밋 이력과 개선 과제 기록(2026.09.10~09.30)으로 확인했습니다. 실사용 성과 수치는 확인 가능한 집계가 없어 기재하지 않았습니다.</p>
+  </footer>
+
+  <script src="../js/hero-scene.js"></script>
+  <script src="../js/project.js"></script>
+</body>
+
+</html>
