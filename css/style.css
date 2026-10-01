@@ -2545,3 +2545,10 @@ body::before {
   #hero .hero-role { justify-content: center; }
   #hero .hero-role strong { text-align: center; }
 }
+
+/* ── 터치 영역 44px 확보(모바일) ── */
+@media (max-width: 980px) {
+  .proj-more-link { display: inline-flex; align-items: center; min-height: 44px; }
+  .contact-link { display: inline-flex; align-items: center; min-height: 44px; }
+  .nav-logo, .nav-menu { display: inline-flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; }
+}
