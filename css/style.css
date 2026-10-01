@@ -2511,3 +2511,30 @@ body::before {
 /* Phosphor 아이콘 — 이모지 대체 */
 .psc-icon .ph, .proj-group-icon .ph, .pd-icon .ph, .intro-card-icon .ph, .contact-icon .ph { color: var(--purple); line-height: 1; }
 .proj-group-icon.hansal .ph { color: var(--hansal); }
+
+/* ── 2026-10 히어로 정리: 직무 한 줄을 헤드라인으로, 슬로건은 보조, 정보 박스는 경력 섹션으로 ── */
+#hero .hero-role {
+  margin: 18px 0 0;
+  font-size: clamp(1.4rem, 2.9vw, 2.1rem);
+  word-break: keep-all;
+  font-weight: 700;
+  line-height: 1.25;
+  min-height: 2.5em;
+}
+#hero .hero-headline {
+  margin-top: 6px;
+  font-size: clamp(1.7rem, 4vw, 2.6rem);
+  color: var(--text-muted);
+}
+.profile-info { margin: 0 0 48px; }
+.profile-info .hero-meta { margin: 0; max-width: 640px; }
+@media (max-width: 980px) {
+  #hero .hero-profile { width: min(240px, 100%); }
+  #hero .hero-content { gap: 20px; padding-bottom: 56px; }
+  .profile-info .hero-meta { margin: 0 auto; }
+}
+@media (max-width: 600px) {
+  #hero .hero-role { min-height: 0; font-size: 1.5rem; }
+  #hero .hero-profile-tags { display: none; }
+}
+#hero .hero-role strong { white-space: nowrap; }
