@@ -532,3 +532,25 @@
 }
 .pd-tree .dir { color: var(--honey-bright, var(--honey)); font-weight: 600; }
 .pd-tree .note { color: var(--text-muted); opacity: 0.7; }
+
+/* Header metadata and metrics remain separate, wrapping safely. */
+.pd-hero .hs-metrics { margin-top: 24px; }
+.pd-meta-item, .hs-metric { min-width: 0; overflow-wrap: anywhere; }
+.pd-eyebrow { flex-wrap: wrap; }
+.pd-icon { flex-shrink: 0; }
+.pd-cat { max-width: 100%; word-break: keep-all; overflow-wrap: anywhere; }
+.pd-back { min-width: 0; min-height: 44px; }
+.pd-nav-logo { flex-shrink: 0; margin-left: 12px; }
+.pd-title { word-break: keep-all; overflow-wrap: anywhere; line-height: 1.25; }
+.pd-body { overflow-wrap: anywhere; }
+.pd-footer { padding-bottom: 88px; }
+@media (max-width: 600px) {
+  .pd-hero .hs-metrics { gap: 12px; }
+  .pd-meta-item { flex: 1 1 100%; }
+  .pd-cat { border-radius: 14px; line-height: 1.6; }
+}
+
+@media (max-width: 600px) {
+  .hs-step { padding-top: 0; }
+  .hs-step .hs-k { position: static; display: inline-block; width: auto; max-width: 100%; padding: 3px 10px; margin-bottom: 10px; }
+}

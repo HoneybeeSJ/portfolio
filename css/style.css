@@ -6,6 +6,9 @@
   --bg:        #0E0E10;
   --bg2:       #16161A;
   --purple:    #FFC400;
+  --honey:     #FFC400;
+  --honey-soft: rgba(255,196,0,.12);
+  --honey-border: rgba(255,196,0,.28);
   --purple-d:  #C99700;
   --cyan:      #FFD43B;
   --emerald:   #C99700;
@@ -2551,4 +2554,145 @@ body::before {
   .proj-more-link { display: inline-flex; align-items: center; min-height: 44px; }
   .contact-link { display: inline-flex; align-items: center; min-height: 44px; }
   .nav-logo, .nav-menu { display: inline-flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; }
+}
+
+/* ── 핵심 메시지와 근거 사례 ── */
+#hero .hero-role {
+  display: block;
+  margin-top: 18px;
+  font-size: clamp(1.05rem, 1.6vw, 1.3rem);
+  font-weight: 600;
+  line-height: 1.6;
+}
+#hero .hero-role #typed-el {
+  display: block;
+  height: auto;
+  min-height: 2.8em;
+  line-height: 1.4;
+  white-space: normal;
+}
+#hero .hero-role strong { display: block; white-space: normal; }
+#hero .hero-headline {
+  display: block;
+  margin-top: 18px;
+  color: var(--text);
+  font-size: clamp(2.05rem, 3.6vw, 3.5rem);
+  line-height: 1.28;
+  word-break: keep-all;
+  letter-spacing: -0.035em;
+}
+#hero .hero-bio { max-width: 560px; word-break: keep-all; }
+.hero-principles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  list-style: none;
+  margin: 24px 0 0;
+  padding: 0;
+  font-size: 0.86rem;
+  color: var(--text);
+}
+.hero-principles a { display: inline-flex; align-items: center; min-height: 44px; }
+.hero-principles a:hover { color: var(--purple); }
+.principle-evidence {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 20px;
+  padding-top: 14px;
+  border-top: 1px solid var(--glass-border);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--text);
+}
+.principle-evidence a {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 4px;
+  min-height: 68px;
+  padding: 10px;
+  border: 1px solid var(--glass-border);
+  border-radius: 10px;
+  background: rgba(255,255,255,0.035);
+  word-break: keep-all;
+  transition: border-color 0.2s, background 0.2s;
+}
+.principle-evidence a:hover {
+  color: var(--text);
+  border-color: var(--honey-border);
+  background: var(--honey-soft);
+}
+.evidence-name { font-size: 0.8rem; font-weight: 600; }
+.evidence-name > span { color: var(--purple); }
+.evidence-note { font-size: 0.73rem; line-height: 1.5; color: var(--text-muted); }
+.proj-subcard-featured { grid-column: 1 / -1; }
+.proj-subcard-featured .psc-desc { max-width: 72ch; }
+.hero-principles a:focus-visible,
+.principle-evidence a:focus-visible { outline: 2px solid var(--purple); outline-offset: 4px; border-radius: 3px; }
+#competency .comp-card { scroll-margin-top: calc(var(--nav-h) + 24px); }
+#projects [id^="project-"] { scroll-margin-top: calc(var(--nav-h) + 24px); }
+.footer-principles { margin-bottom: 12px; color: var(--text-muted); font-size: 0.85rem; word-break: keep-all; }
+@media (max-width: 980px) {
+  #hero .hero-profile { order: 0; }
+  .hero-principles { justify-content: center; }
+}
+
+/* 통합 소개 문구와 핵심 경력의 우선순위 */
+#hero .hero-role { font-size: clamp(1.7rem, 2.7vw, 2.55rem); line-height: 1.4; letter-spacing: -0.025em; }
+#hero .hero-role #typed-el { min-height: 2.8em; }
+#hero .hero-role strong { margin-top: 8px; font-size: clamp(1.15rem, 1.8vw, 1.65rem); line-height: 1.55; }
+.footer-careers { justify-content: center; margin: 8px 0 22px; }
+@media (max-width: 600px) {
+  #hero .hero-role { font-size: 1.7rem; }
+  #hero .hero-role #typed-el { min-height: 2.8em; }
+}
+
+/* 2026-10-02: 소개 간격, 균일한 프로젝트 카드, 상시 TOP */
+#hero .hero-role { font-size: clamp(1.9rem, 3.1vw, 2.8rem); line-height: 1.3; }
+#hero .hero-role #typed-el { min-height: 2.6em; line-height: 1.3; }
+#hero .hero-role strong { margin-top: 4px; }
+.proj-subgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 1fr; }
+.proj-subcard { min-width: 0; min-height: 320px; }
+.proj-subcard-featured { grid-column: auto; }
+.psc-head { flex-wrap: wrap; }
+.psc-badge { max-width: 100%; white-space: normal; }
+#projects .proj-group { scroll-margin-top: calc(var(--nav-h) + 24px); }
+.back-to-top {
+  position: fixed; right: max(20px, env(safe-area-inset-right)); bottom: max(20px, env(safe-area-inset-bottom));
+  z-index: 110; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  width: 52px; height: 56px; border-radius: 12px; border: 1px solid var(--honey-border);
+  background: #19180f; color: var(--honey); box-shadow: 0 4px 18px rgba(0,0,0,.3);
+  font-size: .7rem; font-weight: 700; line-height: 1.4;
+}
+.back-to-top > span:first-child { font-size: 1.25rem; }
+.back-to-top:hover { background: #302910; }
+.back-to-top:focus-visible { outline: 2px solid var(--honey); outline-offset: 4px; }
+@media (max-width: 600px) {
+  #hero .hero-role { font-size: 1.9rem; }
+  .proj-subgrid { grid-template-columns: minmax(0, 1fr); }
+  .back-to-top { right: 12px; bottom: max(12px, env(safe-area-inset-bottom)); width: 46px; height: 50px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+#hero .hero-role #typed-el { display: flex; align-items: flex-end; }
+
+#page-top { position: absolute; top: 0; left: 0; width: 0; height: 0; scroll-margin-top: 0; }
+
+/* 작은 화면의 소개 중앙정렬과 보유기술의 연속 배치 */
+@media (max-width: 980px) {
+  #hero .hero-role, #hero .hero-role strong { text-align: center; }
+  #hero .hero-role #typed-el { justify-content: center; text-align: center; }
+}
+.stack-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (min-width: 701px) and (max-width: 1099px) {
+  .stack-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stack-card:nth-child(1) { grid-column: 1; grid-row: 1; }
+  .stack-card:nth-child(2) { grid-column: 2; grid-row: 1 / span 2; }
+  .stack-card:nth-child(3) { grid-column: 1; grid-row: 2; }
+}
+@media (max-width: 700px) {
+  .stack-grid { grid-template-columns: minmax(0, 1fr); }
+  .stack-card { min-width: 0; }
 }

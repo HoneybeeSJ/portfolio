@@ -7,20 +7,23 @@
   var HAS_ST   = HAS_GSAP && (typeof ScrollTrigger !== 'undefined');
   if (HAS_ST) gsap.registerPlugin(ScrollTrigger);
 
-  /* ── Typed.js hero subtitle ── */
-  if (typeof Typed !== 'undefined') {
+  /* ── Four introduction phrases, followed by the planner's role ── */
+  const typedEl = document.getElementById('typed-el');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (typedEl && typeof Typed !== 'undefined' && !reduceMotion) {
+    typedEl.textContent = '';
     new Typed('#typed-el', {
       strings: [
-        '변화를 기회로 만드는',
-        '사람의 문제를 먼저 정의하는',
-        '반복 업무를 시스템으로 바꾸는',
-        '운영과 사람을 잇는',
+        '현장의 요구를 사람이 쓰는 구조로 바꾸는',
+        '현장 요구를 실행 가능한 구조로 바꾸는',
+        '사람이 이해하고 쓸 수 있도록 설명·조율하는',
+        '검수와 인수인계까지 책임지는',
       ],
-      typeSpeed:  58,
-      backSpeed:  34,
-      backDelay:  2200,
-      loop:       true,
-      cursorChar: '|',
+      typeSpeed: 58,
+      backSpeed: 34,
+      backDelay: 2200,
+      loop: true,
+      showCursor: false,
     });
   }
 
