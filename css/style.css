@@ -2997,3 +2997,14 @@ body::before {
 .pv-facts > div { grid-template-columns: 58px minmax(0, 1fr); }
 .pv-flow { display: block; font-size: 0.85rem; line-height: 1.5; color: var(--text-muted); word-break: keep-all; }
 /* ═══ HOME v4 END ═══ */
+
+/* 경력사항: 증명사진을 인적 사항 카드 옆에 복원 (2026-10-08) */
+#experience .profile-info { display: flex; gap: 24px; align-items: stretch; justify-content: center; }
+#experience .profile-info > .hero-meta { margin: 0; max-width: 520px; width: auto; flex: 1 1 0; }
+.profile-photo { margin: 0; flex: 0 0 300px; border-radius: 10px; overflow: hidden; border: 1px solid rgba(255,196,0,.26); background: #fff; }
+.profile-photo img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 24%; }
+@media (max-width: 640px) {
+  #experience .profile-info { flex-direction: column; align-items: center; }
+  .profile-photo { flex: none; width: 180px; aspect-ratio: 3 / 4; }
+  #experience .profile-info > .hero-meta { width: 100%; }
+}
