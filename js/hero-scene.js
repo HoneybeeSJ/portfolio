@@ -142,10 +142,13 @@
   }
 
   let rafId = null;
+  let skipFrame = false;
   function loop() {
-    t += 16;
-    draw();
     rafId = requestAnimationFrame(loop);
+    skipFrame = !skipFrame;
+    if (skipFrame) return;   /* 30fps 상한 */
+    t += 32;
+    draw();
   }
 
   window.addEventListener('resize', resize);

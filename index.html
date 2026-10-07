@@ -26,7 +26,7 @@
   <meta name="twitter:image" content="https://honeybeesj.github.io/portfolio/assets/og-image.jpg" />
 
   <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
-  <link rel="stylesheet" href="css/style.css?v=20261002-5" />
+  <link rel="stylesheet" href="css/style.css?v=20261008-2" />
 </head>
 
 <body>
@@ -58,6 +58,7 @@
         <li><a href="#skills">보유기술</a></li>
         <li><a href="#introduce">자기소개</a></li>
         <li><a href="#contact">연락처</a></li>
+        <li><a class="nav-resume" href="assets/이승재_이력서.pdf?v=20261001" target="_blank" rel="noopener">이력서</a></li>
       </ul>
       <button class="nav-menu" id="menuBtn" aria-label="메뉴">
         <span></span><span></span><span></span>
@@ -75,35 +76,34 @@
       <li><a href="#skills" class="mob-link">보유기술</a></li>
       <li><a href="#introduce" class="mob-link">자기소개</a></li>
       <li><a href="#contact" class="mob-link">연락처</a></li>
+      <li><a href="assets/이승재_이력서.pdf?v=20261001" class="mob-link" target="_blank" rel="noopener">이력서 PDF</a></li>
     </ul>
   </div>
 
   <!-- ── Hero ────────────────────────────────────── -->
   <section id="hero">
-    <div class="hero-content">
-      <div class="hero-copy">
+    <div class="hv">
+      <div class="hv-copy">
         <div class="hero-tag" data-reveal>AX · 업무 시스템 기획</div>
-        <h1 class="hero-role" data-reveal><span id="typed-el">현장의 요구를 사람이 쓰는 구조로 바꾸는</span><strong>AX·업무 시스템 기획자 이<span class="accent">승</span>재</strong></h1>
-        <p class="hero-bio" data-reveal>고객사 제안용 CRM의 요구·화면을 설계하고, 반복 검수를 AI 스킬로 정리했습니다. 한살림에서 쌓은 제도 설계와 협업 경험을 바탕으로, 현장에서 사용할 업무 시스템을 기획합니다.</p>
+        <h1 class="hv-title" data-reveal>현장의 요구를<br />사람이 쓰는 <span class="accent">구조</span>로<br />바꿉니다.</h1>
+        <p class="hv-bio" data-reveal>고객사 제안용 CRM의 요구·화면을 설계하고, 반복 검수를 AI 스킬로 정리했습니다. 한살림에서 쌓은 제도 설계와 협업 경험을 바탕으로, 현장에서 사용할 업무 시스템을 기획합니다.</p>
+        <div class="hv-person" data-reveal>
+          <img width="900" height="1200" src="assets/profile.jpg" alt="이승재 프로필 사진" />
+          <div>
+            <p class="hv-name">이승재</p>
+            <p class="hv-role"><span>AX·업무 시스템 기획</span><span class="hv-career">교육 기획·운영 담당 약 2년을 포함한 정규 경력 3년 11개월</span><span>현재 엑스퍼트컨설팅 인턴 재직 중</span></p>
+          </div>
+        </div>
         <div class="hero-cta" data-reveal>
           <a href="#competency" class="btn-primary">일하는 기준과 사례</a>
           <a href="#contact" class="btn-ghost">연락하기</a>
+          <a href="assets/이승재_이력서.pdf?v=20261001" class="btn-ghost" target="_blank" rel="noopener">이력서 PDF</a>
         </div>
       </div>
-      <div class="hero-profile glass-card" data-reveal>
-        <div class="hero-photo-wrap">
-          <img src="assets/profile.jpg" alt="이승재 프로필 사진" />
-        </div>
-        <div class="hero-profile-text">
-          <p class="hero-profile-name">이승재</p>
-          <p class="hero-profile-role">AX · 업무 시스템 기획</p>
-          <div class="hero-profile-tags">
-            <span>요구분석·업무 설계</span>
-            <span>AI 도구 기획·검수</span>
-            <span>설명·협업</span>
-            <span>교육·운영 경험</span>
-          </div>
-        </div>
+      <div class="hv-visual" data-reveal role="group" aria-label="대표 작업물 3종">
+        <a class="hv-shot hv-a" href="#principle-structure"><img width="1215" height="1000" src="assets/projects/crm-detail.jpg" alt="영업 CRM 프로토타입 화면 (합성 데이터)" /><span class="hv-cap"><b>01</b>요구를 구조로</span></a>
+        <a class="hv-shot hv-b" href="#principle-cooperation"><img width="1280" height="720" src="assets/projects/hansalim-okr-2.jpg" alt="OKR 설명자료 슬라이드" /><span class="hv-cap"><b>02</b>설명과 조율</span></a>
+        <a class="hv-shot hv-c" href="projects/ai-secretary-course.html"><img width="1536" height="864" src="assets/projects/ai-secretary-cover.jpg" alt="나만의 AI 비서 만들기 제안발표 표지" /><span class="hv-cap"><b>03</b>AI 교육 설계</span></a>
       </div>
     </div>
   </section>
@@ -116,233 +116,251 @@
         <p class="sec-sub">현장 요구의 구조화, 사람과의 조율, 검수와 인수인계. <strong>각 기준을 실제로 적용한 사례</strong>를 연결했습니다.</p>
       </div>
 
-      <div class="comp-grid">
+      <div class="cp-list">
 
-        <!-- ① 현장 요구의 구조화 -->
-        <div class="comp-card glass-card" id="principle-structure" data-reveal>
-          <div class="comp-head">
-            <span class="comp-num">01</span>
-            <div>
-              <span class="comp-kicker">요구분석 · 판단</span>
-              <h3 class="comp-title">현장 요구를<br />실행 가능한 구조로 바꾸는</h3>
-            </div>
+        <article class="cp-row" id="principle-structure" data-reveal>
+          <div class="cp-lead">
+            <span class="cp-kicker">요구분석과 판단</span>
+            <h3 class="cp-title">현장 요구를<br />실행 가능한 구조로 바꾸는</h3>
           </div>
-          <ul class="comp-list">
-            <li><span class="cl-k">문제 정의</span> 반복 업무와 흩어진 기록에서 필요한 정보·절차를 먼저 정리합니다.</li>
-            <li><span class="cl-k">설계 판단</span> 필요한 단계와 입력을 남기고, 불필요한 항목은 덜어냅니다.</li>
-            <li><span class="cl-k">적용 사례</span> CRM의 고객 흐름 설계, 학습모임의 신청·정산 체계.</li>
-          </ul>
-          <div class="principle-evidence" aria-label="요구 구조화 사례">
-            <a href="#project-crm"><span class="evidence-name">CRM 프로토타입 <span aria-hidden="true">↓</span></span><span class="evidence-note">요구·화면 설계</span></a>
-            <a href="#project-learning"><span class="evidence-name">학습모임 <span aria-hidden="true">↓</span></span><span class="evidence-note">수요를 운영 제도로</span></a>
+          <div class="cp-body">
+            <dl class="cp-points">
+              <div><dt>문제 정의</dt><dd>반복 업무와 흩어진 기록에서 필요한 정보·절차를 먼저 정리합니다.</dd></div>
+              <div><dt>설계 판단</dt><dd>필요한 단계와 입력을 남기고, 불필요한 항목은 덜어냅니다.</dd></div>
+            </dl>
+            <p class="cp-cases"><b>적용 사례</b> CRM의 고객 흐름 설계, 학습모임의 신청·정산 체계.</p>
+            <ul class="cp-links" aria-label="요구 구조화 사례">
+              <li><a href="#project-crm">CRM 프로토타입 <span aria-hidden="true">↓</span><em>요구·화면 설계</em></a></li>
+              <li><a href="#project-learning">학습모임 <span aria-hidden="true">↓</span><em>수요를 운영 제도로</em></a></li>
+            </ul>
           </div>
-        </div>
+        </article>
 
-        <!-- ② 설명과 조율 -->
-        <div class="comp-card glass-card" id="principle-cooperation" data-reveal>
-          <div class="comp-head">
-            <span class="comp-num">02</span>
-            <div>
-              <span class="comp-kicker">설명 · 협업</span>
-              <h3 class="comp-title">사람이 이해하고 쓰도록<br />설명·조율하는</h3>
-            </div>
+        <article class="cp-row" id="principle-cooperation" data-reveal>
+          <div class="cp-lead">
+            <span class="cp-kicker">설명과 협업</span>
+            <h3 class="cp-title">사람이 이해하고 쓰도록<br />설명·조율하는</h3>
           </div>
-          <ul class="comp-list">
-            <li><span class="cl-k">상대 이해</span> 구성원의 필요와 새로운 제도에 대한 우려를 듣습니다.</li>
-            <li><span class="cl-k">방식 조정</span> 발표만으로 설명이 닿지 않으면 1:1 대화와 쉬운 예시로 바꿉니다.</li>
-            <li><span class="cl-k">적용 사례</span> OKR 도입 설명·설득, 내부 강사진과 입문교육 준비·리허설.</li>
-          </ul>
-          <div class="principle-evidence" aria-label="설명과 조율 사례">
-            <a href="#project-okr"><span class="evidence-name">OKR <span aria-hidden="true">↓</span></span><span class="evidence-note">설명 방식 변경</span></a>
-            <a href="#project-onboarding"><span class="evidence-name">입문교육 <span aria-hidden="true">↓</span></span><span class="evidence-note">강사진과 운영 준비</span></a>
+          <div class="cp-body">
+            <dl class="cp-points">
+              <div><dt>상대 이해</dt><dd>구성원의 필요와 새로운 제도에 대한 우려를 듣습니다.</dd></div>
+              <div><dt>방식 조정</dt><dd>발표만으로 설명이 닿지 않으면 1:1 대화와 쉬운 예시로 바꿉니다.</dd></div>
+            </dl>
+            <p class="cp-cases"><b>적용 사례</b> OKR 도입 설명·설득, 내부 강사진과 입문교육 준비·리허설.</p>
+            <ul class="cp-links" aria-label="설명과 조율 사례">
+              <li><a href="#project-okr">OKR <span aria-hidden="true">↓</span><em>설명 방식 변경</em></a></li>
+              <li><a href="#project-onboarding">입문교육 <span aria-hidden="true">↓</span><em>강사진과 운영 준비</em></a></li>
+            </ul>
           </div>
-        </div>
+        </article>
 
-        <!-- ③ 검수와 인수인계 -->
-        <div class="comp-card glass-card" id="principle-delivery" data-reveal>
-          <div class="comp-head">
-            <span class="comp-num">03</span>
-            <div>
-              <span class="comp-kicker">검수 · 책임</span>
-              <h3 class="comp-title">검수와 인수인계까지<br />책임지는</h3>
-            </div>
+        <article class="cp-row" id="principle-delivery" data-reveal>
+          <div class="cp-lead">
+            <span class="cp-kicker">검수와 책임</span>
+            <h3 class="cp-title">검수와 인수인계까지<br />책임지는</h3>
           </div>
-          <ul class="comp-list">
-            <li><span class="cl-k">품질 기준</span> 결과물이 쓰일 환경과 실제로 고쳐야 할 오류를 먼저 정합니다.</li>
-            <li><span class="cl-k">예외 처리</span> 확인되지 않은 것은 보류하고, 다음 담당자가 확인할 조건을 남깁니다.</li>
-            <li><span class="cl-k">적용 사례</span> 강의장별 폰트·화면비 준비, 검수 스킬 결과의 최종 확인.</li>
-          </ul>
-          <div class="principle-evidence" aria-label="검수와 인수인계 사례">
-            <a href="#project-usb"><span class="evidence-name">USB 패키지 <span aria-hidden="true">↓</span></span><span class="evidence-note">환경·예외·인수인계</span></a>
-            <a href="#project-proofreader"><span class="evidence-name">검수 스킬 <span aria-hidden="true">↓</span></span><span class="evidence-note">기준·결과 확인</span></a>
+          <div class="cp-body">
+            <dl class="cp-points">
+              <div><dt>품질 기준</dt><dd>결과물이 쓰일 환경과 실제로 고쳐야 할 오류를 먼저 정합니다.</dd></div>
+              <div><dt>예외 처리</dt><dd>확인되지 않은 것은 보류하고, 다음 담당자가 확인할 조건을 남깁니다.</dd></div>
+            </dl>
+            <p class="cp-cases"><b>적용 사례</b> 강의장별 폰트·화면비 준비, 검수 스킬 결과의 최종 확인.</p>
+            <ul class="cp-links" aria-label="검수와 인수인계 사례">
+              <li><a href="#project-usb">USB 패키지 <span aria-hidden="true">↓</span><em>환경·예외·인수인계</em></a></li>
+              <li><a href="#project-proofreader">검수 스킬 <span aria-hidden="true">↓</span><em>기준·결과 확인</em></a></li>
+            </ul>
           </div>
-        </div>
+        </article>
 
       </div>
     </div>
   </section>
 
-  <!-- ── Projects ─────────────────────────────────── -->
+  <!-- ── Projects (시안: 기준별 배너 + 전체 목록) ───────── -->
   <section id="projects">
     <div class="container">
       <div class="sec-header">
         <h2 class="sec-title">대표 프로젝트</h2>
-        <p class="sec-sub">요구를 구조로 바꾸고, 사람과 조율하고, 실행 조건을 검수한 사례입니다. 실제 운영 경험과 제안용 프로토타입·교육 설계 프로젝트를 구분했습니다.</p>
+        <p class="sec-sub"><strong>대표 사례 세 건</strong>을 먼저 넘겨 보고, 아래에서 전체 프로젝트를 확인할 수 있습니다.</p>
       </div>
-      <div class="proj-stack">
 
-        <!-- 엑스퍼트컨설팅 프로젝트 그룹 -->
-        <div class="proj-group glass-card" id="expert" data-reveal>
-          <div class="proj-group-head">
-            <span class="proj-group-icon ai"><i class="ph ph-buildings" aria-hidden="true"></i></span>
-            <div class="proj-group-id">
-              <span class="proj-group-kicker">AX · On-site Impact · 엑스퍼트컨설팅 2026.08~</span>
-              <h3>엑스퍼트컨설팅 · BX컨설팅 프로젝트</h3>
+      <!-- 배너: 기준 3개 = 슬라이드 3장 -->
+      <div class="pv-banner" id="pvBanner" aria-roledescription="carousel" aria-label="기준별 대표 사례">
+        <div class="pv-tabs" id="pvTabs"></div>
+
+        <div class="pv-stage" id="pvStage">
+
+          <article class="pv-slide" data-num="01" data-k="요구분석 · 판단" data-title="영업 CRM 프로토타입">
+            <figure class="pv-media" style="--pbg:#f4f6f8">
+              <img width="1215" height="1000" src="assets/projects/crm-detail.jpg" alt="영업 CRM 프로토타입의 상담 목록·상세 화면" />
+              <a class="pv-media-link" draggable="false" href="projects/crm-sales-workspace.html" aria-label="영업 CRM 프로토타입 자세히 보기"></a>
+              <figcaption class="pv-note">합성 데이터 데모 화면</figcaption>
+            </figure>
+            <div class="pv-copy">
+              <p class="pv-meta">엑스퍼트컨설팅 · 2026.09 · 고객사 제안용 프로토타입</p>
+              <h3 class="pv-problem">
+                <span class="ln"><span>상담부터 공사까지를</span></span>
+                <span class="ln"><span>5단계 흐름으로 다시 짜고,</span></span>
+                <span class="ln"><span>처음 쓰는 직원도 질문 없이</span></span>
+                <span class="ln"><span>쓰도록 화면을 덜어냈습니다.</span></span>
+              </h3>
+              <div class="pv-chips pv-fade"><span>5단계 흐름</span><span>개선 과제 14건</span><span>3주 완성</span></div>
+              <dl class="pv-facts pv-fade">
+                <div><dt>작업 흐름</dt><dd>요구 정의 → 화면 결정 → 구현 → 검수</dd></div>
+                <div><dt>내 역할</dt><dd><b>요구 정의 · 화면 결정 · 검수.</b> 구현은 AI 에이전트 4역할과 승인 게이트로 진행했습니다.</dd></div>
+                <div><dt>범위</dt><dd>제안용 프로토타입이며, 실제 운영 중인 시스템은 아닙니다.</dd></div>
+              </dl>
+              <a class="pv-cta pv-fade" href="projects/crm-sales-workspace.html">자세히 보기 <span class="arrow">→</span></a>
             </div>
-            <span class="proj-group-count">3</span>
+          </article>
+
+          <article class="pv-slide" data-num="02" data-k="설명 · 협업" data-title="OKR 도입 기획">
+            <figure class="pv-media" style="--pbg:#ffffff">
+              <img width="1280" height="720" src="assets/projects/hansalim-okr-2.jpg" alt="OKR 설명자료 중 'WHY OKR? 다양한 방해 요인' 슬라이드" />
+              <a class="pv-media-link" draggable="false" href="projects/hansalim-okr.html" aria-label="OKR 도입 기획 자세히 보기"></a>
+              <figcaption class="pv-note">설명자료 21장 중</figcaption>
+            </figure>
+            <div class="pv-copy">
+              <p class="pv-meta">한살림동서울 · 조직문화 · 변화관리</p>
+              <h3 class="pv-problem">
+                <span class="ln"><span>생소한 성과관리 개념을</span></span>
+                <span class="ln"><span>발표만으로는 전하지 못해,</span></span>
+                <span class="ln"><span>1:1 대화와 쉬운 예시로</span></span>
+                <span class="ln"><span>설명 방식을 바꿨습니다.</span></span>
+              </h3>
+              <div class="pv-chips pv-fade"><span>21장 자료</span><span>8명 TFT</span></div>
+              <dl class="pv-facts pv-fade">
+                <div><dt>작업 흐름</dt><dd>설명자료 제작 → 1:1 설득 → 도입 공감대</dd></div>
+                <div><dt>내 역할</dt><dd><b>직접 기획·제작.</b> 구성원 눈높이의 설명자료를 만들고 1:1로 설득했습니다.</dd></div>
+                <div><dt>결과</dt><dd>OKR 도입에 대한 공감대 형성</dd></div>
+              </dl>
+              <a class="pv-cta pv-fade" href="projects/hansalim-okr.html">자세히 보기 <span class="arrow">→</span></a>
+            </div>
+          </article>
+
+          <article class="pv-slide" data-num="03" data-k="교육 설계 · 전달" data-title="나만의 AI 비서 만들기">
+            <figure class="pv-media" style="--pbg:#FAF7F0">
+              <img width="1536" height="864" src="assets/projects/ai-secretary-roadmap.jpg" alt="나만의 AI 비서 만들기 8시간 운영 흐름 (7개 단원)" />
+              <a class="pv-media-link" draggable="false" href="projects/ai-secretary-course.html" aria-label="나만의 AI 비서 만들기 자세히 보기"></a>
+              <figcaption class="pv-note">제안발표덱 19장 중</figcaption>
+            </figure>
+            <div class="pv-copy">
+              <p class="pv-meta">서울시 매력일자리 교육 · 2026.06 · 교육과정 설계</p>
+              <h3 class="pv-problem">
+                <span class="ln"><span>반복 업무를 가진 실무자가</span></span>
+                <span class="ln"><span>8시간 뒤 자기 AI 비서의</span></span>
+                <span class="ln"><span>운영 매뉴얼을 들고 돌아가는</span></span>
+                <span class="ln"><span>과정을 설계했습니다.</span></span>
+              </h3>
+              <div class="pv-chips pv-fade"><span>7개 모듈</span><span>8시간</span><span>회의비서 데모</span></div>
+              <dl class="pv-facts pv-fade">
+                <div><dt>작업 흐름</dt><dd>진단 → 설계 → 구현 → 테스트 → 운영</dd></div>
+                <div><dt>내 역할</dt><dd><b>단독 기획·설계.</b> 커리큘럼 · 교안 · 제안발표덱 · 회의비서 데모를 직접 만들었습니다.</dd></div>
+                <div><dt>범위</dt><dd>기획·제작 프로젝트입니다.</dd></div>
+              </dl>
+              <a class="pv-cta pv-fade" href="projects/ai-secretary-course.html">자세히 보기 <span class="arrow">→</span></a>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="pv-ctrl">
+          <div class="pv-count" id="pvCount"><b>01</b> / 03</div>
+          <button type="button" class="pv-next-label" id="pvNextLabel"></button>
+          <div class="pv-btns">
+            <button type="button" class="pv-btn" id="pvPrev" aria-label="이전 사례">←</button>
+            <button type="button" class="pv-btn" id="pvNext" aria-label="다음 사례">→</button>
           </div>
-          <p class="proj-group-desc"><strong>CRM 요구·화면 설계 → 검수 자동화 → 현장 검수·인수인계</strong> 순으로 소개합니다. 업무 시스템 기획과 연결되는 경험을 먼저 담았습니다.</p>
-          <div class="proj-subgrid">
+        </div>
+      </div>
 
-            <a class="proj-subcard" id="project-crm" href="projects/crm-sales-workspace.html">
-              <div class="psc-head"><span class="psc-icon"><i class="ph ph-kanban" aria-hidden="true"></i></span><span class="psc-date">2026.09</span></div>
-              <h4>영업 CRM 프로토타입</h4>
-              <p class="psc-sub">고객사 CRM 서비스 제안용 프로토타입 · 요구 정의·화면 결정·검수</p>
-              <p class="psc-desc">광고 유입 고객의 상담부터 공사까지를 <strong>5단계 흐름</strong>으로 재설계하고, "처음 쓰는 직원도 질문 없이"라는 기준으로 화면을 덜어냄. 구현은 <strong>AI 에이전트 4역할</strong>과 승인 게이트로 진행.</p>
-              <div class="psc-chips"><span>5단계 흐름</span><span>개선 과제 14건</span><span>3주 완성</span></div>
-              <span class="psc-more">자세히 보기 <span class="arrow">→</span></span>
-            </a>
+      <!-- 전체 목록: 회사·과정별 (실제 운영 / 제안용 / 교육 설계 구분 유지) -->
+      <div class="pv-list" id="pvList">
+        <div class="pv-list-head"><h3>전체 프로젝트</h3><span>9건 · 소속·과정별</span></div>
 
-            <a class="proj-subcard" id="project-proofreader" href="projects/brochure-proofreader.html">
-              <div class="psc-head"><span class="psc-icon"><i class="ph ph-magnifying-glass" aria-hidden="true"></i></span><span class="psc-badge">2026.08</span></div>
-              <h4>브로셔 검수 스킬</h4>
-              <p class="psc-sub">반복 검수를 AI 스킬로 · 실무 13건 사용</p>
-              <p class="psc-desc">인쇄물 시안마다 되풀이되던 오류 확인을, 문맥 모순·과정명·수치·연락처 오류만 골라 <strong>빨간 박스 수정사항 PPT</strong>로 만드는 스킬로 정리. 단순 맞춤법은 제외해 디자인팀이 바로 고칠 것만 남김.</p>
-              <div class="psc-chips"><span>검수 PPT 13건</span><span>원본 무수정</span></div>
-              <span class="psc-more">자세히 보기 <span class="arrow">→</span></span>
-            </a>
-
-            <a class="proj-subcard" id="project-usb" href="projects/usb-lecture-package.html">
-              <div class="psc-head"><span class="psc-icon"><i class="ph ph-package" aria-hidden="true"></i></span><span class="psc-badge">2026.08 ~ 09</span></div>
-              <h4>강의장별 USB 패키지</h4>
-              <p class="psc-sub">현장 환경에 맞춘 자료 구성·검수·인수인계</p>
-              <p class="psc-desc">강의장 <strong>5곳의 발표자료 786장</strong>을 취합하고, 각 강의장에 필요한 폰트와 화면비·비상 자료를 함께 구성했습니다. 미수급 자료와 현장 확인 조건은 검수 문서로 남겼습니다.</p>
-              <div class="psc-chips"><span>강의장 5곳</span><span>786장 통합</span><span>검수·인수인계</span></div>
-              <span class="psc-more">자세히 보기 <span class="arrow">→</span></span>
-            </a>
-
-
-
+        <div class="pv-group" id="expert">
+          <div class="pv-group-head">
+            <span class="pv-kicker">AX · On-site Impact · 엑스퍼트컨설팅 2026.08~</span>
+            <h4>엑스퍼트컨설팅 · BX컨설팅 프로젝트</h4>
+            <p>CRM 요구·화면 설계 → 검수 자동화 → 현장 검수·인수인계 순으로 소개합니다.</p>
           </div>
-          <div class="proj-more-row">
-            <span class="proj-more-label">함께 보기</span>
-            <a class="proj-more-link" href="projects/code-design-drafts.html">코드로 짠 디자인 기획안</a>
-            <a class="proj-more-link" href="projects/hr-fair-conference.html">강의 슬라이드 취합·검수</a>
-            <a class="proj-more-link" href="projects/hr-fair-booth.html">HRD 커뮤니티 부스</a>
-            <a class="proj-more-link" href="projects/ai-work-system.html">개인 AI 업무 환경</a>
+          <a class="pv-row" id="project-crm" href="projects/crm-sales-workspace.html">
+            <span class="pv-th" style="--tb:#f4f6f8"><img width="1215" height="1000" loading="lazy" src="assets/projects/crm-list.jpg" alt="" /></span>
+            <span class="pv-body"><span class="pv-t">영업 CRM 프로토타입</span><span class="pv-s">고객사 CRM 서비스 제안용 프로토타입 · 요구 정의·화면 결정·검수</span><span class="pv-flow">요구 정의 → 화면 결정 → 구현 → 검수</span><span class="pv-rc"><span>5단계 흐름</span><span>개선 과제 14건</span><span>3주 완성</span></span></span>
+            <span class="pv-y">2026.09</span>
+          </a>
+          <a class="pv-row" id="project-proofreader" href="projects/brochure-proofreader.html">
+            <span class="pv-th pv-th-text" aria-hidden="true"><i class="pv-redbox"></i><i></i><i class="pv-redbox s"></i><em>수정사항 PPT</em></span>
+            <span class="pv-body"><span class="pv-t">브로셔 검수 스킬</span><span class="pv-s">반복 검수를 AI 스킬로 · 실무 13건 사용</span><span class="pv-flow">시안 확인 → 오류 선별 → 수정사항 PPT</span><span class="pv-rc"><span>검수 PPT 13건</span><span>원본 무수정</span></span></span>
+            <span class="pv-y">2026.08</span>
+          </a>
+          <a class="pv-row" id="project-usb" href="projects/usb-lecture-package.html">
+            <span class="pv-th pv-th-usb" aria-hidden="true"><span class="cells"><i></i><i></i><i></i><i></i><i></i></span><em>786장 · 5곳</em></span>
+            <span class="pv-body"><span class="pv-t">강의장별 USB 패키지</span><span class="pv-s">현장 환경에 맞춘 자료 구성·검수·인수인계</span><span class="pv-flow">자료 취합 → 폰트·화면비 구성 → 검수 → 인수인계</span><span class="pv-rc"><span>강의장 5곳</span><span>786장 통합</span><span>검수·인수인계</span></span></span>
+            <span class="pv-y">2026.08 ~ 09</span>
+          </a>
+          <div class="pv-more">
+            <span>함께 보기</span>
+            <a href="projects/code-design-drafts.html">코드로 짠 디자인 기획안</a>
+            <a href="projects/hr-fair-conference.html">강의 슬라이드 취합·검수</a>
+            <a href="projects/hr-fair-booth.html">HRD 커뮤니티 부스</a>
+            <a href="projects/ai-work-system.html">개인 AI 업무 환경</a>
           </div>
         </div>
 
-        <!-- 한살림 프로젝트 그룹 -->
-        <div class="proj-group glass-card" id="hansalim" data-reveal>
-          <div class="proj-group-head">
-            <span class="proj-group-icon hansal"><i class="ph ph-plant" aria-hidden="true"></i></span>
-            <div class="proj-group-id">
-              <span class="proj-group-kicker">On-site Impact · 한살림동서울 2022.06~2024.04</span>
-              <h3>한살림 교육·조직 프로젝트</h3>
-            </div>
-            <span class="proj-group-count">3</span>
+        <div class="pv-group" id="hansalim">
+          <div class="pv-group-head">
+            <span class="pv-kicker">On-site Impact · 한살림동서울 2022.06~2024.04</span>
+            <h4>한살림 교육·조직 프로젝트</h4>
+            <p>구성원의 수요를 운영 제도로 바꾸고, 내부 강사진과 협업하고, 생소한 제도의 도입을 설명·조율한 경험입니다.</p>
           </div>
-          <p class="proj-group-desc">구성원의 수요를 운영 제도로 바꾸고, 내부 강사진과 협업하고, 생소한 제도의 도입을 설명·조율한 경험입니다. <strong>교육기획에서 배운 요구분석과 소통</strong>이 업무 시스템 기획의 출발점입니다.</p>
-          <div class="proj-subgrid">
-
-            <a class="proj-subcard" id="project-learning" href="projects/hansalim-moim.html">
-              <div class="psc-head"><span class="psc-icon"><i class="ph ph-books" aria-hidden="true"></i></span><span class="psc-badge">직접 기획·제작</span></div>
-              <h4>내부 학습모임 시스템</h4>
-              <p class="psc-sub">제도 설계</p>
-              <p class="psc-desc">수요조사로 학습 욕구를 확인하고 신청·운영·활동비 정산 매뉴얼까지 신규 설계.</p>
-              <div class="psc-chips"><span>만족도 4.86</span><span>4개 모임</span><span>정산 체계</span></div>
-              <span class="psc-more">자세히 보기 <span class="arrow">→</span></span>
-            </a>
-
-            <a class="proj-subcard" id="project-okr" href="projects/hansalim-okr.html">
-              <div class="psc-head"><span class="psc-icon"><i class="ph ph-target" aria-hidden="true"></i></span><span class="psc-badge">직접 기획·제작</span></div>
-              <h4>OKR 도입 기획</h4>
-              <p class="psc-sub">조직문화 · 변화관리</p>
-              <p class="psc-desc">생소한 성과관리 개념을 21장 자료와 1:1 설득으로 풀어내 OKR 도입 공감대 형성.</p>
-              <div class="psc-chips"><span>21장 자료</span><span>8명 TFT</span></div>
-              <span class="psc-more">자세히 보기 <span class="arrow">→</span></span>
-            </a>
-
-            <a class="proj-subcard" id="project-onboarding" href="projects/hansalim-ipmun.html">
-              <div class="psc-head"><span class="psc-icon"><i class="ph ph-graduation-cap" aria-hidden="true"></i></span><span class="psc-badge">직접 기획·제작</span></div>
-              <h4>온라인 입문교육</h4>
-              <p class="psc-sub">교육 기획·운영</p>
-              <p class="psc-desc">기존 통합 입문교육을 동서울 자체 온보딩 교육으로 전환하고 내부 강사진 리허설·온라인 운영 체계 구축.</p>
-              <div class="psc-chips"><span>만족도 4.28</span><span>2회 40명</span><span>리허설 8~12회</span></div>
-              <span class="psc-more">자세히 보기 <span class="arrow">→</span></span>
-            </a>
-
-          </div>
+          <a class="pv-row" id="project-learning" href="projects/hansalim-moim.html">
+            <span class="pv-th" style="--tb:#fff"><img width="720" height="1040" loading="lazy" src="assets/projects/hansalim-moim-1.jpg" alt="" /></span>
+            <span class="pv-body"><span class="pv-t">내부 학습모임 시스템</span><span class="pv-s">제도 설계 · 직접 기획·제작</span><span class="pv-flow">수요조사 → 신청·운영 → 활동비 정산</span><span class="pv-rc"><span>만족도 4.86 / 5.0 (참가자 평가)</span><span>4개 모임</span><span>정산 체계</span></span></span>
+            <span class="pv-y">한살림</span>
+          </a>
+          <a class="pv-row" id="project-okr" href="projects/hansalim-okr.html">
+            <span class="pv-th" style="--tb:#fff"><img width="1280" height="720" loading="lazy" src="assets/projects/hansalim-okr-1.jpg" alt="" /></span>
+            <span class="pv-body"><span class="pv-t">OKR 도입 기획</span><span class="pv-s">조직문화 · 변화관리 · 직접 기획·제작</span><span class="pv-flow">설명자료 제작 → 1:1 설득 → 도입 공감대</span><span class="pv-rc"><span>21장 자료</span><span>8명 TFT</span></span></span>
+            <span class="pv-y">한살림</span>
+          </a>
+          <a class="pv-row" id="project-onboarding" href="projects/hansalim-ipmun.html">
+            <span class="pv-th" style="--tb:#FFF1C1"><img width="794" height="1123" loading="lazy" src="assets/projects/hansalim-ipmun-poster.jpg" alt="" /></span>
+            <span class="pv-body"><span class="pv-t">온라인 입문교육</span><span class="pv-s">교육 기획·운영 · 직접 기획·제작</span><span class="pv-flow">자체 교육으로 전환 → 강사진 리허설 → 온라인 운영</span><span class="pv-rc"><span>만족도 4.28 / 5.0 (참가자 평가)</span><span>2회 40명</span><span>리허설 8~12회</span></span></span>
+            <span class="pv-y">한살림</span>
+          </a>
         </div>
 
-        <!-- 서울시 매력일자리 교육 그룹 -->
-        <div class="proj-group glass-card" id="seoul-training" data-reveal>
-          <div class="proj-group-head">
-            <span class="proj-group-icon edu"><i class="ph ph-books" aria-hidden="true"></i></span>
-            <div class="proj-group-id">
-              <span class="proj-group-kicker">AI 과정개발 및 교육담당자 양성과정 · 2026.04 ~ 07</span>
-              <h3>서울시 매력일자리 교육</h3>
-            </div>
-            <span class="proj-group-count">2</span>
+        <div class="pv-group" id="seoul-training">
+          <div class="pv-group-head">
+            <span class="pv-kicker">AI 과정개발 및 교육담당자 양성과정 · 2026.04 ~ 07</span>
+            <h4>서울시 매력일자리 교육</h4>
+            <p>8시간 과정은 기획·제작 프로젝트이며, 15분 강의는 직접 시연·진행한 경험입니다.</p>
           </div>
-          <p class="proj-group-desc">복잡한 AI 활용 구조를 <strong>실무자가 이해하고 따라 할 수 있는 학습 흐름</strong>으로 설계했습니다. 8시간 과정은 기획·제작 프로젝트이며, 15분 강의는 직접 시연·진행한 경험입니다.</p>
-          <div class="proj-subgrid">
-
-            <a class="proj-subcard" href="projects/ai-secretary-course.html">
-              <div class="psc-head"><span class="psc-icon"><i class="ph ph-robot" aria-hidden="true"></i></span><span class="psc-date">2026.06</span></div>
-              <h4>나만의 AI 비서 만들기 교육과정</h4>
-              <p class="psc-sub">8시간 실습형 과정 · 단독 기획·설계</p>
-              <p class="psc-desc">실무자가 반복 업무를 진단해 <strong>개인 AI 비서 운영 매뉴얼</strong>을 완성하는 Antigravity 8시간 과정. 커리큘럼·교안·제안발표덱·회의비서 데모까지 직접 제작.</p>
-              <div class="psc-chips"><span>7개 모듈</span><span>회의비서 데모</span></div>
-              <span class="psc-more">자세히 보기 <span class="arrow">→</span></span>
-            </a>
-
-            <a class="proj-subcard" href="projects/harness-engineering.html">
-              <div class="psc-head"><span class="psc-icon"><i class="ph ph-hexagon" aria-hidden="true"></i></span><span class="psc-date">2026.05.14</span></div>
-              <h4>하네스 엔지니어링 기반 AI 업무 구조화 강의</h4>
-              <p class="psc-sub">15분 마이크로러닝 · 직접 설계·진행</p>
-              <p class="psc-desc">기획·콘텐츠·검수 역할별 <code>.md</code> 에이전트 3종과 사람 피드백 루프를 <strong>Antigravity 라이브 시연</strong>으로 풀어낸 강의.</p>
-              <div class="psc-chips"><span>에이전트 3종</span><span>라이브 시연</span></div>
-              <span class="psc-more">자세히 보기 <span class="arrow">→</span></span>
-            </a>
-
-          </div>
+          <a class="pv-row" href="projects/ai-secretary-course.html">
+            <span class="pv-th" style="--tb:#FAF7F0"><img width="1536" height="864" loading="lazy" src="assets/projects/ai-secretary-cover.jpg" alt="" /></span>
+            <span class="pv-body"><span class="pv-t">나만의 AI 비서 만들기 교육과정</span><span class="pv-s">8시간 실습형 과정 · 단독 기획·설계</span><span class="pv-flow">진단 → 설계 → 구현 → 테스트 → 운영</span><span class="pv-rc"><span>7개 모듈</span><span>회의비서 데모</span></span></span>
+            <span class="pv-y">2026.06</span>
+          </a>
+          <a class="pv-row" href="projects/harness-engineering.html">
+            <span class="pv-th" style="--tb:#fff"><img width="1280" height="720" loading="lazy" src="assets/projects/harness-slide.jpg" alt="" /></span>
+            <span class="pv-body"><span class="pv-t">하네스 엔지니어링 기반 AI 업무 구조화 강의</span><span class="pv-s">15분 마이크로러닝 · 직접 설계·진행</span><span class="pv-flow">기획 → 콘텐츠 → 검수 → 사람 피드백</span><span class="pv-rc"><span>에이전트 3종</span><span>라이브 시연</span></span></span>
+            <span class="pv-y">2026.05.14</span>
+          </a>
         </div>
 
-        <!-- 원티드 AI 데이터분석 부트캠프 그룹 -->
-        <div class="proj-group glass-card" id="wanted-bootcamp" data-reveal>
-          <div class="proj-group-head">
-            <span class="proj-group-icon ai"><i class="ph ph-game-controller" aria-hidden="true"></i></span>
-            <div class="proj-group-id">
-              <span class="proj-group-kicker">원티드 포텐업 · 2024.12 ~ 2025.06</span>
-              <h3>원티드 AI 데이터분석 부트캠프</h3>
-            </div>
-            <span class="proj-group-count">1</span>
+        <div class="pv-group" id="wanted-bootcamp">
+          <div class="pv-group-head">
+            <span class="pv-kicker">원티드 포텐업 · 2024.12 ~ 2025.06</span>
+            <h4>원티드 AI 데이터분석 부트캠프</h4>
+            <p>AI·언리얼 개발자와 함께 게임 기획·사용자 흐름·일정·QA를 총괄한 융합 프로젝트입니다.</p>
           </div>
-          <p class="proj-group-desc">AI·언리얼 개발자와 함께 <strong>게임 기획·사용자 흐름·일정·QA를 총괄</strong>한 융합 프로젝트입니다. 교육·운영 경험과 함께, 팀 단위 서비스 기획과 협업 경험을 보여줍니다.</p>
-          <div class="proj-subgrid">
-            <a class="proj-subcard" id="project-rest-diary" href="projects/rest-diary.html">
-              <div class="psc-head"><span class="psc-icon"><i class="ph ph-game-controller" aria-hidden="true"></i></span><span class="psc-date">2025.04 ~ 06</span></div>
-              <h4>이세계 휴식일지</h4>
-              <p class="psc-sub">힐링 농장 게임 · 6인 융합팀 총괄 PM</p>
-              <p class="psc-desc">번아웃을 겪는 직장인을 위한 게임의 <strong>콘텐츠·시나리오·UI 흐름</strong>을 기획하고, 팀의 일정과 QA를 관리했습니다. AI 에셋 생성과 감성일지 기능을 결합한 프로젝트로 <strong>원티드 포텐업 융합 우수상</strong>을 수상했습니다.</p>
-              <div class="psc-chips"><span>6인 팀 총괄 PM</span><span>기획·UI·일정·QA</span><span>융합 우수상</span></div>
-              <span class="psc-more">자세히 보기 <span class="arrow">→</span></span>
-            </a>
-          </div>
+          <a class="pv-row" id="project-rest-diary" href="projects/rest-diary.html">
+            <span class="pv-th"><img width="1280" height="720" loading="lazy" src="assets/projects/rest-diary-cover.jpg" alt=""></span>
+            <span class="pv-body"><span class="pv-t">이세계 휴식일지</span><span class="pv-s">힐링 농장 게임 · 6인 융합팀 총괄 PM</span><span class="pv-flow">기획 → 일정 관리 → QA</span><span class="pv-rc"><span>6인 팀 총괄 PM</span><span>기획·UI·일정·QA</span><span>융합 우수상</span></span></span>
+            <span class="pv-y">2025.04 ~ 06</span>
+          </a>
         </div>
-
       </div>
     </div>
   </section>
@@ -721,14 +739,13 @@
   </section>
 
   <!-- ── Scripts ──────────────────────────────────── -->
-  <script src="https://unpkg.com/three@0.158.0/build/three.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
   <script src="https://unpkg.com/countup.js@2.6.0/dist/countUp.umd.js"></script>
   <script src="js/hero-scene.js"></script>
-  <script src="js/main.js?v=20261002-5"></script>
+  <script src="js/main.js?v=20261007-4"></script>
   <a class="back-to-top" href="#page-top" aria-label="페이지 맨 위로 이동"><span aria-hidden="true">↑</span><span>TOP</span></a>
+  <script src="js/home-projects.js?v=20261007-3"></script>
   <script src="js/navigation.js?v=20261002-1"></script>
 </body>
 

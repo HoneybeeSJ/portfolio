@@ -162,10 +162,11 @@
 }
 
 /* ── 갤러리 ── */
-.pd-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
-.pd-gallery a { display: block; border-radius: var(--radius-sm); overflow: hidden; border: 1px solid var(--glass-border); transition: transform 0.25s, border-color 0.25s; }
+/* 이미지는 원래 비율 그대로(잘림 없음). 비율이 제각각이라 열 배치로 쌓는다 */
+.pd-gallery { column-width: 240px; column-gap: 12px; }
+.pd-gallery a { display: block; margin-bottom: 12px; break-inside: avoid; border-radius: var(--radius-sm); overflow: hidden; border: 1px solid var(--glass-border); transition: transform 0.25s, border-color 0.25s; }
 .pd-gallery a:hover { transform: translateY(-4px); border-color: var(--honey-border); }
-.pd-gallery img { width: 100%; display: block; aspect-ratio: 16/9; object-fit: cover; }
+.pd-gallery img { width: 100%; height: auto; display: block; background: #f4f4f5; }
 
 .pd-section { margin-top: 56px; }
 .pd-section > .pd-sec-tag {
@@ -553,4 +554,25 @@
 @media (max-width: 600px) {
   .hs-step { padding-top: 0; }
   .hs-step .hs-k { position: static; display: inline-block; width: auto; max-width: 100%; padding: 3px 10px; margin-bottom: 10px; }
+}
+
+/* ── 기획 → 최종 결과물 비교 (본인 기획 / 디자인팀 제작) ── */
+.pd-pairs { display: grid; gap: 36px; margin-top: 16px; }
+.pd-pair-title { font-size: 1rem; font-weight: 700; letter-spacing: -0.01em; }
+.pd-pair-note { margin-top: 4px; font-size: .84rem; line-height: 1.6; color: var(--text-muted); }
+.pd-pair { display: grid; grid-template-columns: minmax(0, 1fr) 40px minmax(0, 1fr); gap: 14px; align-items: start; margin-top: 12px; }
+.pd-pair-col { display: grid; gap: 8px; min-width: 0; }
+.pd-pair-label { font-size: .78rem; color: var(--text-muted); }
+.pd-pair-label b { color: var(--text); font-weight: 700; }
+.pd-pair-col.final .pd-pair-label b { color: var(--honey); }
+.pd-pair a { display: block; border-radius: var(--radius-sm); overflow: hidden; border: 1px solid var(--glass-border); background: #f4f4f5; }
+.pd-pair img { display: block; width: 100%; height: auto; }
+.pd-pair-arrow { align-self: center; text-align: center; font-size: 1.5rem; color: var(--honey); }
+.pd-finals { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 420px)); gap: 14px; margin-top: 12px; }
+.pd-finals figure { display: grid; gap: 8px; margin: 0; }
+.pd-finals a { display: block; border-radius: var(--radius-sm); overflow: hidden; border: 1px solid var(--glass-border); background: #f4f4f5; }
+.pd-finals img { display: block; width: 100%; height: auto; }
+@media (max-width: 700px) {
+  .pd-pair { grid-template-columns: minmax(0, 1fr); }
+  .pd-pair-arrow { transform: rotate(90deg); padding: 2px 0; }
 }
