@@ -2814,9 +2814,10 @@ body::before {
 .pv-slide.is-active .ln:nth-child(4)>span{transition-delay:.12s}
 .pv-fade{opacity:0;transition:opacity .3s ease}
 .pv-slide.is-active .pv-fade{opacity:1;transition-delay:.15s}
-.pv-chips,.pv-rc{display:flex;flex-wrap:wrap;gap:6px}
+.pv-chips,.pv-rc{display:flex;flex-wrap:wrap;gap:2px 14px}
 .pv-chips{margin-top:18px}
-.pv-chips span,.pv-rc span{font-size:12px;font-weight:600;padding:4px 10px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:#d4d4d8}
+.pv-chips span,.pv-rc span{font-size:13px;font-weight:500;letter-spacing:-.005em;line-height:1.6;color:var(--honey);white-space:nowrap}
+.pv-chips span::before,.pv-rc span::before{content:"#";margin-right:1px;opacity:.55}
 .pv-facts{margin-top:auto;display:grid;gap:10px;padding-top:20px}
 .pv-facts>div{display:grid;grid-template-columns:52px 1fr;gap:12px;font-size:14px;line-height:1.6;padding-top:10px;border-top:1px solid rgba(255,255,255,.08)}
 .pv-facts dt{font-size:12px;color:#8f8f98;padding-top:2px}
@@ -2847,7 +2848,7 @@ body::before {
 .pv-group-head{display:grid;gap:6px;padding-bottom:14px}
 .pv-kicker{font-size:12px;color:#8f8f98;letter-spacing:.02em}
 .pv-group-head h4{font-size:18px;font-weight:700;letter-spacing:-.02em}
-.pv-group-head p{font-size:14px;color:var(--text-muted);line-height:1.6;max-width:62ch;word-break:keep-all}
+.pv-group-head p{font-size:14px;color:var(--text-muted);line-height:1.6;max-width:none;word-break:keep-all;text-wrap:balance}
 .pv-row{display:grid;grid-template-columns:168px minmax(0,1fr) 110px;gap:24px;align-items:center;padding:16px 0;border-top:1px solid rgba(255,255,255,.08);scroll-margin-top:96px}
 .pv-row:last-of-type{border-bottom:1px solid rgba(255,255,255,.08)}
 .pv-th{position:relative;display:block;width:168px;aspect-ratio:16/10;border-radius:8px;overflow:hidden;background:var(--tb,#f4f4f5);border:1px solid rgba(255,255,255,.08)}
@@ -2947,7 +2948,7 @@ body::before {
 
 /* 3. 정렬: 섹션 머리말을 왼쪽 기준으로 통일 (첫 화면·배너·목록과 같은 기준선) */
 .sec-header { text-align: left; }
-.sec-sub { max-width: 46ch; }
+.sec-sub { max-width: none; word-break: keep-all; }
 .hv-role span { display: block; }
 .cp-cases { display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: 16px; }
 .cp-cases b { margin: 0; }
