@@ -677,3 +677,30 @@
 .pd-demo a:hover { background: var(--honey-bright, #ffd54a); }
 .pd-demo a:focus-visible { outline: 2px solid var(--honey); outline-offset: 3px; }
 .pd-demo-note { font-size: 0.84rem; line-height: 1.6; color: var(--text-muted); word-break: keep-all; }
+
+/* 기획 문서 발췌 */
+.doc-block { margin-top: 32px; }
+.doc-block:first-of-type { margin-top: 8px; }
+.doc-block h3 { font-size: 1.04rem; font-weight: 700; color: var(--text); margin: 0 0 8px; }
+.doc-cap { margin: 0 0 14px; font-size: 0.88rem; line-height: 1.75; color: var(--text-muted); word-break: keep-all; }
+.doc-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: var(--radius-sm); }
+.doc-table { width: 100%; min-width: 560px; border-collapse: collapse; font-size: 0.9rem; line-height: 1.65; }
+.doc-table th, .doc-table td { padding: 11px 14px 11px 0; text-align: left; vertical-align: top; word-break: keep-all; }
+.doc-table thead th { font-size: 0.78rem; font-weight: 600; color: var(--text-muted); padding-bottom: 8px; border-bottom: 1px solid var(--glass-border); }
+.doc-table tbody th { font-weight: 700; color: var(--honey-bright, var(--honey)); white-space: nowrap; padding-right: 18px; }
+.doc-table tbody td { color: var(--text); }
+.doc-table tbody tr + tr th, .doc-table tbody tr + tr td { border-top: 1px solid rgba(255,255,255,0.05); }
+@media (max-width: 700px) { .doc-block { margin-top: 26px; } .doc-table { font-size: 0.86rem; } }
+@media (max-width: 700px) {
+  .doc-scroll { overflow: visible; }
+  .doc-table { min-width: 0; }
+  .doc-table thead { display: none; }
+  .doc-table, .doc-table tbody, .doc-table tr, .doc-table th, .doc-table td { display: block; width: 100%; }
+  .doc-table tbody tr { padding: 12px 0; }
+  .doc-table tbody tr + tr { border-top: 1px solid rgba(255,255,255,0.06); }
+  .doc-table tbody tr + tr th, .doc-table tbody tr + tr td { border-top: 0; }
+  .doc-table th, .doc-table td { padding: 0; }
+  .doc-table tbody th { margin-bottom: 4px; white-space: normal; }
+  .doc-table td { display: grid; grid-template-columns: 5.6em minmax(0, 1fr); gap: 8px; padding: 2px 0; }
+  .doc-table td::before { content: attr(data-label); color: var(--text-muted); font-size: 0.78rem; font-weight: 600; padding-top: 2px; }
+}
