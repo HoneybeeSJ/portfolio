@@ -670,3 +670,10 @@
   .pd-lb:not([hidden]) { animation: pd-lb-in 0.16s ease-out; }
   @keyframes pd-lb-in { from { opacity: 0; } to { opacity: 1; } }
 }
+
+/* 시연 화면 링크 */
+.pd-demo { margin-top: 18px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; }
+.pd-demo a { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 20px; border-radius: 999px; background: var(--honey); color: #1a1a1a; font-weight: 700; font-size: 0.95rem; text-decoration: none; transition: background .2s; }
+.pd-demo a:hover { background: var(--honey-bright, #ffd54a); }
+.pd-demo a:focus-visible { outline: 2px solid var(--honey); outline-offset: 3px; }
+.pd-demo-note { font-size: 0.84rem; line-height: 1.6; color: var(--text-muted); word-break: keep-all; }

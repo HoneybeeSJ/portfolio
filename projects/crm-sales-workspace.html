@@ -14,7 +14,7 @@
     rel="stylesheet" />
   <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
   <link rel="stylesheet" href="../css/style.css?v=20261002-5" />
-  <link rel="stylesheet" href="../css/project.css?v=20261012-4" />
+  <link rel="stylesheet" href="../css/project.css?v=20261012-7" />
 </head>
 
 <body class="pd-page">
@@ -34,6 +34,7 @@
     <h1 class="pd-title">영업 CRM 프로토타입</h1>
     <p class="pd-lead">엑셀 장부를 단계 흐름으로 바꾼 제안용 CRM. 요구 정리·화면 결정·검수를 맡았습니다.</p>
     <p class="pd-period">2026.09.10 ~ 진행 중 (v3.2.0, 10.12 기준)</p>
+    <p class="pd-demo"><a href="https://haram-crm-portfolio.jaehyun-crm-frontend.workers.dev/" target="_blank" rel="noopener">시연 화면 열기 <span aria-hidden="true">&#8599;</span></a><span class="pd-demo-note">가상 회사·가상 고객 13명 · 관리자/팀장/담당자 역할 전환 · 입력한 내용은 새로고침하면 초기화됩니다</span></p>
   </header>
 
   <main class="pd-body">
@@ -43,7 +44,7 @@
         <div><dt>어디서 · 무슨 일</dt><dd>BX컨설팅 세일즈포스팀 인턴 · 고객사에 CRM 서비스를 제안하기 위한 프로토타입</dd></div>
         <div><dt>주어진 과제</dt><dd>광고로 들어온 고객의 상담부터 공사까지를 엑셀 한 줄로 관리하고 있어, 누가 어느 단계를 맡았고 어디서 막혔는지 보이지 않았습니다.</dd></div>
         <div><dt>내 역할</dt><dd>요구 정리·화면 결정·검수. 요구마다 출처(팀장 피드백과 본인 판단)를 나눠 기록했고, 구현은 역할을 나눈 AI 코딩 에이전트에 맡긴 뒤 PC·모바일 화면으로 직접 확인했습니다.</dd></div>
-        <div><dt>결과</dt><dd>고객 목록·상세·단계 이동·종료 흐름과 권한·로그인 구조를 갖춘 제안용 테스트 빌드(v3.2.0)를 만들었고, 개선 과제 24건을 기록·관리했습니다.</dd></div>
+        <div><dt>결과</dt><dd>고객 목록·상세·단계 이동·종료 흐름과 권한·로그인 구조를 갖춘 제안용 테스트 빌드(v3.2.0)를 만들었고, 개선 과제 24건을 기록·관리했습니다. 가상 회사·가상 고객 데이터로 직접 눌러 볼 수 있는 시연 화면도 따로 공개했습니다.</dd></div>
         <div class="brief-contrib"><dt>이 경험으로 할 수 있는 일</dt><dd>현업의 엑셀·수작업 흐름을 단계와 권한이 있는 도구로 옮길 때, 요구를 정리해 AI 개발 도구에 맡기고 결과를 화면으로 검수할 수 있습니다.</dd></div>
       </dl>
       <ul class="hashtags" aria-label="키워드"><li>요구정의</li><li>업무흐름설계</li><li>화면기획</li><li>AI협업</li><li>검수</li></ul>
@@ -57,6 +58,7 @@
         <li><span><b>화면 기준</b>&quot;처음 쓰는 직원도 질문 없이 쓸 수 있을 것&quot;(팀장 피드백)을 기준으로 색·버튼·용어를 덜어냈습니다.</span></li>
         <li><span><b>단계 이동 규칙</b>담당자는 다음 단계로 이어지고, 실측은 날짜·담당자 없이 확정되지 않으며, 종료 사유는 칩으로 고르게 했습니다.</span></li>
         <li><span><b>권한과 로그인</b>관리자·중간관리자·담당자 3역할, 관리자 승인 후 접근, 비밀번호 없이 구글 로그인·이메일 코드만 허용했습니다.</span></li>
+        <li><span><b>시연 화면</b>실제 고객 정보 없이 가상 회사(하람창호)와 가상 고객 13명으로 시연 빌드를 따로 만들었습니다. 실제 DB와 로그인은 연결하지 않았고(로그인·승인 흐름은 실제 시스템에서 구현했습니다), 관리자·팀장·담당자 역할을 바꿔 가며 단계 이동과 입력을 눌러 볼 수 있습니다.</span></li>
         <li><span><b>AI 작업 방식</b>기획·UX 설계·구현·검수 에이전트를 나누고, 커밋·DB 반영·배포는 각각 사람이 승인했습니다. 개발에는 합성 데이터만 썼습니다.</span></li>
       </ol>
     </section>
@@ -64,13 +66,13 @@
     <section class="pd-section pd-reveal">
       <h2 class="pd-h2">만든 자료</h2>
       <div class="pd-shots">
-        <a href="../assets/projects/crm-list.jpg" data-lightbox><span class="thumb"><img width="1215" height="1000" src="../assets/projects/crm-list.jpg" alt="상담 목록 (합성 데이터)" loading="lazy" /></span><span class="cap"><em>화면 결정</em>상담 목록 (합성 데이터)</span></a>
-        <a href="../assets/projects/crm-detail.jpg" data-lightbox><span class="thumb"><img width="1215" height="1000" src="../assets/projects/crm-detail.jpg" alt="고객 상세 (합성 데이터)" loading="lazy" /></span><span class="cap"><em>화면 결정</em>고객 상세 (합성 데이터)</span></a>
-        <a href="../assets/projects/crm-mobile.jpg" data-lightbox><span class="thumb"><img width="360" height="779" src="../assets/projects/crm-mobile.jpg" alt="모바일 고객 상세" loading="lazy" /></span><span class="cap"><em>화면 결정</em>모바일 고객 상세</span></a>
-        <a href="../assets/projects/crm-mobile-notes.jpg" data-lightbox><span class="thumb"><img width="360" height="864" src="../assets/projects/crm-mobile-notes.jpg" alt="모바일 단계 이동·메모" loading="lazy" /></span><span class="cap"><em>화면 결정</em>모바일 단계 이동·메모</span></a>
+        <a href="../assets/projects/crm-demo-overview.jpg" data-lightbox><span class="thumb"><img width="1440" height="900" src="../assets/projects/crm-demo-overview.jpg" alt="종합 현황: 처리 필요 고객 (가상 데이터)" loading="lazy" /></span><span class="cap"><em>화면 결정</em>종합 현황: 처리 필요 고객 (가상 데이터)</span></a>
+        <a href="../assets/projects/crm-demo-kanban.jpg" data-lightbox><span class="thumb"><img width="1440" height="900" src="../assets/projects/crm-demo-kanban.jpg" alt="단계별 칸반 (가상 데이터)" loading="lazy" /></span><span class="cap"><em>화면 결정</em>단계별 칸반 (가상 데이터)</span></a>
+        <a href="../assets/projects/crm-demo-detail.jpg" data-lightbox><span class="thumb"><img width="1440" height="1400" src="../assets/projects/crm-demo-detail.jpg" alt="실측 단계 상세 (가상 데이터)" loading="lazy" /></span><span class="cap"><em>화면 결정</em>실측 단계 상세 (가상 데이터)</span></a>
+        <a href="../assets/projects/crm-demo-mobile.jpg" data-lightbox><span class="thumb"><img width="390" height="844" src="../assets/projects/crm-demo-mobile.jpg" alt="모바일 고객 상세 (가상 데이터)" loading="lazy" /></span><span class="cap"><em>화면 결정</em>모바일 고객 상세 (가상 데이터)</span></a>
       </div>
-      <ul class="hashtags muted" aria-label="만든 자료"><li>요구사항기록</li><li>개선과제24건</li><li>PC·모바일검수</li></ul>
-      <p class="pd-note">고객사 정보와 실제 고객 데이터는 넣지 않았습니다. 화면은 모두 합성 데이터로 만든 검수 화면입니다.</p>
+      <ul class="hashtags muted" aria-label="만든 자료"><li>요구사항기록</li><li>개선과제24건</li><li>시연화면</li><li>PC·모바일검수</li></ul>
+      <p class="pd-note">시연 화면은 가상 회사와 가상 고객 데이터로만 구성했고 실제 DB와 연결되어 있지 않습니다. 고객사 정보와 실제 고객 데이터는 넣지 않았습니다.</p>
     </section>
   </main>
 
