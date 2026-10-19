@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>홈페이지 히어로 모션 시안 | 이승재 포트폴리오</title>
+  <meta name="description" content="기업 홈페이지 첫 화면을 스크롤 모션으로 보여주는 시안 3종(A·B·C안). 기획안과 작동하는 프로토타입을 만들고 검토에서 나온 수정 요청을 반영했습니다. 아직 실제 홈페이지에는 적용 전입니다." />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+  <link rel="stylesheet" href="../css/style.css?v=20261002-5" />
+  <link rel="stylesheet" href="../css/project.css?v=20261012-11" />
+</head>
+
+<body class="pd-page">
+  <span id="page-top" aria-hidden="true"></span>
+  <canvas id="hero-canvas" aria-hidden="true"></canvas>
+
+  <nav class="pd-nav">
+    <a href="../index.html#expert" class="pd-back"><span class="arrow">&larr;</span> 엑스퍼트컨설팅 프로젝트</a>
+    <a href="../index.html" class="pd-nav-logo" aria-label="홈"><span class="logo-hex"></span></a>
+  </nav>
+
+  <header class="pd-hero pd-reveal">
+    <div class="pd-eyebrow">
+      <span class="pd-cat">엑스퍼트컨설팅 · BX컨설팅 세일즈포스팀</span>
+      <span class="pd-kind">홈페이지 시안 3종 · 적용 전</span>
+    </div>
+    <h1 class="pd-title">홈페이지 히어로 모션 시안</h1>
+    <p class="pd-lead">회사 홈페이지 첫 화면을 스크롤 모션으로 바꾸는 방안을, 확정 전에 눈으로 볼 수 있는 시안으로 만들었습니다. 방향이 다른 A안·B안을 먼저 만들고, 두 안을 합친 C안까지 3종입니다.</p>
+    <p class="pd-period">2026.10.15 ~ 10.19 · 팀장 검토용 · 실제 홈페이지에는 아직 적용되지 않았습니다</p>
+  </header>
+
+  <main class="pd-body">
+    <section class="pd-section pd-brief pd-reveal">
+      <h2 class="pd-h2">한눈에 보기</h2>
+      <dl class="brief">
+        <div><dt>어디서 · 무슨 일</dt><dd>BX컨설팅 세일즈포스팀 인턴 · 회사 홈페이지의 첫 화면과 메인 전 구간을 스크롤 모션으로 보여주는 시안 제작</dd></div>
+        <div><dt>주어진 과제</dt><dd>지금 홈페이지의 첫 화면은 이미지 슬라이드입니다. 모션 방향을 확정하기 전에, 글로 된 설명이 아니라 직접 움직여 볼 수 있는 시안이 필요했습니다.</dd></div>
+        <div><dt>내 역할</dt><dd>기획안 작성(콘셉트·장면 구성·문구 출처 정리·팀장에게 확인받을 항목), 벤치마크 선정, 시안 점검과 수정. 작동하는 HTML 시안은 AI 코딩 에이전트와 함께 만들었고, 화면은 직접 열어 확인했습니다.</dd></div>
+        <div><dt>결과</dt><dd>기획안 2판, 작동하는 프로토타입 3종(A·B·C안), 접근성·모션 점검표, 시안 비교 화면(A/B/C·PC/모바일)을 팀장 검토용으로 만들었습니다. 적용 여부는 아직 정해지지 않았고, 사용자 반응 수치는 없습니다.</dd></div>
+        <div class="brief-contrib"><dt>이 경험으로 할 수 있는 일</dt><dd>새 화면 방향을 확정 전에 작동하는 시안으로 보여주고, 검토에서 나온 수정 요청을 목록으로 관리해 다음 시안에서 같은 문제가 다시 나오지 않았는지 확인할 수 있습니다.</dd></div>
+      </dl>
+      <ul class="hashtags" aria-label="키워드"><li>화면기획</li><li>모션기획</li><li>프로토타입</li><li>접근성점검</li><li>수정요청반영</li></ul>
+    </section>
+
+    <section class="pd-section pd-reveal">
+      <h2 class="pd-h2">기획 흐름</h2>
+      <ol class="pd-process">
+        <li><span><b>홈페이지 읽기</b>현재 홈페이지 메인의 문구·구성·서비스·사례를 읽고 기획안의 문구를 모두 홈페이지 원문으로 맞췄습니다. 처음에는 브로셔 기준으로 썼다가 홈페이지 기준으로 정렬했고(v1.1), 새로 지어낸 문구는 넣지 않았습니다.</span></li>
+        <li><span><b>벤치마크 나누기</b>참고한 사이트에서 가져온 것(연출 방식), 새로 만든 것, 가져오지 않은 것(코드·이미지·문구)을 표로 나눠 적었습니다. 1차는 포스코 이스틸포유, 2차는 수상작 목록에서 찾은 루아소프트를 참고했습니다.</span></li>
+        <li><span><b>장면 구성</b>히어로 → 서비스 7개 → CRM 예시 → 세일즈 교육 4단계 → 수행사례 → 인사이트 → 전국 거점 → 고객 로고 → 문의, 9개 구간입니다. A안(1차)의 콘셉트는 &quot;줄무늬 BX가 7개 서비스로 갈라진다&quot;이고, B안(2차)은 흰 바탕에서 화면이 고정된 채 장면이 바뀌는 방식입니다. C안은 B안의 구성에 A안의 스크롤 감각을 합친 안입니다.</span></li>
+        <li><span><b>확인받을 것 분리</b>팀장에게 결정받을 항목(적용 방식, 문구 순서, 고객 로고 사용 범위, 홈페이지 데이터 연동, BX 로고 벡터 파일)과 시안에서 동작하지 않는 부분(문의 창, 고정된 사례·인사이트 내용)을 기획안에 따로 적었습니다.</span></li>
+        <li><span><b>점검과 수정</b>1차 프로토타입을 웹 접근성 기준과 디자인 점검 도구로 훑어 반드시 고칠 것 5건, 고치는 편이 좋은 것 14건, 디자인 판단이 필요한 것 8건을 표로 정리했습니다. 27건 중 26건을 10월 15일에 반영했고, 어두운 테마 하나로 가는 방향 1건은 사용자 결정이 필요해 남겼습니다.</span></li>
+        <li><span><b>수정 요청 반영</b>A안을 검토하며 나온 수정 요청 10가지를 목록으로 만들고, B안에서 하나씩 처리했는지 확인했습니다.</span></li>
+        <li><span><b>합본 C안</b>B안을 기본으로 두고 PC·모바일을 한 페이지로 합쳤습니다. 스크롤 고정 구간을 9.2화면에서 7.6화면으로 줄이고 반응 속도를 A안 수준으로 맞췄습니다. 첫 화면은 검정에서 시작해 줄무늬가 가늘어지며 흰 바탕으로 바뀝니다. 하단은 홈페이지와 같은 구조(문의 카드와 레터 구독 카드를 나란히)로 맞췄습니다.</span></li>
+      </ol>
+      <p class="pd-note">아래는 세 안의 비교와, A안에서 B안으로 넘어갈 때의 수정 요청 처리 내용입니다.</p>
+    </section>
+
+    <section class="pd-section pd-reveal">
+      <h2 class="pd-h2">A·B·C안 비교</h2>
+      <p class="doc-cap">같은 홈페이지 원문과 같은 구간(히어로 → 서비스 → CRM 예시 → 세일즈 교육 → 수행사례 → 인사이트 → 전국 거점 → 고객 로고 → 문의)을 쓰고, 보여주는 방식만 다르게 했습니다.</p>
+      <div class="doc-block">
+        <div class="doc-scroll"><table class="doc-table"><thead><tr><th>안</th><th>첫 화면</th><th>서비스 7개 소개</th><th>특징</th></tr></thead><tbody>
+          <tr><td data-label="안">A안 (1차)</td><td data-label="첫 화면">흩어진 빛줄기가 BX로 모였다가 스크롤하면 7개 서비스로 갈라짐</td><td data-label="서비스 소개">가로 카드</td><td data-label="특징">어두운 바탕, 줄무늬가 7개 서비스로 갈라지는 콘셉트</td></tr>
+          <tr><td data-label="안">B안 (2차)</td><td data-label="첫 화면">홈페이지와 같은 문구 3장 순환 후, 스크롤하면 BX가 흩어지며 소개 문장으로 이어짐</td><td data-label="서비스 소개">화면이 고정된 채 서비스가 차례로 바뀌고, 서비스마다 실제 화면처럼 보이는 모션 그래픽(예시 데이터)</td><td data-label="특징">흰 바탕, 모바일은 가로 스와이프 지원</td></tr>
+          <tr><td data-label="안">C안 (합본)</td><td data-label="첫 화면">검정에서 시작해 검은 줄무늬가 가늘어지며 흰 바탕으로 바뀜(한 번만)</td><td data-label="서비스 소개">B안과 같은 그래픽 장면. 모바일에서도 세로로 나열되고 화면에 들어올 때 처음부터 재생</td><td data-label="특징">PC·모바일 한 페이지, 부드러운 스크롤, 넓은 화면에서 가운데 정렬</td></tr>
+        </tbody></table></div>
+      </div>
+      <details class="doc-fold"><summary>10월 19일 추가 수정 보기</summary>
+        <div class="doc-block">
+          <div class="doc-scroll"><table class="doc-table"><thead><tr><th>대상</th><th>수정</th></tr></thead><tbody>
+            <tr><td data-label="대상">A·B안</td><td data-label="수정">UI 점검 반영(터치 영역 확대, 자동 전환 멈춤, 글자 대비, 외부 이미지를 내려받아 로컬로 변경)</td></tr>
+            <tr><td data-label="대상">A·B안</td><td data-label="수정">서비스 소개 화면 정리(줄무늬 분할 화면과 제목 삭제), 히어로 문구를 세로로 나열하고 BX 로고 확대</td></tr>
+            <tr><td data-label="대상">A·B안</td><td data-label="수정">CRM 샘플 이미지에 예시 페이지 링크 추가</td></tr>
+            <tr><td data-label="대상">B안</td><td data-label="수정">PC에서 거꾸로 스크롤해도 서비스 장면이 보이도록 수정, 모바일 그래픽도 위로 스크롤할 때 다시 재생, 가로 스와이프 추가</td></tr>
+            <tr><td data-label="대상">B·C안</td><td data-label="수정">아주 넓은 화면에서 내용 폭을 1560px로 제한하고 가운데로 모음</td></tr>
+            <tr><td data-label="대상">C안</td><td data-label="수정">고객 레퍼런스 로고를 키우고 제목과의 간격을 늘림, 하단 빈 공간 축소, 모바일 서비스 영역을 PC·B안과 같은 그래픽 장면으로 되돌림</td></tr>
+          </tbody></table></div>
+        </div>
+      </details>
+    </section>
+
+    <section class="pd-section pd-reveal">
+      <h2 class="pd-h2">수정 요청과 처리</h2>
+      <p class="doc-cap">A안(1차)에서 나온 요청을 재발 방지 점검표로 만들어, B안(2차)에서 같은 문제가 없는지 화면으로 확인했습니다.</p>
+      <details class="doc-fold"><summary>수정 요청 10가지 보기</summary>
+        <div class="doc-block">
+          <div class="doc-scroll"><table class="doc-table"><thead><tr><th>A안 때 요청</th><th>B안 처리</th></tr></thead><tbody>
+            <tr><td data-label="요청">화면을 키우면 간격이 이상함</td><td data-label="처리">그래픽 영역 크기 변화를 감지해 매번 다시 계산. 900px로 연 뒤 1600px로 키워도 서비스 줄기와 라벨 간격이 균일한 것을 확인</td></tr>
+            <tr><td data-label="요청">서비스 라벨이 영역을 벗어남</td><td data-label="처리">라벨 폭을 자기 칸 안으로 제한. 1280·1600·375px에서 라벨 7개가 모두 칸 안에 있는 것을 확인</td></tr>
+            <tr><td data-label="요청">단계가 한꺼번에 켜지고 끝에 하늘색이 남음</td><td data-label="처리">선이 각 카드에 닿을 때 그 카드만 켜지게 변경. 단계가 하나씩 켜지고 끝에서 4단계가 모두 켜지는 것을 확인</td></tr>
+            <tr><td data-label="요청">섹션이 커서 아래 글자를 가림</td><td data-label="처리">큰 영역은 고정 화면 한 장 안에서만 바뀌게 변경</td></tr>
+            <tr><td data-label="요청">의미 없는 영문 장식</td><td data-label="처리">영문 장식과 라벨 삭제. 영문은 홈페이지 원문의 히어로 부제만 남김</td></tr>
+            <tr><td data-label="요청">일시정지 버튼 삭제</td><td data-label="처리">버튼 삭제. 로고 줄은 마우스를 올리면 멈춤</td></tr>
+            <tr><td data-label="요청">홈페이지 메인 콘텐츠를 빼지 말 것</td><td data-label="처리">CRM 예시, 수행사례 3건, 인사이트 3종 유지</td></tr>
+            <tr><td data-label="요청">이미지를 배너 비율에 맞게</td><td data-label="처리">수행사례와 CRM 이미지를 원래 비율로 표시, 잘림 없음</td></tr>
+            <tr><td data-label="요청">고객사는 홈페이지 하단처럼 나열</td><td data-label="처리">로고 49개를 두 줄로 나열. 49개 로딩과 깨진 이미지 0개 확인</td></tr>
+            <tr><td data-label="요청">히어로 문구 3장 순환</td><td data-label="처리">홈페이지와 같은 3장을 5초 간격으로 순환</td></tr>
+          </tbody></table></div>
+        </div>
+      </details>
+    </section>
+
+    <section class="pd-section pd-reveal">
+      <h2 class="pd-h2">확인한 것과 못한 것</h2>
+      <dl class="brief">
+        <div><dt>확인함</dt><dd>B안(10월 16일 기준): 데스크톱 1280px 전 구간, 900px에서 1600px로 크기 변경, 모바일 375px 전 구간(가로 넘침 없음), 인트로와 문구 순환, 스크롤 동작, 콘솔 오류 없음</dd></div>
+        <div><dt>확인하지 못함</dt><dd>C안과 10월 19일 수정분을 화면으로 다시 점검한 기록(수정 내역은 작업 기록 기준), 실제 휴대폰과 저사양 PC에서의 부드러움(성능 수치는 측정하지 않았습니다), 크롬 외 브라우저, 마우스 휠로 느끼는 스크롤 속도, 동작 줄이기 설정 화면(코드만 작성)</dd></div>
+        <div><dt>아직 없는 것</dt><dd>실제 홈페이지 적용, 사용자 반응이나 방문 지표. 이 시안은 방향을 정하기 위한 것이며 성과를 낸 결과물이 아닙니다.</dd></div>
+      </dl>
+      <p class="pd-note">시안 속 그래픽의 숫자는 이해를 돕기 위한 예시이며 실적이 아닙니다. 회사 홈페이지 화면과 고객사 로고는 이 페이지에 넣지 않았습니다.</p>
+    </section>
+  </main>
+
+  <footer class="pd-footer">
+    <a href="../index.html#expert" class="btn-primary">&larr; 엑스퍼트컨설팅 프로젝트로 돌아가기</a>
+    <p class="pd-disclaimer">기간·시안 수·수정 요청 내용은 기획안, 점검 문서, 시안 작업 기록으로 확인했습니다. 실제 홈페이지에는 적용되지 않았습니다.</p>
+  </footer>
+
+  <script src="../js/hero-scene.js"></script>
+  <script src="../js/project.js?v=20261012-5"></script>
+  <a class="back-to-top" href="#page-top" aria-label="페이지 맨 위로 이동"><span aria-hidden="true">↑</span><span>TOP</span></a>
+  <script src="../js/navigation.js?v=20261002-1"></script>
+</body>
+
+</html>
