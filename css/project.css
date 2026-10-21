@@ -161,6 +161,25 @@
   text-align: center;
 }
 
+/* ── 세로형 영상 ── */
+.pd-video { margin: 8px auto 4px; max-width: 360px; }
+.pd-video video {
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--glass-border);
+  background: #000;
+  display: block;
+}
+.pd-video figcaption {
+  margin-top: 8px;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  text-align: center;
+  word-break: keep-all;
+}
+
 /* ── 갤러리 ── */
 /* 이미지는 원래 비율 그대로(잘림 없음). 비율이 제각각이라 열 배치로 쌓는다 */
 .pd-gallery { column-width: 240px; column-gap: 12px; }
@@ -714,3 +733,10 @@
 .doc-fold > summary:hover { background: var(--honey-soft); }
 .doc-fold > summary:focus-visible { outline: 2px solid var(--honey); outline-offset: 3px; }
 .doc-fold[open] > summary { margin-bottom: 8px; }
+
+/* 세로 프레임 4장 (사계절): 데스크톱 4열, 모바일 2열 */
+.pd-page .pd-shots.pd-shots-season { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.pd-shots-season .thumb { aspect-ratio: 9 / 16; }
+@media (max-width: 600px) {
+  .pd-page .pd-shots.pd-shots-season { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
