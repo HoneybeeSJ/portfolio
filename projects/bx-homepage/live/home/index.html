@@ -405,6 +405,7 @@ footer .tagline{color:var(--ink);font-weight:600;margin-bottom:6px}
 .story.dark0 .slide-title em{color:var(--sky)}
 .story.dark0 .hero-sub{color:#aeb8de}
 .story.dark0 .hero-row .btn{color:#fff}
+.logo-ph{display:flex;align-items:center;justify-content:center;font-size:13px;letter-spacing:.02em;color:#6b7280;border:1px dashed #cbd5e1;border-radius:10px;background:#f8fafc}
 </style>
 </head>
 <body>
@@ -531,7 +532,7 @@ footer .tagline{color:var(--ink);font-weight:600;margin-bottom:6px}
 
 <!-- CLIENTS : 홈페이지 하단과 같은 로고 나열(두 줄로 흐름) -->
 <section class="clients" id="clients" aria-labelledby="clientsTitle">
-  <h2 class="h2 split reveal pad" id="clientsTitle">실제 프로젝트로 축적한<br> 고객 레퍼런스</h2>
+  <h2 class="h2 split reveal pad" id="clientsTitle">실제 프로젝트로 축적한<br> 고객 레퍼런스 <small style="display:block;font-size:14px;font-weight:400;color:#6b7280;margin-top:10px">고객사 로고는 포트폴리오에서 비공개로 대체했습니다</small></h2>
   <div class="mq"><div class="mq-track" id="mqA" style="--d:56s"></div></div>
   <div class="mq"><div class="mq-track rev" id="mqB" style="--d:64s"></div></div>
 </section>
@@ -642,67 +643,15 @@ ScrollTrigger.create({ start: 'top -40', end: 'max', toggleClass: { targets: hea
 
 /* ---------- 고객 로고 (홈페이지 고객 레퍼런스와 같은 49개, 공개 이미지 주소 그대로) ---------- */
 const LOGO_BASE = 'assets/';
-const LOGOS = [
-  ['logos/001-강원도.webp', '강원도'],
-  ['logos/002-강원랜드.webp', '강원랜드'],
-  ['logos/003-공항철도.webp', '공항철도'],
-  ['logos/004-기아자동차.webp', '기아자동차'],
-  ['logos/magewebp-노루페인트.webp', '노루페인트'],
-  ['logos/006-대명리조트.webp', '대명리조트'],
-  ['logos/007-대상주식회사.webp', '대상주식회사'],
-  ['logos/008-더클래스효성.webp', '더클래스효성'],
-  ['logos/009-동아오츠카.webp', '동아오츠카'],
-  ['logos/010-디오션리조트.webp', '디오션리조트'],
-  ['logos/magewebp-르노코리아자동차.webp', '르노코리아자동차'],
-  ['logos/012-미디어윌.webp', '미디어윌'],
-  ['logos/013-미래에셋증권.webp', '미래에셋증권'],
-  ['logos/014-바이드뮬러코리아.webp', '바이드뮬러코리아'],
-  ['logos/015-반얀트리.webp', '반얀트리'],
-  ['logos/016-부산디자인센터.webp', '부산디자인센터'],
-  ['logos/017-삼성전자.webp', '삼성전자'],
-  ['logos/018-서울관광재단.webp', '서울관광재단'],
-  ['logos/019-수협은행.webp', '수협은행'],
-  ['logos/020-순천시.webp', '순천시'],
-  ['logos/021-신한은행.webp', '신한은행'],
-  ['logos/022-아모스프로페셔널.webp', '아모스프로페셔널'],
-  ['logos/023-에스원.webp', '에스원'],
-  ['logos/024-엘지유플러스.webp', '엘지유플러스'],
-  ['logos/025-우리은행.webp', '우리은행'],
-  ['logos/026-워커힐호텔앤리조트.webp', '워커힐호텔앤리조트'],
-  ['logos/027-유진투자증권.webp', '유진투자증권'],
-  ['logos/858-이랜드FC.webp', '이랜드FC'],
-  ['logos/029-인천공항.webp', '인천공항'],
-  ['logos/030-전남드래곤즈.webp', '전남드래곤즈'],
-  ['logos/031-코레일.webp', '코레일'],
-  ['logos/032-팜스코.webp', '팜스코'],
-  ['logos/033-하나은행.webp', '하나은행'],
-  ['logos/034-한국공항공사.webp', '한국공항공사'],
-  ['logos/035-한국GM.webp', '한국GM'],
-  ['logos/036-현대엘리베이터서비스.webp', '현대엘리베이터서비스'],
-  ['logos/037-현대자동차.webp', '현대자동차'],
-  ['logos/038-휘닉스호텔앤리조트.webp', '휘닉스호텔앤리조트'],
-  ['logos/039-BGF리테일.webp', 'BGF리테일'],
-  ['logos/040-BMW.webp', 'BMW'],
-  ['logos/041-IBK기업은행.webp', 'IBK기업은행'],
-  ['logos/042-KB국민은행.webp', 'KB국민은행'],
-  ['logos/540-KB리브모바일.webp', 'KB리브모바일'],
-  ['logos/044-KB증권.webp', 'KB증권'],
-  ['logos/045-KTestate.webp', 'KTestate'],
-  ['logos/046-LG전자.webp', 'LG전자'],
-  ['logos/047-LS엠트론.webp', 'LS엠트론'],
-  ['logos/048-NH투자증권.webp', 'NH투자증권'],
-  ['logos/049-NICE그룹.webp', 'NICE그룹']
-];
+const LOGOS = Array.from({ length: 12 }, (_, i) => ['', '고객사 ' + String(i + 1).padStart(2, '0')]);
 function fillTrack(el, list) {
   [false, true].forEach(dup => {
     const set = document.createElement('div'); set.className = 'mq-set';
     if (dup) set.setAttribute('aria-hidden', 'true');
     list.forEach(([f, name]) => {
       const tile = document.createElement('div'); tile.className = 'logo-tile';
-      const img = document.createElement('img');
-      img.src = LOGO_BASE + f; img.alt = dup ? '' : name + ' 로고'; img.loading = 'lazy'; img.decoding = 'async';
-      img.width = 136; img.height = 44;
-      tile.appendChild(img); set.appendChild(tile);
+      tile.className = 'logo-tile logo-ph'; tile.textContent = dup ? '' : name;
+      set.appendChild(tile);
     });
     el.appendChild(set);
   });
