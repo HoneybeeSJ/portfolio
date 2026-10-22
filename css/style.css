@@ -3068,3 +3068,11 @@ body::before {
   #hero .hx-lead span, #hero .hx-title .w, #hero .hx-role, #hero .hx-bio, #hero .hx-cta { opacity: 1; transform: none; animation: none; }
   #hero .hx-title .name { animation: none; color: var(--honey); }
 }
+
+/* ═══ HERO · 한 화면 완결 + 스크롤 유도 (2026-10-23) ═══ */
+#hero { min-height: 100vh; min-height: 100svh; }
+#hero .hx { will-change: transform, opacity; transform-origin: 50% 45%; }
+#hero .hx-scroll { position: absolute; left: 50%; bottom: 28px; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 10px; font-size: 11px; font-weight: 600; letter-spacing: .24em; color: var(--text-muted); text-decoration: none; opacity: 0; animation: hxUp .8s ease 3.1s forwards; z-index: 2; }
+#hero .hx-scroll i { display: block; width: 1px; height: 44px; background: linear-gradient(to bottom, var(--honey), transparent); transform-origin: top; animation: hxDrip 1.8s ease-in-out 3.6s infinite; }
+@keyframes hxDrip { 0% { transform: scaleY(0); } 55% { transform: scaleY(1); opacity: 1; } 100% { transform: scaleY(1); opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { #hero .hx-scroll { opacity: 1; animation: none; } #hero .hx-scroll i { animation: none; } }
