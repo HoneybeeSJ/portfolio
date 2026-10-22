@@ -3037,3 +3037,34 @@ body::before {
 }
 
 .hv-role-line { margin-top: -8px; font-size: 0.95rem; color: var(--text-muted); }
+
+/* ═══ HERO · 타이포 중심 (2026-10-23) ═══ */
+#hero .hx { position: relative; z-index: 1; width: 100%; max-width: 1100px; margin: 0 auto; padding: 56px 24px 96px; display: flex; flex-direction: column; align-items: center; text-align: center; }
+#hero .hx-lead { display: flex; align-items: center; gap: 20px; width: min(860px, 100%); font-size: clamp(15px, 1.6vw, 20px); font-weight: 500; color: #E8D9A8; letter-spacing: -.01em; }
+#hero .hx-lead b { font-weight: 700; color: var(--honey); }
+#hero .hx-lead .hx-line { flex: 1; min-width: 24px; height: 1px; background: var(--honey); transform-origin: left; transform: scaleX(0); animation: hxDraw 1.1s cubic-bezier(.65, 0, .35, 1) .35s forwards; }
+#hero .hx-lead span { opacity: 0; animation: hxUp .7s ease forwards; }
+#hero .hx-lead span:first-child { animation-delay: .1s; }
+#hero .hx-lead span:last-child { animation-delay: 1.2s; }
+#hero .hx-title { margin: 28px 0 0; font-size: clamp(2.4rem, 7.4vw, 6.6rem); line-height: 1.12; font-weight: 800; letter-spacing: -.045em; color: #3A3A41; }
+#hero .hx-title .w { display: inline-block; opacity: 0; transform: translateY(.25em); animation: hxUp .8s cubic-bezier(.2, .8, .2, 1) forwards; }
+#hero .hx-title > .w:first-child { animation-delay: 1.45s; }
+#hero .hx-title .hx-nb { white-space: nowrap; }
+#hero .hx-title .name { animation: hxUp .8s cubic-bezier(.2, .8, .2, 1) 1.58s forwards, hxFill .9s ease 2.3s forwards; }
+#hero .hx-title .last { animation-delay: 1.8s; }
+#hero .hx-role { margin: 22px 0 0; font-size: 14px; font-weight: 600; letter-spacing: .12em; color: var(--text-muted); opacity: 0; animation: hxUp .8s ease 2.5s forwards; }
+#hero .hx-bio { max-width: 34em; margin: 28px auto 0; font-size: 15.5px; line-height: 1.8; color: #8E8E96; opacity: 0; animation: hxUp .8s ease 2.6s forwards; }
+#hero .hx-cta { display: flex; gap: 10px; justify-content: center; margin-top: 28px; opacity: 0; animation: hxUp .8s ease 2.75s forwards; }
+@keyframes hxDraw { to { transform: scaleX(1); } }
+@keyframes hxUp { to { opacity: 1; transform: none; } }
+@keyframes hxFill { to { color: var(--honey); } }
+@media (max-width: 640px) {
+  #hero .hx { padding: 40px 16px 72px; }
+  #hero .hx-lead { gap: 10px; font-size: 14px; }
+  #hero .hx-title { margin-top: 20px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #hero .hx-lead .hx-line { transform: none; animation: none; }
+  #hero .hx-lead span, #hero .hx-title .w, #hero .hx-role, #hero .hx-bio, #hero .hx-cta { opacity: 1; transform: none; animation: none; }
+  #hero .hx-title .name { animation: none; color: var(--honey); }
+}
