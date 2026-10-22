@@ -3,15 +3,14 @@
   var banner=document.getElementById('pvBanner'); if(!banner) return;
   var slides=[].slice.call(banner.querySelectorAll('.pv-slide'));
   var N=slides.length, cur=0;
-  var tabs=document.getElementById('pvTabs'), count=document.getElementById('pvCount'), nextLabel=document.getElementById('pvNextLabel');
+  var tabs=document.getElementById('pvTabs'), nextLabel=document.getElementById('pvNextLabel');
   var stage=document.getElementById('pvStage');
 
   slides.forEach(function(s,i){
     var b=document.createElement('button'); b.type='button'; b.className='pv-tab';
     var k=document.createElement('span'); k.className='k';
-    var num=document.createElement('b'); num.textContent=s.dataset.num;
     var kl=document.createElement('span'); kl.className='kl'; kl.textContent=s.dataset.k;
-    k.appendChild(num); k.appendChild(kl);
+    k.appendChild(kl);
     var nm=document.createElement('span'); nm.className='nm'; nm.textContent=s.dataset.title;
     b.appendChild(k); b.appendChild(nm);
     b.addEventListener('click',function(){go(i)});
@@ -27,10 +26,26 @@
   function render(){
     slides.forEach(function(s,i){ s.classList.toggle('is-active',i===cur); s.setAttribute('aria-hidden',i!==cur); s.inert=(i!==cur) });
     tabs.querySelectorAll('.pv-tab').forEach(function(el,i){ el.classList.toggle('active',i===cur); el.setAttribute('aria-current',i===cur?'true':'false') });
-    count.innerHTML='<b>'+('0'+(cur+1)).slice(-2)+'</b> / 0'+N;
     setNext();
   }
-  function go(i){ cur=(i+N)%N; render() }
+  // 자동 순환: 마우스·포커스가 있거나 화면 밖이면 멈추고, 모션 줄이기 설정이면 돌리지 않는다
+  var AUTO_MS=6500, timer=null, held=false, onScreen=false;
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function stopAuto(){ if(timer){ clearInterval(timer); timer=null } }
+  function runAuto(){
+    stopAuto();
+    if(reduce||held||!onScreen||document.hidden) return;
+    timer=setInterval(function(){ go(cur+1,true) },AUTO_MS);
+  }
+  function go(i,auto){ cur=(i+N)%N; render(); if(!auto) runAuto() }
+  banner.addEventListener('pointerenter',function(){ held=true; stopAuto() });
+  banner.addEventListener('pointerleave',function(){ held=false; runAuto() });
+  banner.addEventListener('focusin',function(){ held=true; stopAuto() });
+  banner.addEventListener('focusout',function(){ held=false; runAuto() });
+  document.addEventListener('visibilitychange',runAuto);
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(e){ onScreen=e[0].isIntersecting; runAuto() }).observe(banner);
+  }
 
   document.getElementById('pvPrev').addEventListener('click',function(){go(cur-1)});
   document.getElementById('pvNext').addEventListener('click',function(){go(cur+1)});

@@ -740,3 +740,7 @@
 @media (max-width: 600px) {
   .pd-page .pd-shots.pd-shots-season { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
+
+/* 내 역할: 줄마다 한 줄 띄운 목록처럼 읽히게 한다 */
+.brief dd .pd-line { display: block; }
+.brief dd .pd-line + .pd-line { margin-top: 9px; }
