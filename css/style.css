@@ -215,9 +215,9 @@ h1, h2, h3 {
 }
 .mobile-menu.open { max-height: 480px; }
 .mobile-menu ul { padding: 16px 24px 24px; }
-.mobile-menu li { padding: 12px 0; border-bottom: 1px solid var(--glass-border); }
+.mobile-menu li { border-bottom: 1px solid var(--glass-border); }
 .mobile-menu li:last-child { border: none; }
-.mob-link { font-size: 1.1rem; font-weight: 500; }
+.mob-link { display: flex; align-items: center; min-height: 48px; font-size: 1.1rem; font-weight: 500; }
 
 /* ═══════════════════════════════════════════════════════
    CONTENTS
@@ -3046,7 +3046,7 @@ body::before {
 #hero .hx-lead span { opacity: 0; animation: hxUp .7s ease forwards; }
 #hero .hx-lead span:first-child { animation-delay: .1s; }
 #hero .hx-lead span:last-child { animation-delay: 1.2s; }
-#hero .hx-title { margin: 28px 0 0; font-size: clamp(2.4rem, 7.4vw, 6.6rem); line-height: 1.12; font-weight: 800; letter-spacing: -.045em; color: #3A3A41; }
+#hero .hx-title { margin: 28px 0 0; font-size: clamp(2.4rem, 7.4vw, 6.6rem); line-height: 1.12; font-weight: 800; letter-spacing: -.045em; color: #8A8A93; }
 #hero .hx-title .w { display: inline-block; opacity: 0; transform: translateY(.25em); animation: hxUp .8s cubic-bezier(.2, .8, .2, 1) forwards; }
 #hero .hx-title > .w:first-child { animation-delay: 1.45s; }
 #hero .hx-title .hx-nb { white-space: nowrap; }
@@ -3054,7 +3054,6 @@ body::before {
 #hero .hx-title .last { animation-delay: 1.8s; }
 #hero .hx-role { margin: 22px 0 0; font-size: 14px; font-weight: 600; letter-spacing: .12em; color: var(--text-muted); opacity: 0; animation: hxUp .8s ease 2.5s forwards; }
 #hero .hx-bio { max-width: 34em; margin: 28px auto 0; font-size: 15.5px; line-height: 1.8; color: #8E8E96; opacity: 0; animation: hxUp .8s ease 2.6s forwards; }
-#hero .hx-cta { display: flex; gap: 10px; justify-content: center; margin-top: 28px; opacity: 0; animation: hxUp .8s ease 2.75s forwards; }
 @keyframes hxDraw { to { transform: scaleX(1); } }
 @keyframes hxUp { to { opacity: 1; transform: none; } }
 @keyframes hxFill { to { color: var(--honey); } }
@@ -3065,7 +3064,7 @@ body::before {
 }
 @media (prefers-reduced-motion: reduce) {
   #hero .hx-lead .hx-line { transform: none; animation: none; }
-  #hero .hx-lead span, #hero .hx-title .w, #hero .hx-role, #hero .hx-bio, #hero .hx-cta { opacity: 1; transform: none; animation: none; }
+  #hero .hx-lead span, #hero .hx-title .w, #hero .hx-role, #hero .hx-bio { opacity: 1; transform: none; animation: none; }
   #hero .hx-title .name { animation: none; color: var(--honey); }
 }
 
@@ -3076,3 +3075,32 @@ body::before {
 #hero .hx-scroll i { display: block; width: 1px; height: 44px; background: linear-gradient(to bottom, var(--honey), transparent); transform-origin: top; animation: hxDrip 1.8s ease-in-out 3.6s infinite; }
 @keyframes hxDrip { 0% { transform: scaleY(0); } 55% { transform: scaleY(1); opacity: 1; } 100% { transform: scaleY(1); opacity: 0; } }
 @media (prefers-reduced-motion: reduce) { #hero .hx-scroll { opacity: 1; animation: none; } #hero .hx-scroll i { animation: none; } }
+
+/* ═══ 일하는 기준 · 히어로 아래 압축형 (2026-10-26) ═══ */
+#standards { position: relative; padding: 72px 0 8px; scroll-margin-top: 72px; }
+#standards .std-heading { margin: 0 0 28px; font-size: 13px; font-weight: 700; letter-spacing: .24em; color: var(--honey); }
+.std-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.std-item { display: flex; flex-direction: column; gap: 14px; padding: 26px 24px 22px; border: 1px solid var(--glass-border); border-top: 2px solid var(--honey); border-radius: 12px; background: rgba(255,255,255,.03); }
+.std-kicker { font-size: 12px; font-weight: 700; letter-spacing: .16em; color: var(--text-muted); }
+.std-title { margin: 0; font-size: clamp(1.15rem, 1.7vw, 1.4rem); line-height: 1.4; font-weight: 800; letter-spacing: -.03em; color: var(--text); }
+.std-body { margin: 0; font-size: 14.5px; line-height: 1.8; color: var(--text-muted); }
+.std-cases { display: grid; grid-template-columns: 4.6em minmax(0, 1fr); align-items: start; gap: 0 12px; margin: auto 0 0; padding-top: 16px; border-top: 1px solid var(--glass-border); font-size: 13px; }
+.std-cases-label { display: flex; align-items: center; min-height: 44px; color: var(--text-muted); font-weight: 600; line-height: 1.4; white-space: nowrap; }
+.std-cases-list { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
+.std-cases a { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 0 16px; border: 1px solid var(--glass-border); border-radius: 999px; line-height: 1.4; color: var(--text); text-decoration: none; transition: border-color .15s, color .15s; }
+.std-cases a i { font-style: normal; color: var(--honey); }
+.std-cases a:hover, .std-cases a:focus-visible { border-color: var(--honey); color: var(--honey); }
+@media (max-width: 860px) {
+  #standards { padding-top: 56px; }
+  .std-grid { grid-template-columns: 1fr; }
+}
+
+/* 대표 탭: 프로젝트명 + 회사명 2줄 (2026-10-26) */
+.pv-tab .nm { margin-top: 4px; font-size: clamp(15px, 1.5vw, 19px); }
+.pv-tab .co { display: block; margin-top: 5px; font-size: 12.5px; font-weight: 500; letter-spacing: -.01em; color: #8f8f98; word-break: keep-all; }
+.pv-tab.active .co { color: var(--honey); }
+@media (max-width: 600px) {
+  .pv-tab { min-height: 76px; }
+  .pv-tab .nm { font-size: 13.5px; }
+  .pv-tab .co { font-size: 12px; }
+}

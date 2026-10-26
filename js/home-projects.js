@@ -13,6 +13,7 @@
     k.appendChild(kl);
     var nm=document.createElement('span'); nm.className='nm'; nm.textContent=s.dataset.title;
     b.appendChild(k); b.appendChild(nm);
+    if(s.dataset.co){ var co=document.createElement('span'); co.className='co'; co.textContent=s.dataset.co; b.appendChild(co); }
     b.addEventListener('click',function(){go(i)});
     tabs.appendChild(b);
   });
