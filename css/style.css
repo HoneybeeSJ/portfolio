@@ -3108,3 +3108,8 @@ body::before {
 .pv-row-static { cursor: default; }
 .pv-row-static:hover .pv-t { color: inherit; }
 .pv-row-static .pv-th-text em { color: #3a352c; }
+
+/* 안내 문구를 뺀 섹션: 제목 아래 여백을 문구 자리까지 잡지 않는다 (2026-10-26) */
+#projects .sec-header, #skills .sec-header { margin-bottom: 28px; }
+.pv-group { padding-top: 36px; }
+.pv-group-head { padding-bottom: 10px; }
