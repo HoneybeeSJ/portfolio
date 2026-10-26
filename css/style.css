@@ -3104,3 +3104,7 @@ body::before {
   .pv-tab .nm { font-size: 13.5px; }
   .pv-tab .co { font-size: 12px; }
 }
+/* 상세 페이지가 없는 목록 행 */
+.pv-row-static { cursor: default; }
+.pv-row-static:hover .pv-t { color: inherit; }
+.pv-row-static .pv-th-text em { color: #3a352c; }
