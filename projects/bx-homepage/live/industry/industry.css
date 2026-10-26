@@ -16,3 +16,158 @@
 @media(max-width:540px){.review-strip{font-size:12px;flex-wrap:wrap;gap:3px}.hero h1{font-size:34px}.hero .lead{font-size:16px}.hero{padding-top:32px;padding-bottom:42px}.hero-diagram{padding:22px}.diagram-title{font-size:22px}.diagram-flow{grid-template-columns:1fr 1fr}.hero-meta .tag{font-size:12px}.page-links{gap:5px 22px;font-size:13px}.section-head{margin-bottom:28px}.industry-row{grid-template-columns:30px 1fr 36px;padding:25px 0;gap:12px}.industry-row p{grid-column:2;grid-row:2;font-size:14px}.round-arrow{grid-column:3;grid-row:1 / 3;width:36px;height:36px}.industry-row .en{font-size:12px}.role-cards,.expert-grid,.feedback-band{grid-template-columns:1fr}.role-card,.expert-card{padding:25px}.case-row{grid-template-columns:1fr 30px;gap:10px}.case-type{grid-column:1}.case-row>div:nth-child(2){grid-column:1}.case-row>.arr{grid-column:2;grid-row:1 / 3}.case-row h3{font-size:20px}.steps{gap:28px 20px}.step h3{font-size:19px}.course-meta{align-items:flex-start;flex-direction:column;gap:6px}.course-meta h3{font-size:22px}.module{grid-template-columns:24px 1fr;padding:20px 15px;gap:8px 12px}.module p,.module .output,.module .time{grid-column:2}.module .output::before{content:'산출물 · ';font-size:12px;color:var(--mute)}.module .time{font-size:12px}.track-tabs button{padding:10px 15px;font-size:13px}.workbook{padding:24px;box-shadow:7px 10px 0 #e8efff}.cta-box{padding:28px}.cta-box .btn{width:100%}.doc{padding:25px 20px 60px}.doc h1{font-size:31px}.doc table{font-size:12px}.doc th,.doc td{padding:8px}.doc pre{white-space:pre-wrap}dialog{padding:24px}.site-footer{padding-top:32px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.motion-ready .reveal{opacity:1;transform:none}}
 @media print{.site-header,.review-strip,.page-links,.actions,dialog,.doc-tools{display:none!important}.section{padding:30px 0;break-inside:avoid}.hero{padding:25px 0;min-height:0}.reveal,.motion-ready .reveal{opacity:1;transform:none}.doc{max-width:none;padding:0}.doc h2{break-after:avoid}.doc table{break-inside:avoid}body{background:white}.pad{padding-left:25px;padding-right:25px}}
+.strategy-list{list-style:none;margin:34px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1100px}.strategy-list li{display:flex;gap:14px;border-top:1px solid #b6c6e6;padding-top:20px}.strategy-no{flex:0 0 auto;white-space:nowrap;color:var(--blue-d);font-size:13px;font-weight:700;padding-top:4px}.strategy-list h3{font-size:19px;line-height:1.45;margin:0 0 10px}.strategy-list p{font-size:15px;margin:0;line-height:1.8}.outlook-grid.three{grid-template-columns:repeat(3,1fr);gap:40px}
+@media(max-width:900px){.strategy-list{grid-template-columns:1fr;gap:18px}.outlook-grid.three{grid-template-columns:1fr;gap:30px}}
+
+/* 참고 자료: 출처를 한 줄씩 세로로 */
+.source-note .source-title{display:block;margin-bottom:6px;font-size:12px;font-weight:700;color:var(--ink,#1f3d73)}
+.source-list{list-style:none;margin:0 0 10px;padding:0}
+.source-list li{position:relative;padding-left:12px;line-height:1.9}
+.source-list li::before{content:'';position:absolute;left:0;top:.95em;width:4px;height:4px;border-radius:50%;background:#8ea3c9}
+.source-note p{margin:0}
+
+/* 허브: 카테고리 카드 / 상세: 구간 내비 (세일즈클리닉 산업 페이지의 구성을 참고한 배치) */
+.cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:10px}
+.cat-card{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-card);overflow:hidden;transition:box-shadow .2s,transform .2s}
+.cat-card:hover{box-shadow:0 18px 38px #0b153014;transform:translateY(-3px)}
+.cat-main{display:block;padding:26px 26px 20px}
+.cat-label{display:inline-flex;margin-bottom:16px;padding:5px 12px;border-radius:var(--r-pill);background:#edf3ff;color:#2547a6;font-size:12px;font-weight:750;letter-spacing:.04em}
+.cat-thumb{display:block;width:100%;height:auto;aspect-ratio:360/208;object-fit:cover;border-radius:14px;margin-bottom:20px;background:#e5edff}
+.cat-main h3{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;font-size:28px;margin-bottom:8px}
+.cat-main .en{font-size:11px;color:var(--mute);letter-spacing:.06em;font-weight:500}
+.cat-main p{font-size:15px;color:var(--mute);line-height:1.6}
+.cat-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding:16px 26px 24px;border-top:1px solid var(--line)}
+.cat-links a{padding:6px 12px;border:1px solid var(--line);border-radius:var(--r-pill);font-size:13px;color:var(--ink);transition:background .15s,border-color .15s}
+.cat-links a:hover{background:#eaf0ff;border-color:#b7c8f2;color:var(--blue-d)}
+.section-tabs{position:sticky;top:74px;z-index:20;background:#fffffff2;backdrop-filter:blur(8px);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.tabs-inner{display:flex;justify-content:space-between;align-items:center;gap:24px;overflow-x:auto;scrollbar-width:none}
+.tabs-inner::-webkit-scrollbar{display:none}
+.tabs-industries,.tabs-sections{display:flex;gap:6px;white-space:nowrap}
+.tabs-industries a,.tabs-sections a{display:inline-flex;align-items:center;min-height:48px;padding:0 12px;font-size:14px;color:var(--mute)}
+.tabs-industries a[aria-current],.tabs-industries a:hover{color:var(--blue-d);font-weight:700}
+.tabs-sections a{color:var(--ink);font-weight:600}
+.tabs-sections a:hover{color:var(--blue-d)}
+.section{scroll-margin-top:130px}
+@media(max-width:1000px){.cat-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.section-tabs{position:static}.cat-grid{grid-template-columns:1fr}.tabs-inner{flex-direction:column;align-items:flex-start;gap:0}.tabs-industries{border-bottom:1px solid var(--line);width:100%}}
+@media print{.section-tabs{display:none}}
+.cat-card{flex-direction:row;align-items:center;justify-content:space-between;gap:16px;padding:34px 28px;min-height:110px}
+.cat-card h3{font-size:20px;line-height:1.35;margin:0}
+.cat-go{width:9px;height:9px;border-right:2px solid var(--blue-d);border-top:2px solid var(--blue-d);transform:rotate(45deg);flex:none}
+.cat-card.soon{background:#f7f9fd;box-shadow:none;transform:none}
+.cat-card.soon h3{color:var(--mute)}
+.cat-soon{flex:none;font-size:12px;color:var(--mute);border:1px solid var(--line);border-radius:var(--r-pill);padding:4px 10px;background:#fff}
+.hero-solo{grid-template-columns:1fr;min-height:0;padding-top:70px;padding-bottom:70px}
+.hero-solo .lead{max-width:640px}
+
+/* 상세 간략 구성: 왼쪽 라벨 + 오른쪽 본문, 부가 내용은 접기 */
+.row-block{display:grid;grid-template-columns:200px 1fr;gap:40px;align-items:start}
+.row-label{display:flex;flex-direction:column;gap:8px;font-size:22px;line-height:1.3;padding-top:4px}
+.row-label span{font-size:13px;color:var(--blue-d);font-weight:750;letter-spacing:.08em}
+.row-headline{font-size:clamp(22px,2.4vw,30px);line-height:1.4;margin-bottom:14px}
+.row-text{color:var(--mute);font-size:16px;line-height:1.7;max-width:760px}
+.row-body .outlook-grid{margin-top:0}
+.mini-details{margin-top:22px;border-top:1px solid var(--line)}
+.mini-details>summary{display:flex;justify-content:space-between;align-items:center;padding:16px 2px;cursor:pointer;list-style:none;font-weight:650;font-size:15px}
+.mini-details>summary::-webkit-details-marker{display:none}
+.mini-details>summary::after{content:"+";font-size:20px;color:var(--blue-d)}
+.mini-details[open]>summary::after{content:"−"}
+.mini-details>*:not(summary){margin-bottom:20px}
+.mini-intro{color:var(--mute);font-size:15px;margin-bottom:18px}
+.compact-tail{padding-top:0}
+.compact-tail .mini-details:first-child{margin-top:0}
+.row-body .related-solutions{margin-top:26px}
+.row-body .actions{margin-top:26px}
+@media(max-width:900px){.row-block{grid-template-columns:1fr;gap:18px}.row-label{flex-direction:row;align-items:baseline;gap:10px}}
+.sub-label{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:700;margin:0 0 14px}
+.sub-label b{color:var(--blue-d);font-size:13px}
+.client-block{margin-bottom:44px}
+.client-grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.client-grid li{display:flex;align-items:center;justify-content:center;min-height:78px;padding:12px;background:#fff;border:1px solid var(--line);border-radius:12px;text-align:center}
+.client-grid img{width:auto;height:auto;max-width:100%;max-height:46px;object-fit:contain}
+.client-grid span{font-size:14px;font-weight:600;line-height:1.35;color:var(--ink)}
+@media(max-width:900px){.client-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:540px){.client-grid{grid-template-columns:repeat(2,1fr)}}
+/* 영업 환경·현장 용어 */
+.env-block{margin-top:64px;padding-top:40px;border-top:1px solid #b6c6e6}
+.env-title{font-size:28px;line-height:1.4;margin:14px 0 16px}
+.env-intro{max-width:880px;color:var(--mute);font-size:17px;line-height:1.9;margin:0 0 32px}
+.env-grid{display:grid;gap:18px}
+.env-grid.n3{grid-template-columns:repeat(3,1fr)}
+.env-grid.n2{grid-template-columns:repeat(2,1fr)}
+.env-card{background:#fff;border:1px solid var(--line);border-radius:var(--r-card);padding:26px 24px}
+.env-tag{display:inline-block;color:var(--blue-d);background:#eaf0ff;border-radius:var(--r-pill);padding:5px 12px;font-size:12.5px;font-weight:700}
+.env-card h4{font-size:20px;line-height:1.4;margin:16px 0 14px}
+.env-card dl{margin:0}
+.env-card dt{font-size:12.5px;font-weight:700;color:var(--blue-d);margin-top:14px}
+.env-card dd{margin:5px 0 0;font-size:15px;line-height:1.8;color:var(--mute)}
+.env-terms{list-style:none;margin:18px 0 0;padding:16px 0 0;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px}
+.env-terms li{font-size:13px;font-weight:600;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:4px 10px}
+.term-title{font-size:18px;margin:44px 0 14px}
+.term-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0 44px;margin:0;border-top:1px solid #b6c6e6}
+.term-grid>div{display:grid;grid-template-columns:150px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid var(--line)}
+.term-grid dt{font-weight:700;font-size:15px;color:var(--ink)}
+.term-grid dd{margin:0;font-size:14.5px;line-height:1.75;color:var(--mute)}
+@media(max-width:1200px){.env-grid.n3{grid-template-columns:1fr}.term-grid{grid-template-columns:1fr}}@media(max-width:1000px){.env-grid.n2{grid-template-columns:1fr}}
+@media(max-width:540px){.env-title{font-size:23px}.term-grid>div{grid-template-columns:1fr;gap:4px}}
+
+/* 20차: 산업 상세 재구성(세일즈클리닉 구성). 개요·영업 환경·커스터마이징·특화 과정·레퍼런스 */
+.ind-tabs{display:flex;flex-wrap:wrap;gap:8px;padding:20px var(--gut) 0;max-width:1400px;margin:0 auto}
+.ind-tabs a,.ind-tabs .soon{padding:9px 16px;border:1px solid var(--line);border-radius:var(--r-pill);background:#fff;font-size:14px;font-weight:600;color:var(--mute)}
+.ind-tabs a:hover{border-color:#b7c8f2;color:var(--blue-d)}
+.ind-tabs a[aria-current]{background:var(--blue-d);border-color:var(--blue-d);color:#fff}
+.ind-tabs .soon{opacity:.45;cursor:default}
+.ind-photo{position:relative;margin:20px auto 0;max-width:1400px;padding:0 var(--gut)}
+.ind-photo img{display:block;width:100%;height:auto;max-height:440px;object-fit:cover;object-position:center 20%;border-radius:var(--r-xl)}
+.ind-photo figcaption{position:absolute;right:calc(var(--gut) + 14px);bottom:12px;font-size:11px;color:#fff;background:#0b153099;padding:3px 9px;border-radius:99px}
+.ind-head{padding-bottom:30px}
+.ind-head h1{margin:10px 0 18px;font-size:clamp(30px,4vw,46px);line-height:1.2}
+.ind-head .lead{max-width:860px;font-size:18px;line-height:1.8;color:var(--ink)}
+.ind-row{padding-top:34px;padding-bottom:34px;border-top:1px solid var(--line)}
+.ind-row .row-label{font-size:20px;position:relative;padding-top:14px}
+.ind-row .row-label::before{content:'';position:absolute;top:0;left:0;width:34px;height:2px;background:var(--blue)}
+.ind-row .row-body>p{margin:0;max-width:860px;font-size:17px;line-height:1.85}
+.ind-courses{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.ind-course{background:#fff;border:1px solid var(--line);border-radius:var(--r-card);padding:24px}
+.ind-course ul{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:10px}
+.ind-course a{display:block;padding:14px 16px;border-radius:12px;background:var(--bg);transition:background .2s}
+.ind-course a:hover{background:#e5edff}
+.ind-course b{display:block;font-size:16px}
+.ind-course span{display:block;margin-top:4px;font-size:14px;line-height:1.55;color:var(--mute)}
+@media(max-width:900px){.ind-courses{grid-template-columns:1fr}.ind-head .lead{font-size:16px}}
+.ind-env{margin:0;display:grid;max-width:860px}
+.ind-env>div{display:grid;grid-template-columns:120px 1fr;gap:18px;padding:14px 0;border-top:1px solid var(--line)}
+.ind-env>div:first-child{border-top:0;padding-top:0}
+.ind-env dt{font-weight:750;color:var(--blue-d);font-size:15px}
+.ind-env dd{margin:0;font-size:16px;line-height:1.75}
+.ind-head h1{margin-top:0}
+
+/* 상세 산업 섹션은 제목을 위에 두고 제목·내용을 같은 왼쪽선에 정렬한다. */
+.ind-row .row-block{grid-template-columns:1fr;gap:16px}
+.ind-row .ind-env>div{grid-template-columns:1fr;gap:4px;padding:12px 0}
+
+@media(max-width:900px){.ind-env>div{grid-template-columns:1fr;gap:4px}.ind-row{padding-top:22px;padding-bottom:22px}.ind-head{padding-bottom:18px}.ind-photo img{max-height:220px}.ind-course{padding:18px}}
+.ind-partner-lead{margin:0 0 20px;font-size:17px;line-height:1.7;max-width:860px}
+.ind-partners{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.ind-partner{background:#fff;border:1px solid var(--line);border-radius:var(--r-card);padding:22px}
+.ind-partner img{display:block;height:44px;width:auto;max-width:100%;object-fit:contain;object-position:left}
+.ind-partner h3{margin:14px 0 0;font-size:17px}
+.ind-partner details{margin-top:8px}
+.ind-partner summary{cursor:pointer;font-size:14px;font-weight:600;color:var(--blue-d);list-style:none;min-height:32px;display:flex;align-items:center}
+.ind-partner summary::-webkit-details-marker{display:none}
+.ind-partner details p{margin:8px 0 0;font-size:14.5px;line-height:1.75;color:var(--mute)}
+.ind-partner-src{margin:14px 0 0;font-size:13px;color:var(--mute)}
+@media(max-width:900px){.ind-partners{grid-template-columns:1fr}.ind-partner{padding:18px}.ind-partner-lead{font-size:16px}}
+
+/* 산업 간 이동: 짧은 이름의 작은 칩, 줄바꿈해서 한눈에 */
+.ind-nav{display:flex;flex-wrap:wrap;gap:5px;max-width:1400px;margin:0 auto;padding:8px var(--gut) 2px}
+.ind-nav a{padding:6px 9px;border:1px solid var(--line);border-radius:var(--r-pill);background:#fff;font-size:12px;font-weight:600;line-height:1.2;color:var(--mute)}
+.ind-nav a:hover{border-color:#b7c8f2;color:var(--blue-d)}
+.ind-nav a[aria-current]{background:var(--blue-d);border-color:var(--blue-d);color:#fff}
+@media(min-width:1000px){.ind-nav a{font-size:13px;padding:7px 12px}}
+
+/* 건설 페이지의 단일 레퍼런스 로고는 카드 안에서 식별되도록 표시 크기를 보정한다. */
+
+/* 최종 검수: 문의창 내부 스크롤을 유지하고 긴 제목의 줄바꿈을 개선한다. */
+dialog{overscroll-behavior:contain}
+h1,h2,h3{text-wrap:balance}

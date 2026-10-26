@@ -40,7 +40,7 @@
       stop();
       if(preference.matches||!inView||document.hidden||phase===3)return;
       figure.dataset.running="true";
-      timer=setTimeout(()=>{show(phase+1);continueMotion();},figure.dataset.variant?1400:1900);
+      timer=setTimeout(()=>{show(phase+1);continueMotion();},figure.dataset.variant?1400:1500);
     };
     const applyPreference=()=>{stop();replay.hidden=preference.matches;if(preference.matches)show(3);else continueMotion();};
     replay.addEventListener('click',()=>{show(0);continueMotion();});
