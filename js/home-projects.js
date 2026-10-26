@@ -20,8 +20,7 @@
   function setNext(){
     nextLabel.textContent='';
     var b=document.createElement('b');
-    if(cur===N-1){ b.textContent='전체 프로젝트 보기 ↓'; nextLabel.appendChild(b); nextLabel.dataset.mode='list'; }
-    else { nextLabel.appendChild(document.createTextNode('다음 · ')); b.textContent=slides[cur+1].dataset.title; nextLabel.appendChild(b); nextLabel.dataset.mode='next'; }
+    nextLabel.appendChild(document.createTextNode('다음 · ')); b.textContent=slides[(cur+1)%N].dataset.title; nextLabel.appendChild(b);
   }
   function render(){
     slides.forEach(function(s,i){ s.classList.toggle('is-active',i===cur); s.setAttribute('aria-hidden',i!==cur); s.inert=(i!==cur) });
@@ -49,10 +48,7 @@
 
   document.getElementById('pvPrev').addEventListener('click',function(){go(cur-1)});
   document.getElementById('pvNext').addEventListener('click',function(){go(cur+1)});
-  nextLabel.addEventListener('click',function(){
-    if(nextLabel.dataset.mode==='list') document.getElementById('pvList').scrollIntoView({behavior:'smooth'});
-    else go(cur+1);
-  });
+  nextLabel.addEventListener('click',function(){ go(cur+1) });
   // 좌우 키: 배너가 화면에 보일 때만
   document.addEventListener('keydown',function(e){
     if(e.key!=='ArrowRight'&&e.key!=='ArrowLeft') return;
