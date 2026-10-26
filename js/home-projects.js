@@ -1,4 +1,4 @@
-/* home-projects.js — 대표 프로젝트 배너(기준별 3장) */
+/* home-projects.js — 대표 프로젝트 배너 */
 (function(){
   var banner=document.getElementById('pvBanner'); if(!banner) return;
   var slides=[].slice.call(banner.querySelectorAll('.pv-slide'));
