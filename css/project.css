@@ -665,6 +665,19 @@
   .pd-page .pd-shots { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
   .pd-h2 { font-size: 1.2rem; }
 }
+/* 슬라이드·문서 캡처처럼 글자를 읽어야 하는 이미지는 큰 썸네일로 */
+.pd-page .pd-shots.pd-shots-wide { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; }
+.pd-page .pd-shots-wide .thumb { aspect-ratio: 1600 / 1110; }
+.pd-page .pd-shots-wide .cap { font-size: 0.82rem; }
+/* 세로로 긴 EDM 기획안은 위쪽을 잘라 보여주고, 누르면 전체를 확대해서 봄 */
+.pd-page .pd-shots.pd-shots-tall { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 14px; }
+.pd-page .pd-shots-tall .thumb { aspect-ratio: 3 / 4; }
+.pd-page .pd-shots-tall img { object-fit: cover; object-position: top; }
+.pd-page .pd-shots-tall .cap { font-size: 0.82rem; }
+@media (max-width: 700px) {
+  .pd-page .pd-shots.pd-shots-wide { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .pd-page .pd-shots.pd-shots-tall { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+}
 .pd-page .pd-kind::before { margin: 0 8px; }
 .pd-page .pd-lead { max-width: none; word-break: keep-all; text-wrap: balance; }
 
